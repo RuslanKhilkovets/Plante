@@ -1,0 +1,4 @@
+.global-container{
+    width: min(1440px, 100%);
+    padding: 0 16px;
+}
