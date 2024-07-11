@@ -1,0 +1,103 @@
+.navbar{
+    padding: 17.5px 0;
+    display: flex;
+    justify-content: space-between;
+    &__list{
+        display: flex;
+        justify-content: space-between;
+        gap: 25px;
+    }
+    &__link{
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #121212;
+        font-size: 19px;
+    }
+    &__contacts{
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+    }
+    &__connect{
+        color: #2A8927;
+    }
+}
+
+.header{
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 10fr 2fr;
+    gap: 20px;
+    align-items: center;
+    &__logo{
+        background-image: url("../../icons/logo.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 56px;
+        width: 100px;
+    }
+    &__catalog{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 18.5px;
+        background: #e9e8e8;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    &__catalog_button{
+        width: 24px;
+        height: 24px;
+        background-image: url("../../icons/catalog.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    &__catalog_title{
+        font-size: 1.2rem;
+        font-family: "Roboto", sans-serif;
+    }
+    &__search{
+        display: flex;
+        align-items: center;
+        border-radius: 30px;
+        background: #e9e8e8;
+        height: 100%;
+        padding: 0 1rem;
+    }
+    &__search_btn{
+        width: 19px;
+        height: 19px;
+        background-image: url("../../icons/search.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    &__search_input{
+        background: #e9e8e8;
+        width: 100%;
+        font-size: 1.2rem;
+        font-family: "Roboto", sans-serif;
+    }
+    &__icons{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__icon{
+        height: 24px;
+        width: 24px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+    &__icon:nth-child(1){
+        background-image: url("../../icons/person.svg");
+    }
+    &__icon:nth-child(2){
+        background-image: url("../../icons/like.svg");
+    }
+    &__icon:nth-child(3){
+        background-image: url("../../icons/cart.svg");
+    }
+}
