@@ -5,3 +5,20 @@
     width: min(1456px, 100%);
     padding: 0 16px;
 }
+
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+::-webkit-scrollbar-track {
+    background: #e9e8e8; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a8927; 
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    opacity: .7;
+}

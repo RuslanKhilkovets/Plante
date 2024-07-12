@@ -2,14 +2,14 @@ import * as React from 'react';
 import { Button as ButtonUnstyled, ButtonProps } from '@mui/base/Button';
 import { styled } from '@mui/system';
 
-const CustomButton = React.forwardRef(function CustomButton(
+const Button = React.forwardRef(function CustomButton(
   props: ButtonProps,
   ref: React.ForwardedRef<HTMLButtonElement>,
 ) {
   return <ButtonUnstyled {...props} ref={ref} />;
 });
 
-const StyledButton = styled(CustomButton)(
+const CustomButton = styled(Button)(
   ({ theme }) => `
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -42,4 +42,4 @@ const StyledButton = styled(CustomButton)(
 `,
 );
 
-export default StyledButton;
+export default CustomButton;

@@ -5,7 +5,10 @@ import MainPage from "../pages/MainPage";
 import PATHS from "./paths";
 
 export const routes = [
-    { path: PATHS.CATALOG, component: CatalogPage },
+    { 
+        path: PATHS.CATALOG,
+        component: CatalogPage
+    },
     { path: PATHS.MAIN_PAGE, component: MainPage },
     { path: PATHS.CHECKOUT, component: CheckoutPage },
     { path: PATHS.ITEM, component: ItemPage },
