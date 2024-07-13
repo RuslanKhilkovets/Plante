@@ -1,179 +1,50 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import * as React from 'react';
+
+import axios from 'axios';
+import clsx from 'clsx';
 
 import { Button } from '@mui/base';
 
 import ConnectModal from '../ConnectModal/ConnectModal';
 import CustomInput from '../StyledComponents/CustomInput';
+import CustomLink from '../StyledComponents/CustomLink';
 import Logo from '../Logo/Logo';
 
-import PATHS from '../../router/paths';
+import navbarLinks from '../../constants/navbarLinks';
+
+import IMenuItem from '../../types/IMenuItem';
 
 import cl from "./Header.module.scss";
 import "../../fonts/index.css";
 
+
 const Header = () => {
-    const [searchPrompt, setSearchPrompt] = useState<boolean>();
-    const [isConnectModalOpen, setIsConnectModalOpen] = useState<boolean>(false);
+    const [searchPrompt, setSearchPrompt] = useState<string>('');
+    const [isConnectModalOpen, setIsConnectModalOpen] = useState<boolean>(false);    
     const [isCatalogOpen, setIsCatalogOpen] = useState<boolean>(false);
-    const [activeMenuItem, setActiveMenuItem] = useState<any | null>(null);
+    const [menuItems, setMenuItems] = useState<IMenuItem[] | null>(null);
+    const [activeMenuItem, setActiveMenuItem] = useState<IMenuItem | null>(null);
+  
+    const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const { value } = e.target;
 
-    const onSearchChange = (e: any) => {
-        const { value } = e.target;        
-        setSearchPrompt(value);
+      setSearchPrompt(value);
     }
+  
+    useEffect(() => {
+      const getMenuItems = async () => {
+        try {
+          const response = await axios.get<IMenuItem[]>("http://localhost:5000/menuItems");
 
-    const menuItems = [
-        {
-            id: 1,
-            title: "Насіння овочів європакет",
-            iconName: "eco"
-        },
-        {
-            id: 2,
-            title: "Насіння квітів",
-            iconName: "psychiatry"
-        },
-        {
-            id: 3,
-            title: "Насіння овочів пакет гигант",
-            iconName: "filter_vintage"
-        },
-        {
-            id: 4,
-            title: "Газонні трави",
-            iconName: "grass"
-        },
-        {
-            id: 5,
-            title: "Кормові культури",
-            iconName: "cruelty_free"
-        },
-        {
-            id: 6,
-            title: "Серія Зарубіжної селекції",
-            iconName: "map"
-        },
-        {
-            id: 7,
-            title: "Серія Пропуск в світ високого врожаю інкрустоване",
-            iconName: "search"
-        },
-        {
-            id: 8,
-            title: "Серія Щедра грядка (інкрусоване)",
-            iconName: "volunteer_activism"
-        },
-    ]
-
-    const menuListItems = [
-        {
-            id: 1,
-            title: "Насіння овочів європакет",
-            items: [
-                {
-                    text: "Малий європакет",
-                    to: "/",
-                    isTitle: true,
-                },
-                {
-                    text: "Арахіс (малий європакет)",
-                    to: "/"
-                },
-                {
-                    text: "Баклажани (малий європак...",
-                    to: "/"
-                },
-                {
-                    text: "Буряк (малий європакет)",
-                    to: "/"
-                },
-                {
-                    text: "Диня (малий європакет)",
-                    to: "/"
-                },
-                {
-                    text: "Гарбуз (малий європакет)",
-                    to: "/"
-                },
-                {
-                    text: "Горох (малий європакет)",
-                    to: "/"
-                },
-                {
-                    text: "Кабачок (малий європакет)",
-                    to: "/"
-                },
-                {
-                    text: "Кавун (малий європакет)",
-                    to: "/"
-                },
-                {
-                    text: "Кавун (малий європакет)",
-                    to: "/"
-                },
-            ]
-        },
-        {
-            id: 3,
-            title: "Малий європакет 2",
-            items: [
-                {
-                    text: "Арахіс (малий європакет)12",
-                    to: "/"
-                },
-                {
-                    text: "Арахіс (малий європакет) 22",
-                    to: "/"
-                },
-                {
-                    text: "Арахіс (малий європакет)sd",
-                    to: "/"
-                },
-                {
-                    text: "Арахіс (малий європакет)",
-                    to: "/"
-                },
-                {
-                    text: "Арахіс (малий європакет)",
-                    to: "/"
-                },
-            ]
-        },
-        {
-            id: 2,
-            title: "Малий європакет 2",
-            items: [
-                {
-                    text: "Арахіс (малий європакет) dsds",
-                    to: "/"
-                },
-                {
-                    text: "Арахіс (малий європакет)",
-                    to: "/"
-                },
-                {
-                    text: "Арахіс (малий європакет)",
-                    to: "/"
-                },
-                {
-                    text: "Арахіс (малий європакет)",
-                    to: "/"
-                },
-                {
-                    text: "Арахіс (малий європакет)dd",
-                    to: "/"
-                },
-            ]
-        },
-    ]
-
-    const handleMouseHover = (id: number) => {
-        const itemMenu = menuListItems.find(item => item.id === id);
-
-        setActiveMenuItem(itemMenu || null);
-    }
-
+          setMenuItems(response.data);
+        } catch (error) {
+          console.error("Error fetching menu items:", error);
+        }
+      }
+  
+      getMenuItems();
+    }, []);
 
     return (
         <>
@@ -181,21 +52,11 @@ const Header = () => {
                 <div className="global-container">
                     <div className={cl.navbar}>
                         <ul className={cl.navbar__list}>
-                            <li className={cl.navbar__item}>
-                                <Link to={PATHS.MAIN_PAGE} className={cl.navbar__link}>Культура</Link>
-                            </li>
-                            <li className={cl.navbar__item}>
-                                <Link to={PATHS.MAIN_PAGE} className={cl.navbar__link}>Прайс</Link>
-                            </li>
-                            <li className={cl.navbar__item}>
-                                <Link to={PATHS.MAIN_PAGE} className={cl.navbar__link}>Акції</Link>
-                            </li>
-                            <li className={cl.navbar__item}>
-                                <Link to={PATHS.MAIN_PAGE} className={cl.navbar__link}>Доставка</Link>
-                            </li>
-                            <li className={cl.navbar__item}>
-                                <Link to={PATHS.MAIN_PAGE} className={cl.navbar__link}>Контакти</Link>
-                            </li>
+                            {navbarLinks.map(link => {
+                                return (
+                                    <CustomLink to={link.to} className={cl.navbar__link}>{link.text}</CustomLink>
+                                )
+                            })}
                         </ul>
                         <div className={cl.navbar__contacts}>
                             <div className={cl.navbar__phones}></div>
@@ -205,28 +66,29 @@ const Header = () => {
                     <div className={cl["header-actions"]}>
                         <Logo className={cl["header-actions__logo"]}/>
                         <Button 
-                            className={cl[`header-actions__catalog`] + " " + cl[isCatalogOpen ? "header-actions__catalog_active" : ""]} 
+                            className={clsx(cl['header-actions__catalog'], {
+                                [cl['header-actions__catalog_active']]: isCatalogOpen
+                            })}                            
                             onClick={() => setIsCatalogOpen(!isCatalogOpen)}
                         >
                             <div 
-                                className={
-                                    isCatalogOpen ? 
-                                        cl["header-actions__catalog_button_active"] 
-                                        : cl["header-actions__catalog_button"]
-                                }
+                                className={clsx(cl["header-actions__catalog_button"], {
+                                    [cl["header-actions__catalog_button_active"]]: isCatalogOpen
+                                })}
                             >
                             </div>
                             <p className={cl["header-actions__catalog_title"]}>Каталог</p>
                         </Button>
+
                         <CustomInput
                             type="text" 
                             placeholder='Я шукаю...' 
-                            className={cl["header-actions__search_input"] + " " +  cl["header-actions__search"]} 
+                            className={clsx(cl["header-actions__search_input"], cl["header-actions__search"])}                            
                             value={searchPrompt} 
                             onChange={onSearchChange}
                             endAdornment={<Button className={cl["header-actions__search_btn"]}></Button>}
                         />
-                
+
                         <div className={cl["header-actions__icons"]}>
                             <Button className={cl["header-actions__icon"]}></Button>
                             <Button className={cl["header-actions__icon"]}></Button>
@@ -244,18 +106,48 @@ const Header = () => {
                         <div className={cl.menu}>
                             <ul className={cl.menu__list}>
                                 {
+                                    menuItems !== null
+                                    &&
                                     menuItems.map((item: any) => {
                                         return (
-                                            <li className={cl.menu__item + " "} 
-                                                onMouseOver={() => handleMouseHover(item.id)}
+                                            <li className={cl.menu__item} 
+                                                onMouseOver={() => setActiveMenuItem(item)}
                                             >
-                                                <p className={cl.menu__item_icon + " material-symbols-outlined"}>{item.iconName}</p>
+                                                <p className={clsx(cl.menu__item_icon, "material-symbols-outlined")}>{item.iconName}</p>
                                                 <p className={cl.menu__text}>{item.title}</p>
                                             </li>
                                         )
                                     })
                                 }
                             </ul>
+                            <div className={cl["menu-navbar"]}>
+                                <div className={cl["menu-navbar__header"]}>
+                                    <div className={cl["menu-navbar__header"]}>
+                                        <div className={cl["menu-navbar__header_item"]}>
+                                            <Button className={cl["menu-navbar__header_item_button"]}></Button>
+                                            <p className={cl["menu-navbar__header_item_title"]}>Особисті дані</p>
+                                        </div>
+                                        <div className={cl["menu-navbar__header_item"]}>
+                                            <Button className={cl["menu-navbar__header_item_button"]}></Button>
+                                            <p className={cl["menu-navbar__header_item_title"]}>Вибране</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={cl["menu-navbar__container"]}>
+                                    <ul className={cl["menu-navbar__list"]}>
+                                        {navbarLinks.map(link => {
+                                            return (
+                                                <CustomLink to={link.to} className={cl.navbar__link}>{link.text}</CustomLink>
+                                            )
+                                        })}
+                                    </ul>
+                                    <div className={cl["menu-navbar__links"]}>
+                                        <a href='tel:(067) 282-52-44' className={cl["menu-navbar__link"]}>(067) 282-52-44</a>
+                                        <a href='tel:(067) 282-52-44' className={cl["menu-navbar__link"]}>(067) 282-52-44</a>
+                                        <Button className={clsx(cl.navbar__connect,  cl.navbar__link)} onClick={() => setIsConnectModalOpen(!isConnectModalOpen)}>Зворотній зв’язок</Button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         {
                             activeMenuItem !== null
@@ -268,17 +160,19 @@ const Header = () => {
                                     <Button className={cl["menu-items__header--close-icon"]} onClick={() => setActiveMenuItem(null)}></Button>
                                 </div>
                                 <ul className={cl["menu-items__list"]}>
+                                    <p className={`${cl["menu-items__item_text"]} ${cl["menu-items__item_title"]}`}>{activeMenuItem.title}</p>
                                     {
                                         activeMenuItem?.items.map((item: any) => {
                                             
                                             return (
                                                 <li className={cl[`menu-items__item`]}>
-                                                    <Link to={item.to} className={`${cl["menu-items__item_text"]} ${item.isTitle ? cl["menu-items__item_title"] : ""}`}>{item.text}</Link>
+                                                    <CustomLink to={item.to} className={cl["menu-items__item_text"]}>{item.text}</CustomLink>
                                                 </li>
                                             )
                                         })
                                     }
                                 </ul>
+    
                             </div>
                         }
                     </div>

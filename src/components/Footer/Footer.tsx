@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import { Box } from "@mui/material";
 
 import Logo from "../Logo/Logo";
@@ -11,6 +9,33 @@ import YoutubeIcon from "../../icons/Youtube.svg";
 import ViberIcon from "../../icons/Viber.svg";
 import FacebookIcon from "../../icons/Facebook.svg";
 import CustomLink from "../StyledComponents/CustomLink";
+
+const footerLinksBlock1 = [
+    { id: 1, text: 'Культура', path: PATHS.MAIN_PAGE },
+    { id: 2, text: 'Про компанію', path: PATHS.MAIN_PAGE },
+    { id: 3, text: 'Прайс', path: PATHS.MAIN_PAGE },
+    { id: 4, text: 'Акції', path: PATHS.MAIN_PAGE },
+    { id: 5, text: 'Доставка', path: PATHS.MAIN_PAGE },
+    { id: 6, text: 'Замовлення', path: PATHS.MAIN_PAGE }
+];
+
+const footerLinksBlock2 = [
+    { id: 1, text: 'Умови використання сайту', path: PATHS.MAIN_PAGE },
+    { id: 2, text: 'Усі категорії', path: PATHS.MAIN_PAGE },
+    { id: 3, text: 'Доставка та оплата', path: PATHS.MAIN_PAGE },
+    { id: 4, text: 'Повернення товару', path: PATHS.MAIN_PAGE },
+    { id: 5, text: 'Контакти', path: PATHS.MAIN_PAGE },
+    { id: 6, text: 'Співпраця з нами', path: PATHS.MAIN_PAGE }
+];
+
+const footerLinksBlock3 = [
+    { id: 1, text: 'Популярні статті', path: PATHS.MAIN_PAGE },
+    { id: 2, text: '"Євро Овочі"', path: PATHS.MAIN_PAGE },
+    { id: 3, text: '"Саджанці Профі"', path: PATHS.MAIN_PAGE },
+    { id: 4, text: '"Ботанічний Кошик"', path: PATHS.MAIN_PAGE },
+    { id: 5, text: '"Експерт Агро"', path: PATHS.MAIN_PAGE },
+    { id: 6, text: '"Екологічне Поле"', path: PATHS.MAIN_PAGE }
+];
 
 const Footer = () => {
     return (
@@ -41,81 +66,41 @@ const Footer = () => {
                     </div>
                     <div className={cl.footer__links}>
                         <ul className={cl.footer__list}>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Культура</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Про компанію</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Прайс</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Акції</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Доставка</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Замовлення</CustomLink>
-                            </li>
+                            {footerLinksBlock1.map(link => (
+                                <li key={link.id} className={cl.footer__item}>
+                                    <CustomLink to={link.path} className={cl.footer__link}>{link.text}</CustomLink>
+                                </li>
+                            ))}
                         </ul>
                         <ul className={cl.footer__list}>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Умови використання сайту</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Усі категорії</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Доставка та оплата</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Повернення товару</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Контакти</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Співпраця з нами</CustomLink>
-                            </li>
+                            {footerLinksBlock2.map(link => (
+                                <li key={link.id} className={cl.footer__item}>
+                                    <CustomLink to={link.path} className={cl.footer__link}>{link.text}</CustomLink>
+                                </li>
+                            ))}
                         </ul>
                         <ul className={cl.footer__list + " " + cl.footer__article}>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>Популярні статті</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>"Євро Овочі"</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>"Саджанці Профі"</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>"Ботанічний Кошик"</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>"Експерт Агро"</CustomLink>
-                            </li>
-                            <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>"Екологічне Поле"</CustomLink>
-                            </li>
+                            {footerLinksBlock3.map(link => (
+                                <li key={link.id} className={cl.footer__item}>
+                                    <CustomLink to={link.path} className={cl.footer__link}>{link.text}</CustomLink>
+                                </li>
+                            ))}
                         </ul>
                         <ul className={cl.footer__list}>
                             <li className={cl.footer__item}>
                                 <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>
-                                    Kyivstar
+                                    <span>Kyivstar</span>
+                                    <a href="tel:+38(099)323-55-03" className={cl.footer__link}>+38 (099) 323-55-03</a>
                                 </CustomLink>
-                                <a href="tel:+38(099)323-55-03">+38 (099) 323-55-03</a>
                             </li>
                             <li className={cl.footer__item}>
                                 <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>
-                                    Kyivstar
+                                    <span>Lifecell</span>
+                                    <a href="tel:+38 (067) 282-52-44" className={cl.footer__link}>+38 (067) 282-52-44</a>
                                 </CustomLink>
-                                <a href="tel:+38 (067) 282-52-44">+38 (067) 282-52-44</a>
                             </li>
                             <li className={cl.footer__item}>
-
-                                <a href="mailto:planteua2017@gmail.com">planteua2017@gmail.com</a>
+                                <a href="mailto:planteua2017@gmail.com" className={cl.footer__link}>planteua2017@gmail.com</a>
                             </li>
                             <li className={cl.footer__item}>
                                 <p className={cl.footer__link}>

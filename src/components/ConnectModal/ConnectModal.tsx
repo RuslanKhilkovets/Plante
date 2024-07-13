@@ -42,7 +42,7 @@ const ConnectModal: React.FC<IConnectModalProps> = ({ open, onClose }) => {
     fontStyle: "normal",
     lineHeight: "120%",
   };
-
+  
   return (
     <Dialog
       open={open}

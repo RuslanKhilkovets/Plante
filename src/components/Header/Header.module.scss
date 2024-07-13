@@ -1,124 +1,102 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
 .navbar{
     padding: 17.5px 0;
-    display: flex;
-    justify-content: space-between;
+    @include f-between;    
     &__list{
-        display: flex;
-        justify-content: space-between;
-        gap: 25px;
+        @include f-between(25px);    
     }
     &__link{
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: #121212;
-        font-size: 19px;
+        @include font($fsz: 1.125rem!important);
+        color: $text-primary-color;
     }
     &__contacts{
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
+        @include f-between(30px);    
     }
     &__connect{
-        color: #2A8927;
+        color: $text-secondary-color;
     }
 }
 
 .header-actions{
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 2fr 10fr 2fr;
     gap: 20px;
-    position: relative;
     padding: 10px 0;
 
     &__catalog{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
+        @include f-center(10px);
         position: relative;
         padding: 18.5px;
-        background: #e9e8e8;
         border-radius: 30px;
-        cursor: pointer;
-        transition: .3s;
+        transition: $trans-time;
         z-index: 9999;
+        background: $button-secondary-color;
+        cursor: pointer;
         &:hover{
             color:#2A8927;
-            transition: .3s;;
+            transition: $trans-time;
         }
     }
     &__catalog_button{
+        @include back-image("../../icons/catalog.svg");
         width: 24px;
         height: 24px;
-        background-image: url("../../icons/catalog.svg");
-        background-size: contain;
-        background-repeat: no-repeat;
         position: relative;
         z-index: 9;
     }
     &__catalog_button_active{
+        @include back-image("../../icons/close.svg");
         width: 24px;
         height: 24px;
-        background-image: url("../../icons/close.svg");
-        background-size: contain;
-        background-repeat: no-repeat;
     }
     &__catalog_title{
-        font-size: 1.2rem;
-        font-family: "Roboto", sans-serif;
+        @include font($fsz: 1.2rem);
     }
     &__search{
-        display: flex;
-        align-items: center;
+        @include flexbox($ai: center);
         border-radius: 30px;
-        background: #e9e8e8;
+        background: $button-secondary-color;
         height: 100%;
         padding: 0 1rem;
     }
     &__search_btn{
+        position: relative;
         width: 19px;
         height: 19px;
-        background-image: url("../../icons/search.svg");
-        background-size: contain;
-        background-repeat: no-repeat;
-        position: relative;
+        @include back-image("../../icons/search.svg");
     }
     &__search_input{
-        background: #e9e8e8;
+        @include font($fsz: 1.2rem);
+        background: $button-secondary-color;
         width: 100%;
-        font-size: 1.2rem;
-        font-family: "Roboto", sans-serif;
     }
     &__icons{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 5px;
+        @include f-between($gap: 5px, $ai: center);
     }
     &__icon{
         height: 24px;
         width: 24px;
-        background-size: contain;
-        background-repeat: no-repeat;
         cursor: pointer;
     }
     &__icon:nth-child(1){
-        background-image: url("../../icons/person.svg");
+        @include back-image("../../icons/person.svg");
     }
     &__icon:nth-child(2){
-        background-image: url("../../icons/like.svg");
+        @include back-image("../../icons/like.svg");
     }
     &__icon:nth-child(3){
-        background-image: url("../../icons/cart.svg");
+        @include back-image("../../icons/cart.svg");
     }
 }
 
 .header{
+    width: 100%;
     position: fixed;
     z-index: 999;
-    background-color: #f8f8f8;
-    width: 100%;
+    background-color: $main-secondary-color;
 }
 
 .catalog-overlay{
@@ -127,7 +105,7 @@
     height: 100vh;
     width: 100vw;
     opacity: 0.7;
-    background: #4c4c4c;
+    background: $overlay-color;
 }
 
 .menu-container{
@@ -141,96 +119,126 @@
         cursor: pointer;
         width: 100%;
         position: relative;
-        display: flex;
-        align-items: center;
+        @include f-center();
         padding: 10px;  
     }
 
 }
 
 .menu{
+    @include flexbox($fd: column, $gap: 20px);
     position: absolute;
+    z-index: 7;
     width: 300px;
     height: 100%;
-    background-color: #fff;
-    overflow: auto;
     border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     padding: 10px 0;
+    overflow: auto;
     overflow-x: hidden;
-    z-index: 7;
+    background-color: $main-primary-color;
+
     &__item{
-        padding: 0 10px;
-        transition: .3s;
-        cursor: pointer;
+        @include flexbox($gap: 10px, $ai: center);
         width: 100%;
-        position: relative;
-        display: flex;
-        gap: 5px;
-        align-items: center;
-        padding: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: $trans-time;
         &:hover{
-            background-color: #dee2e6;
+            background-color: $menu-item-hover-back;
         }
         &::after{
             content: "";
             position: absolute;
-            right: 0px;
+            z-index: 3;
+            right: 0;
             height: 30px;
             width: 30px;
-            background-image: url("../../icons/arrow-right.svg");
-            background-size: contain;
-            background-repeat: no-repeat;
-            z-index: 3;
+            @include back-image("../../icons/arrow-right.svg");
         }
     }
     &__item_icon{
         font-size: 1.5rem;
-        color: #4a9d23;
+        color: $text-icons-color;
     }
     &__text{
-        font-size: 17px;
         color: #121212;
-        font-family: "Roboto", sans-serif;
+        @include font;
+    }
+}
+
+.menu-navbar{
+    background-color: #e9e8e8;
+    border-radius: 20px;
+    display: none;
+    width: 100%;
+    &__header{
+        background-color: #caf0d2;
+        padding: 10px;
+        border-radius: 20px;
+        display: none;
+    }
+    &__container{
+        @include f-between(3rem);
+        padding: 20px;
+    }
+    &__header_item{
+        width: 100%;
+        @include f-center($jc: flex-start, $gap: 1rem);
+        &:nth-child(1) &_button{
+            @include back-image("../../icons/person.svg")
+        }
+        &:nth-child(2) &_button{
+            @include back-image("../../icons/like.svg")
+        }
+    }
+    &__header_item_title{
+        @include font($fsz: 1.5rem, $lh: 200%);
+        color: $text-primary-color;
+    }
+    &__header_item_button{
+        @include back-image();
+        height: 25px;
+        width: 25px;
+    }
+    &__list{
+        @include flexbox($fd: column, $gap: 1rem)
+    }
+    &__links{
+        @include flexbox($fd: column, $gap: 1rem)
+    }
+    &__link{
+        @include font($fsz: 1.5rem);
+        color: $text-primary-color;
     }
 }
 
 .menu-items{
     position: absolute;
+    z-index: 8;
+    left: 350px;
     width: max-content;
     height: 100%;
-    background-color: #fff;
-    overflow: auto;
-    border-radius: 10px;
-    left: 350px;
     padding: 10px;
-    z-index: 8;
+    border-radius: 10px;
+    overflow: auto;
+    background-color: $main-primary-color;
     &__header{
         display: none;
-        justify-content: space-between;
-        align-items: center;
-        padding: 27px 16px;
-        border-bottom: 2px #E9E8E8 solid;
+        padding: 1rem;
+        border-bottom: 2px $button-secondary-color solid;
     }
     &__header--title{
-        font-size: 2rem;
-        color: #121212;
-        font-family: "Roboto", sans-serif;
-        font-weight: 500;
+        @include font($fsz: 2rem, $fw: 500);
+        color: $text-primary-color;
     }
     &__header--close-icon{
+        @include back-image("../../icons/close.svg");
         width: 50px;
         height: 50px;
-        background-image: url("../../icons/close.svg");
-        background-size: contain;
     }
     &__list{
+        @include flexbox($fd: column, $gap: 1rem);
         padding: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
     }
     &__item{
         transition: .3s;
@@ -241,7 +249,6 @@
         align-items: center;
         color: #121212;
         font-family: "Roboto", sans-serif;
-
     }
     &__item_title{
         color: #2a8927!important;
@@ -254,6 +261,12 @@
 }
 
 @media screen and (max-width: 1024px){
+    .navbar{
+        display: none;
+    }
+    .menu-navbar{
+        display: block;
+    }
     .menu{
         min-height: 100vh;
         width: 495px;
@@ -268,7 +281,7 @@
         left: 0;
         z-index: 99999;
         &__header{
-            display: flex;
+            @include f-between;
         }
         &__item_title{
             font-size: 2.5rem!important;
@@ -279,9 +292,6 @@
     }
     .menu-container{
         padding: 0;
-    }
-    .navbar{
-        display: none;
     }
     .header-actions{
         grid-template-columns: 0fr 1fr 10fr 2fr;
@@ -299,7 +309,7 @@
 }
 
 @media screen and (max-width: 768px){
-    
+
     .header-actions{
         grid-template-columns: 0fr 1fr 12fr 3fr;
     }
@@ -316,14 +326,22 @@
         width: 100%;
         border-radius: 0;
         left: 0;
+        &__list{
+            gap: 2rem;
+        }
     }
 
     .menu{
         top: -80px;
-        padding-top: 100px;
+        padding: 10px;
+        padding-top: 80px;
         min-height: 100vh;
         width: 100%;
         border-radius: 0;
+        background-color: $main-primary-color;
+        &__text{
+            font-size: 1.2rem;
+        }
     }
 }
 
@@ -335,6 +353,19 @@
         }
         &__icon:nth-child(2){
             display: none;
+        }
+    }
+    .menu-navbar{
+        &__container{
+            flex-wrap: wrap;
+        }
+        &__header{
+            @include flexbox($fd: column, $gap: 1rem)
+        }
+    }
+    .menu-items{
+        &__header{
+            @include f-between($gap: 1rem);
         }
     }
 }
