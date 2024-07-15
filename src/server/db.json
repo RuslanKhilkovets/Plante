@@ -232,7 +232,121 @@
                 }
             ]
         }
-    ]
-    
-    
+    ],
+    "products": {
+        "popular": [
+            {
+                "id": 1,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 2,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": false
+            },
+            {
+                "id": 3,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 4,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 5,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 6,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            }
+        ],
+        "discounts": [
+            {
+                "id": 1,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 2,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": false
+            },
+            {
+                "id": 3,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 4,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 5,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 6,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            }
+        ],
+        "news": [
+            {
+                "id": 1,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 2,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": false
+            },
+            {
+                "id": 3,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 4,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 5,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            },
+            {
+                "id": 6,
+                "title": "Царська ікра",
+                "price": 3.40,
+                "isInStock": true
+            }
+        ]
+    }
 }

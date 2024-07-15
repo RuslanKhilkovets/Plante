@@ -17,6 +17,7 @@ import IMenuItem from '../../types/IMenuItem';
 
 import cl from "./Header.module.scss";
 import "../../fonts/index.css";
+import SliderMenu from '../SliderMenu/SliderMenu';
 
 
 const Header = () => {
@@ -99,84 +100,7 @@ const Header = () => {
                 {
                 isCatalogOpen
                 &&
-                <>
-                    <div className={cl["catalog-overlay"]}></div>
-
-                    <div className={cl["menu-container"]}>
-                        <div className={cl.menu}>
-                            <ul className={cl.menu__list}>
-                                {
-                                    menuItems !== null
-                                    &&
-                                    menuItems.map((item: any) => {
-                                        return (
-                                            <li className={cl.menu__item} 
-                                                onMouseOver={() => setActiveMenuItem(item)}
-                                            >
-                                                <p className={clsx(cl.menu__item_icon, "material-symbols-outlined")}>{item.iconName}</p>
-                                                <p className={cl.menu__text}>{item.title}</p>
-                                            </li>
-                                        )
-                                    })
-                                }
-                            </ul>
-                            <div className={cl["menu-navbar"]}>
-                                <div className={cl["menu-navbar__header"]}>
-                                    <div className={cl["menu-navbar__header"]}>
-                                        <div className={cl["menu-navbar__header_item"]}>
-                                            <Button className={cl["menu-navbar__header_item_button"]}></Button>
-                                            <p className={cl["menu-navbar__header_item_title"]}>Особисті дані</p>
-                                        </div>
-                                        <div className={cl["menu-navbar__header_item"]}>
-                                            <Button className={cl["menu-navbar__header_item_button"]}></Button>
-                                            <p className={cl["menu-navbar__header_item_title"]}>Вибране</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className={cl["menu-navbar__container"]}>
-                                    <ul className={cl["menu-navbar__list"]}>
-                                        {navbarLinks.map(link => {
-                                            return (
-                                                <CustomLink to={link.to} className={cl.navbar__link}>{link.text}</CustomLink>
-                                            )
-                                        })}
-                                    </ul>
-                                    <div className={cl["menu-navbar__links"]}>
-                                        <a href='tel:(067) 282-52-44' className={cl["menu-navbar__link"]}>(067) 282-52-44</a>
-                                        <a href='tel:(067) 282-52-44' className={cl["menu-navbar__link"]}>(067) 282-52-44</a>
-                                        <Button className={clsx(cl.navbar__connect,  cl.navbar__link)} onClick={() => setIsConnectModalOpen(!isConnectModalOpen)}>Зворотній зв’язок</Button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {
-                            activeMenuItem !== null
-                            &&
-                            <div className={cl["menu-items"]}
-                                onMouseLeave={() => setActiveMenuItem(null)}   
-                            >
-                                <div className={cl["menu-items__header"]}>
-                                    <p className={cl["menu-items__header--title"]}>{activeMenuItem.title}</p>
-                                    <Button className={cl["menu-items__header--close-icon"]} onClick={() => setActiveMenuItem(null)}></Button>
-                                </div>
-                                <ul className={cl["menu-items__list"]}>
-                                    <p className={`${cl["menu-items__item_text"]} ${cl["menu-items__item_title"]}`}>{activeMenuItem.title}</p>
-                                    {
-                                        activeMenuItem?.items.map((item: any) => {
-                                            
-                                            return (
-                                                <li className={cl[`menu-items__item`]}>
-                                                    <CustomLink to={item.to} className={cl["menu-items__item_text"]}>{item.text}</CustomLink>
-                                                </li>
-                                            )
-                                        })
-                                    }
-                                </ul>
-    
-                            </div>
-                        }
-                    </div>
-                </>                 
+                <SliderMenu active={isCatalogOpen} setActive={setIsCatalogOpen}/>                
             }
             </header>
 

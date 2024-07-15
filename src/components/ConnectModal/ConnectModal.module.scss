@@ -1,0 +1,34 @@
+
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.title{
+    margin-top: 1rem;
+    @include font($fsz: 2rem, $fw: 700);
+    color: $text-primary-color;
+}
+
+.subtitle{
+    color: $text-gray-color;
+    @include font($lh: 120%);
+}
+
+.dialog-input{
+    background-color: $button-secondary-color;
+    color: $text-primary-color;
+    @include font;
+    margin: 10px 0;
+}
+.dialog-consents{
+    text-align: center;
+    margin: 16px 0;
+}
+
+.dialog-consents{
+    @include font($lh: 120%);
+
+}
+
+.dialog-link{
+    color: $text-secondary-color!important;
+}

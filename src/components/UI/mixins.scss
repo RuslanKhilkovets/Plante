@@ -11,17 +11,18 @@
 }
   
 @mixin font($ff: "Roboto", $fw: 400, $fs: normal, $fsz: 1rem, $lh: 120%){
-    font-family: $ff, sans-serif;
-    font-weight: $fw;
-    font-style: $fs;
-    font-size: $fsz;
-    line-height: $lh;
+    font-family: $ff, sans-serif!important;
+    font-weight: $fw!important;
+    font-style: $fs!important;
+    font-size: $fsz!important;
+    line-height: $lh!important;
 }
 
-@mixin f-center($gap: 0px, $jc: center) {
+@mixin f-center($gap: 0px, $jc: center, $fd: row) {
     display: flex;
     justify-content: $jc;
     align-items: center;
+    flex-direction: $fd;
     gap: $gap;
 }
 
@@ -33,10 +34,11 @@
     gap: $gap;
 }
 
-@mixin f-between($gap: 0px, $ai: flex-start, $fw: no-wrap) {
+@mixin f-between($gap: 0px, $ai: flex-start, $fw: no-wrap, $fd: row) {
     display: flex;
     justify-content: space-between;
     align-items: $ai;
+    flex-direction: $fd;
     flex-wrap: $fw;
     gap: $gap;
 }
@@ -45,4 +47,5 @@
     background-image: url($url);
     background-size: $size;
     background-repeat: $repeat;
+    background-position: center;
 }

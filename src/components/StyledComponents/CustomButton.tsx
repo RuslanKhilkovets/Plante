@@ -15,13 +15,12 @@ const CustomButton = styled(Button)(
   font-weight: 400;
   font-style: normal;
   width: 100%;
-  padding: 16px;
+  padding: 1.5rem;
   text-align: center;
   background: #2a8927;
   border-radius: 30px;
   font-size: 1rem;
   color: white;
-  margin-top: 1rem;
   cursor: pointer;
   transition: .3s;
   

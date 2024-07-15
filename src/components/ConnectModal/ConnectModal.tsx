@@ -9,6 +9,10 @@ import CloseModalButton from "../StyledComponents/CloseModalButton";
 import IConnectModalProps from "../../types/IConnectModalProps";
 import IContactFormProps from "../../types/IContactFormProps";
 
+import cl from "./ConnectModal.module.scss";
+import CustomLink from "../StyledComponents/CustomLink";
+import PATHS from "../../router/paths";
+
 const ConnectModal: React.FC<IConnectModalProps> = ({ open, onClose }) => {
 
   const [form, setForm] = useState<IContactFormProps>({ phone: "", name: "" });
@@ -27,22 +31,6 @@ const ConnectModal: React.FC<IConnectModalProps> = ({ open, onClose }) => {
     py: 1,
   };
 
-  const titleTextStyles = {
-    mt: 1,
-    color: "#121212",
-    fontSize: "2rem",
-    fontStyle: "normal",
-    fontWeight: "bold",
-    lineHeight: "100%",
-  };
-
-  const textStyles = {
-    color: "#868686",
-    fontSize: "1rem",
-    fontStyle: "normal",
-    lineHeight: "120%",
-  };
-  
   return (
     <Dialog
       open={open}
@@ -52,10 +40,10 @@ const ConnectModal: React.FC<IConnectModalProps> = ({ open, onClose }) => {
     >
       <DialogTitle sx={{ display: "flex", justifyContent: "space-between" }}>
         <Box>
-          <Typography variant="h6" sx={titleTextStyles}>
+          <Typography variant="h6" className={cl["title"]}>
             Зворотній зв’язок
           </Typography>
-          <Typography sx={textStyles}>
+          <Typography  className={cl["subtitle"]}>
             Ми зв’яжемось з вами протягом 5 хв
           </Typography>
         </Box>
@@ -65,15 +53,24 @@ const ConnectModal: React.FC<IConnectModalProps> = ({ open, onClose }) => {
       <DialogContent>
         <form action="#">
             
-          <Typography variant="h6" sx={{ ...textStyles, py: 2}}>
+          <Typography variant="h6" className={cl["input-title"]}>
             Телефон *
           </Typography>
-          <CustomInput value={form.phone} onChange={onInputChange} name="phone" />
+          <CustomInput value={form.phone} onChange={onInputChange} name="phone" className={cl["dialog-input"]}/>
       
-          <Typography variant="h6" sx={{ ...textStyles, py: 2}}>
+          <Typography variant="h6" className={cl["input-title"]}>
             Ім’я
           </Typography>
-          <CustomInput value={form.name} onChange={onInputChange} name="name" />
+          <CustomInput value={form.name} onChange={onInputChange} name="name" className={cl["dialog-input"]}/>
+
+          <div className={cl['dialog-consents']}>
+            “
+            Відправляючи форму ви погоджуєтесь нa <br/>
+            <CustomLink to={PATHS.MAIN_PAGE} className={cl["dialog-link"]}>Умови використання </CustomLink>
+            та 
+            <CustomLink to={PATHS.MAIN_PAGE} className={cl["dialog-link"]}> Політику конфіденційності.</CustomLink>
+            "
+          </div>
 
           <CustomButton>Отримати консультацію</CustomButton>
 

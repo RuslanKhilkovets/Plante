@@ -1,0 +1,87 @@
+@import "../../../components/UI/vars.scss";
+@import "../../../components/UI/mixins.scss";
+
+.slider{
+  overflow: hidden;
+}
+
+.slide{
+    height: 575px;
+    background-color: #333; 
+    padding: 30px;
+    border-radius: 10px;
+    &__heading{
+        width: max-content;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: $light-green;
+    }
+    &__title{
+        @include font($fw: 700, $fsz: 3.5rem);
+        color: $text-secondary-color;   
+    }
+    &__subtitle{
+        @include font($fw: 700, $fsz: 2rem);
+        color: $text-secondary-color;   
+    }
+}
+
+.splide__arrow {
+    background-color: #fff!important;
+    border: 1px solid #ccc;
+    color: #000;
+    font-size: 1.5rem;
+    height: 48px;
+    width: 42px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 1!important;
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  
+    &--prev {
+      left: 0!important;
+      border-top-left-radius: 0!important;
+      border-bottom-left-radius: 0!important;
+      border-top-right-radius: 20px!important;
+      border-bottom-right-radius: 20px!important;
+    }
+  
+    &--next {
+      right: 0!important;
+      border-top-left-radius: 20px!important;
+      border-bottom-left-radius: 20px!important;
+      border-top-right-radius: 0!important;
+      border-bottom-right-radius: 0!important;
+    }
+  }
+  
+  .splide__pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  
+    .splide__pagination__page {
+      background-color: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      height: 10px;
+      margin: 0 5px;
+      width: 10px;
+      transition: background-color 0.3s ease;
+  
+      &.is-active {
+        background-color: #000;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px){
+      .splide__arrow{
+        &--prev, &--next{
+          display: none!important;
+        }
+      }
+  }

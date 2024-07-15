@@ -10,7 +10,6 @@ const StyledInput = styled(InputBase)(
     font-style: normal;
     width: 100%;
     padding: 16px;
-    background: #e9e8e8;
     border-radius: 30px;
     border: 1px solid transparent;
     transition: .3s;
@@ -24,7 +23,6 @@ const StyledInput = styled(InputBase)(
       transition: .3s;
     }
 
-    // firefox
     &:focus-visible {
       outline: 0;
     }
