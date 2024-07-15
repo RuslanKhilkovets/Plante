@@ -9,7 +9,7 @@ const StyledInput = styled(InputBase)(
     font-weight: 400;
     font-style: normal;
     width: 100%;
-    padding: 16px;
+    padding: 12px;
     border-radius: 30px;
     border: 1px solid transparent;
     transition: .3s;

@@ -239,23 +239,27 @@
                 "id": 1,
                 "title": "Царська ікра",
                 "price": 3.40,
+                "img": "/img/baklazhany.png",
                 "isInStock": true
             },
             {
                 "id": 2,
                 "title": "Царська ікра",
                 "price": 3.40,
+                "img": "/img/buraki.png",
                 "isInStock": false
             },
             {
                 "id": 3,
                 "title": "Царська ікра",
+                "img": "/img/perec.png",
                 "price": 3.40,
                 "isInStock": true
             },
             {
                 "id": 4,
                 "title": "Царська ікра",
+                "img": "/img/kabachki.png",
                 "price": 3.40,
                 "isInStock": true
             },
@@ -263,11 +267,13 @@
                 "id": 5,
                 "title": "Царська ікра",
                 "price": 3.40,
+                "img": "/img/kapusta.png",
                 "isInStock": true
             },
             {
                 "id": 6,
                 "title": "Царська ікра",
+                "img": "/img/baklazhany.png",
                 "price": 3.40,
                 "isInStock": true
             }
@@ -276,24 +282,28 @@
             {
                 "id": 1,
                 "title": "Царська ікра",
+                "img": "/img/tomatos.png",
                 "price": 3.40,
                 "isInStock": true
             },
             {
                 "id": 2,
                 "title": "Царська ікра",
+                "img": "/img/kapusta.png",
                 "price": 3.40,
                 "isInStock": false
             },
             {
                 "id": 3,
                 "title": "Царська ікра",
+                "img": "/img/garbuza.png",
                 "price": 3.40,
                 "isInStock": true
             },
             {
                 "id": 4,
                 "title": "Царська ікра",
+                "img": "/img/cucumbers.png",
                 "price": 3.40,
                 "isInStock": true
             },
@@ -301,12 +311,14 @@
                 "id": 5,
                 "title": "Царська ікра",
                 "price": 3.40,
+                "img": "/img/salade.png",
                 "isInStock": true
             },
             {
                 "id": 6,
                 "title": "Царська ікра",
                 "price": 3.40,
+                "img": "/img/salade.png",
                 "isInStock": true
             }
         ],
@@ -314,36 +326,42 @@
             {
                 "id": 1,
                 "title": "Царська ікра",
+                "img": "/img/perec.png",
                 "price": 3.40,
                 "isInStock": true
             },
             {
                 "id": 2,
                 "title": "Царська ікра",
+                "img": "/img/buraki.png",
                 "price": 3.40,
                 "isInStock": false
             },
             {
                 "id": 3,
                 "title": "Царська ікра",
+                "img": "/img/dynya.png",
                 "price": 3.40,
                 "isInStock": true
             },
             {
                 "id": 4,
                 "title": "Царська ікра",
+                "img": "/img/kapusta.png",
                 "price": 3.40,
                 "isInStock": true
             },
             {
                 "id": 5,
                 "title": "Царська ікра",
+                "img": "/img/tomatos.png",
                 "price": 3.40,
                 "isInStock": true
             },
             {
                 "id": 6,
                 "title": "Царська ікра",
+                "img": "/img/salade.png",
                 "price": 3.40,
                 "isInStock": true
             }

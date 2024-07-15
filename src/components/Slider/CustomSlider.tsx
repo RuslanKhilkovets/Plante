@@ -3,9 +3,9 @@ import clsx from 'clsx';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { FC } from "react";
 
-
-const CustomSlider = (  ) => {
+const CustomSlider: FC<{ imgSource: string; }> = ( { imgSource } ) => {
     const settings = {
         type: 'loop',
         perPage: 1,
@@ -19,19 +19,18 @@ const CustomSlider = (  ) => {
             <div className="slider">
 
                 <Splide options={settings}>
-                    <SplideSlide className={clsx("slider__slide", "slide")}>
-                        <div className={"slide__heading"}>
+                    <SplideSlide className={clsx("slider__slide", "slide")} style={{
+                        backgroundImage: `url("/img/main-slider1.png")`,
+                    }}>
+                        <div className={"slide__heading"}
+                        >
                             <p className={"slide__title"}>Вирощуй своє майбутнє</p>
                             <p className={"slide__subtitle"}>вибери найкращі насіння для свого городу тут!</p>
                         </div>
                     </SplideSlide>
-                    <SplideSlide className={clsx("slider__slide", "slide")}>
-                        <div className={"slide__heading"}>
-                            <p className={"slide__title"}>Ваша земля, ваші правила!</p>
-                            <p className={"slide__subtitle"}>Великий вибір якісного насіння за роздрібними цінами</p>
-                        </div>
-                    </SplideSlide>
-                    <SplideSlide className={clsx("slider__slide", "slide")}>
+                    <SplideSlide className={clsx("slider__slide", "slide")} style={{
+                        backgroundImage: `url("/img/main-slider2.png")`,
+                    }}>
                         <div className={"slide__heading"}>
                             <p className={"slide__title"}>Ваша земля, ваші правила!</p>
                             <p className={"slide__subtitle"}>Великий вибір якісного насіння за роздрібними цінами</p>

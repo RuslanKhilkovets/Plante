@@ -2,7 +2,7 @@
 @import "../../../components/UI/mixins.scss";
 
 .product-item {
-    @include flexbox($fd: column, $gap: 1rem);
+    @include flexbox($fd: column, $gap: 3rem);
     &__likes{
         height: 24px;
         width: 24px;
@@ -10,6 +10,10 @@
     }
     &__item{
         @include flexbox($fd: column, $gap: 1rem);
+    }
+    &__footer{
+        width: 100%;
+        @include f-between($ai: center);
     }
     &__item_basket{
         height: 24px;
@@ -19,7 +23,6 @@
     &__img{
         height: 246px;
         width: 246px;
-        background-color: #333;
         border-radius: 10px;
     }
     &__title{

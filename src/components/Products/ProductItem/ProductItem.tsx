@@ -9,11 +9,14 @@ enum STOCK_VARIANT {
 }
 
 const ProductItem: FC<{product: TProductItem}> = ( { product } ) => {
-
+    console.log(product.img);
+    
     return (
         <div className={cl["product-item"]}>
             <div className={cl["product-item__item"]}>
-                <div className={cl["product-item__img"]}></div>
+                <div className={cl["product-item__img"]} style={{
+                    backgroundImage: `url(${product.img})`,
+                }}></div>  
                 <div className={cl["product-item__heading"]}>
                     <p className={cl["product-item__title"]}>
                         {product.title}
@@ -21,7 +24,7 @@ const ProductItem: FC<{product: TProductItem}> = ( { product } ) => {
                     <Button className={cl["product-item__likes"]}></Button>
                 </div>
             </div>
-            <div className={cl["product-item__item"]}>
+            <div className={cl["product-item__footer"]}>
                 <div className={cl["product-item__item_info"]}>
                     <p className={cl["product-item__item_price_text"]}>
                         {product.price} грн

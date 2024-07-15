@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import CustomSlider from '../StyledComponents/Slider/CustomSlider';
+import { FC, useState } from 'react';
+import CustomSlider from '../Slider/CustomSlider';
 import SliderMenu from '../SliderMenu/SliderMenu';
 import cl from "./SliderPreview.module.scss"
 
-const SliderPreview = () => {
+const SliderPreview: FC<{ imgSource?: string; }> = ( { imgSource } ) => {
     const [isMenuActive, setIsMenuActive] = useState<boolean>(false)
 
     return (
@@ -24,7 +24,7 @@ const SliderPreview = () => {
                         <SliderMenu active={isMenuActive} setActive={setIsMenuActive}/>
                     </div>
 
-                    <CustomSlider/>
+                    <CustomSlider imgSource={imgSource}/>
                 </div>
             </div>  
         </>     

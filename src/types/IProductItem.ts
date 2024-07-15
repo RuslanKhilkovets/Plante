@@ -2,6 +2,7 @@ export type TProductItem = {
     id: number;
     title: string;
     price: number;
+    img: string;
     isInStock: boolean;
 }
 

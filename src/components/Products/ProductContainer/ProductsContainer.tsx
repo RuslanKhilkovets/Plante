@@ -1,4 +1,4 @@
-import React, { FC, useRef, useEffect } from "react";
+import { FC, useRef, useEffect } from "react";
 import { Button } from '@mui/base';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import cl from "./ProductsContainer.module.scss";
@@ -43,7 +43,11 @@ const ProductsContainer: FC<IProductsContainerProps> = ({ products, title, subti
                 <div className={cl["products__heading"]}>
                     <div className={cl["products__titles"]}>
                         <p className={cl["products__title"]}>{title}</p>
-                        <p className={clsx(cl["products__subtitle"], cl[getClassName(type)])}>{subtitle}</p>
+                        {
+                            subtitle
+                            &&
+                            <p className={clsx(cl["products__subtitle"], cl[getClassName(type)])}>{subtitle}</p>
+                        }
                     </div>
                     <div className={cl["products__navs"]}>
                         <Button ref={prevButtonRef} className={clsx(cl["products__nav"], cl["products__nav_prev"])}></Button>
