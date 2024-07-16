@@ -26,7 +26,7 @@ const ProductsMain = () => {
     }, []);
 
     return (
-        <>
+        <div style={{ marginTop: "100px"}}>
             <ProductsContainer 
                 products={products.popular} 
                 type={ProductType.POPULAR} 
@@ -45,7 +45,7 @@ const ProductsMain = () => {
                 title='Новинки'
                 subtitle="NEW"
             />
-        </>
+        </div>
     );
 };
 

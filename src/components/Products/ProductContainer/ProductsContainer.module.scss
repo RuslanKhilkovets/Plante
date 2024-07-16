@@ -3,9 +3,8 @@
 @import "../../../components/UI/mixins.scss";
 
 .products{
-    margin-top: 100px;
     @include flexbox($gap: 1rem, $fd: column);
-
+    margin-bottom: 50px;
     &__slider{
         margin-top: 5px;
         overflow: hidden;
@@ -59,4 +58,12 @@
 .news{
     background-color: #ffe9d4;
     color: #ff7e07;
+}
+ 
+@media screen and (max-width: 768px) {
+    .products{
+        &__navs{
+            display: none!important;
+        }
+    }
 }

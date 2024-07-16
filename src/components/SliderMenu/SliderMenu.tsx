@@ -1,20 +1,25 @@
-import React, { FC, useEffect, useState } from 'react';
-import IMenuItem from '../../types/IMenuItem';
-import cl from "./SliderMenu.module.scss";
+import { FC, useEffect, useState } from 'react';
 import axios from 'axios';
 import clsx from 'clsx';
-import { Button } from '@mui/base';
-import CustomLink from '../StyledComponents/CustomLink';
-import navbarLinks from '../../constants/navbarLinks';
-import ConnectModal from '../ConnectModal/ConnectModal';
-import ICustomSliderProps from '../../types/ICustomSliderProps';
 
-const SliderMenu: FC<ICustomSliderProps> = ({ active, setActive }) => {
+import { Button } from '@mui/base';
+
+import CustomLink from '../StyledComponents/CustomLink';
+import ConnectModal from '../ConnectModal/ConnectModal';
+
+import IMenuItem from '../../types/IMenuItem';
+import ICustomSliderProps from '../../types/ICustomSliderProps';
+import navbarLinks from '../../constants/navbarLinks';
+
+import cl from "./SliderMenu.module.scss";
+
+
+const SliderMenu: FC<ICustomSliderProps> = ({ active, setActive, isHeaderMenu }) => {
 
     const [menuItems, setMenuItems] = useState<IMenuItem[] | null>(null);
     const [activeMenuItem, setActiveMenuItem] = useState<IMenuItem | null>(null);
     const [isConnectModalOpen, setIsConnectModalOpen] = useState<boolean>(false);    
-
+    
     useEffect(() => {
         const getMenuItems = async () => {
           try {
@@ -32,14 +37,12 @@ const SliderMenu: FC<ICustomSliderProps> = ({ active, setActive }) => {
     return (
         <>
             <div className={
-                clsx(cl["menu-container"])}
+                clsx(cl["menu-container"], {
+                    [cl["header-menu"]]: isHeaderMenu
+                })}
             >
-                <div className={
-                    clsx(cl.menu, {
-                        isBurgerMenu: cl["burger-container"]
-
-                    })}>
-                    <ul className={cl["cl.menu__list"]}>
+                <div className={cl["menu"]}>
+                    <ul className={cl["menu__list"]}>
                         {
                             menuItems !== null
                             &&
@@ -47,7 +50,6 @@ const SliderMenu: FC<ICustomSliderProps> = ({ active, setActive }) => {
                                 return (
                                     <li className={cl.menu__item} 
                                         onMouseOver={() => setActiveMenuItem(item)}
-                                        onMouseLeave={() => setActiveMenuItem(null)}
                                     >
                                         <p className={clsx(cl.menu__item_icon, "material-symbols-outlined")}>{item.iconName}</p>
                                         <p className={cl.menu__text}>{item.title}</p>
@@ -80,7 +82,7 @@ const SliderMenu: FC<ICustomSliderProps> = ({ active, setActive }) => {
                             <div className={cl["menu-navbar__links"]}>
                                 <a href='tel:(067) 282-52-44' className={cl["menu-navbar__link"]}>(067) 282-52-44</a>
                                 <a href='tel:(067) 282-52-44' className={cl["menu-navbar__link"]}>(067) 282-52-44</a>
-                                <Button className={clsx(cl.navbar__connect,  cl.navbar__link)} onClick={() => setIsConnectModalOpen(!isConnectModalOpen)}>Зворотній зв’язок</Button>
+                                <Button className={clsx(cl["menu-navbar__connect"],  cl["menu-navbar__link"])} onClick={() => setIsConnectModalOpen(!isConnectModalOpen)}>Зворотній зв’язок</Button>
                             </div>
                         </div>
                     </div>
@@ -88,7 +90,8 @@ const SliderMenu: FC<ICustomSliderProps> = ({ active, setActive }) => {
                 {
                     activeMenuItem !== null
                     &&
-                    <div className={cl["menu-items"]}
+                    <div className={cl["menu-items"]}                                         onMouseLeave={() => setActiveMenuItem(null)}
+
                     >
                         <div className={cl["menu-items__header"]}>
                             <p className={cl["menu-items__header--title"]}>{activeMenuItem.title}</p>
@@ -112,9 +115,9 @@ const SliderMenu: FC<ICustomSliderProps> = ({ active, setActive }) => {
                 }
             </div>
             {
-                isConnectModalOpen
+                active
                 &&
-                <div className="catalog-overlay"></div>
+                <div className="catalog-overlay" onClick={() => setActive(false)}></div>
             }
             <ConnectModal open={isConnectModalOpen} onClose={() => setIsConnectModalOpen(false)}/>
         </>

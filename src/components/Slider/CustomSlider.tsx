@@ -5,7 +5,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { FC } from "react";
 
-const CustomSlider: FC<{ imgSource: string; }> = ( { imgSource } ) => {
+const CustomSlider: FC = () => {
     const settings = {
         type: 'loop',
         perPage: 1,
@@ -20,7 +20,7 @@ const CustomSlider: FC<{ imgSource: string; }> = ( { imgSource } ) => {
 
                 <Splide options={settings}>
                     <SplideSlide className={clsx("slider__slide", "slide")} style={{
-                        backgroundImage: `url("/img/main-slider1.png")`,
+                        backgroundImage: `url("/img/main-slide-3.png")`,
                     }}>
                         <div className={"slide__heading"}
                         >
@@ -29,11 +29,19 @@ const CustomSlider: FC<{ imgSource: string; }> = ( { imgSource } ) => {
                         </div>
                     </SplideSlide>
                     <SplideSlide className={clsx("slider__slide", "slide")} style={{
-                        backgroundImage: `url("/img/main-slider2.png")`,
+                        backgroundImage: `url("/img/main-slide-2.png")`,
                     }}>
                         <div className={"slide__heading"}>
                             <p className={"slide__title"}>Ваша земля, ваші правила!</p>
                             <p className={"slide__subtitle"}>Великий вибір якісного насіння за роздрібними цінами</p>
+                        </div>
+                    </SplideSlide>
+                    <SplideSlide className={clsx("slider__slide", "slide")} style={{
+                        backgroundImage: `url("/img/main-slide-1.png")`,
+                    }}>
+                        <div className={"slide__heading"}>
+                            <p className={"slide__title"}>Вирощуй своє майбутнє</p>
+                            <p className={"slide__subtitle"}>вибери найкращі насіння для свого городу тут!</p>
                         </div>
                     </SplideSlide>
                 </Splide>

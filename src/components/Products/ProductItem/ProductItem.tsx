@@ -9,7 +9,6 @@ enum STOCK_VARIANT {
 }
 
 const ProductItem: FC<{product: TProductItem}> = ( { product } ) => {
-    console.log(product.img);
     
     return (
         <div className={cl["product-item"]}>

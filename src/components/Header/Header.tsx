@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import * as React from 'react';
 
-import axios from 'axios';
 import clsx from 'clsx';
 
 import { Button } from '@mui/base';
@@ -13,8 +12,6 @@ import Logo from '../Logo/Logo';
 
 import navbarLinks from '../../constants/navbarLinks';
 
-import IMenuItem from '../../types/IMenuItem';
-
 import cl from "./Header.module.scss";
 import "../../fonts/index.css";
 import SliderMenu from '../SliderMenu/SliderMenu';
@@ -24,29 +21,13 @@ const Header = () => {
     const [searchPrompt, setSearchPrompt] = useState<string>('');
     const [isConnectModalOpen, setIsConnectModalOpen] = useState<boolean>(false);    
     const [isCatalogOpen, setIsCatalogOpen] = useState<boolean>(false);
-    const [menuItems, setMenuItems] = useState<IMenuItem[] | null>(null);
-    const [activeMenuItem, setActiveMenuItem] = useState<IMenuItem | null>(null);
   
     const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target;
 
       setSearchPrompt(value);
     }
-  
-    useEffect(() => {
-      const getMenuItems = async () => {
-        try {
-          const response = await axios.get<IMenuItem[]>("http://localhost:5000/menuItems");
-
-          setMenuItems(response.data);
-        } catch (error) {
-          console.error("Error fetching menu items:", error);
-        }
-      }
-  
-      getMenuItems();
-    }, []);
-
+    
     return (
         <>
             <header className={cl.header + " header"}>
@@ -100,11 +81,20 @@ const Header = () => {
                 {
                 isCatalogOpen
                 &&
-                <SliderMenu active={isCatalogOpen} setActive={setIsCatalogOpen}/>                
-            }
+                    <>
+                        <div className={cl["catalog-overlay"]}></div>
+                        <SliderMenu 
+                            active={isCatalogOpen} 
+                            isHeaderMenu={true}
+                            setActive={setIsCatalogOpen} 
+                        />                
+                    </>
+                }
             </header>
-
-            <ConnectModal open={isConnectModalOpen} onClose={() => setIsConnectModalOpen(false)}/>
+            <ConnectModal 
+                open={isConnectModalOpen} 
+                onClose={() => setIsConnectModalOpen(false)}
+            />
         </>
     );
 };

@@ -37,13 +37,18 @@ const ConnectModal: React.FC<IConnectModalProps> = ({ open, onClose }) => {
       fullWidth={true}
       onClose={onClose}
       sx={{ ".MuiDialog-paper": dialogPaperStyles }}
+      className={cl["connect-dialog"]}
     >
-      <DialogTitle sx={{ display: "flex", justifyContent: "space-between" }}>
+      <DialogTitle className={cl["connect-dialog__header"]}>
         <Box>
-          <Typography variant="h6" className={cl["title"]}>
+          <Typography 
+            className={cl["connect-dialog__title"]}
+          >
             Зворотній зв’язок
           </Typography>
-          <Typography  className={cl["subtitle"]}>
+          <Typography 
+            className={cl["connect-dialog__subtitle"]}
+          >
             Ми зв’яжемось з вами протягом 5 хв
           </Typography>
         </Box>
@@ -53,22 +58,43 @@ const ConnectModal: React.FC<IConnectModalProps> = ({ open, onClose }) => {
       <DialogContent>
         <form action="#">
             
-          <Typography variant="h6" className={cl["input-title"]}>
+          <Typography className={cl["connect-dialog__input-label"]}>
             Телефон *
           </Typography>
-          <CustomInput value={form.phone} onChange={onInputChange} name="phone" className={cl["dialog-input"]}/>
+          <CustomInput 
+            value={form.phone} 
+            onChange={onInputChange} 
+            name="phone" 
+            className={cl["connect-dialog__input"]}
+          />
       
-          <Typography variant="h6" className={cl["input-title"]}>
+          <Typography className={cl["connect-dialog__input-label"]}>
             Ім’я
           </Typography>
-          <CustomInput value={form.name} onChange={onInputChange} name="name" className={cl["dialog-input"]}/>
+          <CustomInput 
+            value={form.name} 
+            onChange={onInputChange} 
+            name="name" 
+            className={cl["connect-dialog__input"]}
+          />
 
-          <div className={cl['dialog-consents']}>
+          <div className={cl['connect-dialog__dialog-consents']}>
             “
             Відправляючи форму ви погоджуєтесь нa <br/>
-            <CustomLink to={PATHS.MAIN_PAGE} className={cl["dialog-link"]}>Умови використання </CustomLink>
+
+            <CustomLink 
+              to={PATHS.MAIN_PAGE} 
+              className={cl["connect-dialog__consents-link"]}
+            >
+              Умови використання 
+            </CustomLink>
             та 
-            <CustomLink to={PATHS.MAIN_PAGE} className={cl["dialog-link"]}> Політику конфіденційності.</CustomLink>
+            <CustomLink 
+              to={PATHS.MAIN_PAGE} 
+              className={cl["connect-dialog__consents-link"]}
+            > 
+               Політику конфіденційності.
+            </CustomLink>
             "
           </div>
 

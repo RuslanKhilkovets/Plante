@@ -11,7 +11,7 @@
     padding: 30px;
     border-radius: 10px;
     &__heading{
-        width: max-content;
+        width: min(max-content, 100%);
         padding: 20px;
         border-radius: 10px;
         background-color: $light-green;
@@ -79,6 +79,20 @@
   }
 
   @media screen and (max-width: 768px){
+    .slide{
+      padding: 15px;
+      height: 230px;
+      &__heading{
+        padding: 10px;
+      }
+      &__title{
+        font-size: 1.6rem!important;
+      }
+      &__subtitle{
+        font-size: 1rem!important;
+        font-weight: normal!important;
+      }
+    }
       .splide__arrow{
         &--prev, &--next{
           display: none!important;

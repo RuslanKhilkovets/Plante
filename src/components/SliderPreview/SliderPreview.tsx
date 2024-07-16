@@ -3,7 +3,7 @@ import CustomSlider from '../Slider/CustomSlider';
 import SliderMenu from '../SliderMenu/SliderMenu';
 import cl from "./SliderPreview.module.scss"
 
-const SliderPreview: FC<{ imgSource?: string; }> = ( { imgSource } ) => {
+const SliderPreview: FC = () => {
     const [isMenuActive, setIsMenuActive] = useState<boolean>(false)
 
     return (
@@ -14,7 +14,7 @@ const SliderPreview: FC<{ imgSource?: string; }> = ( { imgSource } ) => {
                 <div className={cl["catalog-overlay"]} onClick={() => setIsMenuActive(false)}></div>
             }
 
-            <div className="global-container">
+            <div className="global-container-no-padding">
                 <div className={cl["slider-preview"]}>
                     <div 
                         className={cl["slider-preview__menu"]}
@@ -24,7 +24,7 @@ const SliderPreview: FC<{ imgSource?: string; }> = ( { imgSource } ) => {
                         <SliderMenu active={isMenuActive} setActive={setIsMenuActive}/>
                     </div>
 
-                    <CustomSlider imgSource={imgSource}/>
+                    <CustomSlider/>
                 </div>
             </div>  
         </>     

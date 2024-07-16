@@ -1,14 +1,11 @@
-@mixin adaptive-font($min-size, $max-size, $min-width: 360px, $max-width: 1440px) {
-    font-size: $min-size;
+@mixin adaptive-font($min-size, $max-size, $min-vw: 360px, $max-vw: 1440px) {
+    font-size: clamp(
+      $min-size,
+      calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw}))),
+      $max-size
+    )!important;
+  }
   
-    @media screen and (min-width: $min-width) {
-      font-size: calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-width}) / (#{$max-width} - #{$min-width})));
-    }
-  
-    @media screen and (min-width: $max-width) {
-      font-size: $max-size;
-    }
-}
   
 @mixin font($ff: "Roboto", $fw: 400, $fs: normal, $fsz: 1rem, $lh: 120%){
     font-family: $ff, sans-serif!important;

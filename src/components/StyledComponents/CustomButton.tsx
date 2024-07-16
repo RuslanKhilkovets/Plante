@@ -19,7 +19,7 @@ const CustomButton = styled(Button)(
   text-align: center;
   background: #2a8927;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: white;
   cursor: pointer;
   transition: .3s;

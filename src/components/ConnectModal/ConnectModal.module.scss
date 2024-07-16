@@ -2,33 +2,36 @@
 @import "../../components/UI/vars.scss";
 @import "../../components/UI/mixins.scss";
 
-.title{
-    margin-top: 1rem;
-    @include font($fsz: 2rem, $fw: 700);
-    color: $text-primary-color;
-}
 
-.subtitle{
-    color: $text-gray-color;
-    @include font($lh: 120%);
-}
-
-.dialog-input{
-    background-color: $button-secondary-color;
-    color: $text-primary-color;
-    @include font;
-    margin: 10px 0;
-}
-.dialog-consents{
-    text-align: center;
-    margin: 16px 0;
-}
-
-.dialog-consents{
-    @include font($lh: 120%);
-
-}
-
-.dialog-link{
-    color: $text-secondary-color!important;
+.connect-dialog{
+    &__header{
+        @include f-between;
+    }
+    &__title{
+        margin-top: 1rem;
+        @include font($fsz: 2rem, $fw: 700, $lh: 150%);
+        color: $text-primary-color;
+    }
+    &__subtitle{
+        @include font($lh: 120%);
+        color: $text-gray-color;
+    }
+    &__input-label{
+        @include font;
+        color: #000;
+    }
+    &__input{
+        @include font;
+        background-color: $button-secondary-color;
+        color: $text-primary-color;
+        margin: 10px 0;
+    }
+    &__dialog-consents{
+        @include font($lh: 120%);
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    &__consents-link{
+        color: $text-secondary-color!important;
+    }
 }

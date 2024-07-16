@@ -1,4 +1,5 @@
 export default interface ICustomSliderProps{
     active: boolean;
-    setActive: () => void;
+    isHeaderMenu?: boolean;
+    setActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
