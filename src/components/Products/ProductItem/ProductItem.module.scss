@@ -21,6 +21,7 @@
         @include back-image("@/icons/cart.svg");
     }
     &__img{
+        background-color: #333;
         height: 246px;
         width: 246px;
         border-radius: 10px;
@@ -44,5 +45,14 @@
     }
     &__item_info{
         @include flexbox($fd: column, $gap: .5rem)
+    }
+}
+
+@media screen and (max-width: 768px){
+    .product-item{
+        &__img{
+            height: 150px;
+            width: 150px;
+        }
     }
 }

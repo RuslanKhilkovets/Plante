@@ -1,0 +1,1 @@
+export const MIN_RANGE_STEP = 1;

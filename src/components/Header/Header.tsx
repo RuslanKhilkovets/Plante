@@ -15,6 +15,7 @@ import navbarLinks from '../../constants/navbarLinks';
 import cl from "./Header.module.scss";
 import "../../fonts/index.css";
 import SliderMenu from '../SliderMenu/SliderMenu';
+import Overlay from '../Overlay/Overlay';
 
 
 const Header = () => {
@@ -30,13 +31,13 @@ const Header = () => {
     
     return (
         <>
-            <header className={cl.header + " header"}>
+            <header className={cl.header}>
                 <div className="global-container">
                     <div className={cl.navbar}>
                         <ul className={cl.navbar__list}>
                             {navbarLinks.map(link => {
                                 return (
-                                    <CustomLink to={link.to} className={cl.navbar__link}>{link.text}</CustomLink>
+                                    <CustomLink key={link.id} to={link.to} className={cl.navbar__link}>{link.text}</CustomLink>
                                 )
                             })}
                         </ul>
@@ -78,18 +79,15 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                {
-                isCatalogOpen
-                &&
-                    <>
-                        <div className={cl["catalog-overlay"]}></div>
-                        <SliderMenu 
-                            active={isCatalogOpen} 
-                            isHeaderMenu={true}
-                            setActive={setIsCatalogOpen} 
-                        />                
-                    </>
-                }
+
+                <Overlay active={isCatalogOpen} onClick={() => setIsCatalogOpen(false)} />
+
+                <SliderMenu 
+                    active={isCatalogOpen} 
+                    isHeaderMenu={true}
+                    setActive={setIsCatalogOpen} 
+                />       
+
             </header>
             <ConnectModal 
                 open={isConnectModalOpen} 

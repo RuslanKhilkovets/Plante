@@ -1,0 +1,59 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.sortings{
+    @include flexbox($jc: flex-end, $ai: center, $gap: 1rem);
+    padding: 30px 0;
+    &__filter-btn{
+        display: none;
+    }
+    &__select-container{
+        display: none;
+    }
+}
+
+.sorting-types{
+    @include flexbox($gap: 20px, $ai: center);
+    &__title{
+        @include font();
+    }
+    &__type{
+        @include font();
+        padding: 10px;
+        border-radius: 5px;
+        color: $text-secondary-color;
+        &-active{
+            color: $overlay-color;
+            background-color: $button-secondary-color;
+        }
+    }
+    &__select{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .sorting-types{
+        gap: 10px;
+    }
+    .sortings{
+        @include f-between($ai: center, $gap: 20px);
+        &__filter-btn{
+            max-width: 150px;
+            @include f-center();
+            @include font($fw: 700);
+        }
+    }
+}
+
+@media screen and (max-width: 360px){
+    .sorting-types{
+        display: none;
+    }
+    .sortings{
+        &__select-container{
+            display: block;
+        }
+    }
+}
+

@@ -1,0 +1,12 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.catalog{
+    @include f-between($gap: 30px);
+}
+
+@media screen and (max-width: 768px){
+    .catalog{
+        @include f-between($gap: 0px);
+    }
+}

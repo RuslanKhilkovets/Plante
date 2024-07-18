@@ -21,13 +21,12 @@ const StyledLink = styled(Link)(({ theme }) => ({
     }
 }));
 
-const CustomLink: FC<ICustomLinkProps> = ({ to, className, children }) => {
+const CustomLink: FC<ICustomLinkProps> = ({ to, className, children, onMouseOver }) => {
     return (
-        <StyledLink to={to} className={className}>
+        <StyledLink to={to} className={className} onMouseOver={onMouseOver}>
             {children}
         </StyledLink>
     );
 };
 
 export default CustomLink;
-``

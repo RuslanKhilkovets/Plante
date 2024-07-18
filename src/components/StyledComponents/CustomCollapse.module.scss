@@ -1,0 +1,23 @@
+
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.collapse{
+    width: 100%;
+    border-bottom: 1px solid $text-gray-color;
+    padding: 20px 0;
+    &__btn{
+        @include font($fsz: 1.2rem, $fw: 700);
+        padding: 0;
+        color: #000!important;
+        text-transform: none!important;
+    }
+}
+
+.expand {
+    transition: all 0.2s;
+}
+.expandOpen {
+    transition: all 0.2s;
+    transform: rotate(180deg);
+}

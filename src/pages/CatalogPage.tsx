@@ -1,17 +1,16 @@
 import { Typography } from '@mui/material';
-import React from 'react';
-import { useSearchParams } from 'react-router-dom';
 import Catalog from '../components/Catalog/Catalog';
 import ViewedItems from '../components/ViewedItems/ViewedItems';
+import useQuery from '../hools/useQuery';
 
 const CatalogPage = () => {
-    const [searchParams, setSearchParams] = useSearchParams();
-
-    console.log(searchParams)
+    const query = useQuery();
+    const currentCategory = query.get('category');
+    
     return (
         <div className='global-container'>
             <Typography variant='h4'>Лікарські рослини</Typography>
-            <Catalog />
+            <Catalog category={currentCategory}/>
             <ViewedItems />
         </div>
     );

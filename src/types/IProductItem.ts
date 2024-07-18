@@ -4,6 +4,7 @@ export type TProductItem = {
     price: number;
     img: string;
     isInStock: boolean;
+    popularity: number;
 }
 
 export default interface IProductItems {

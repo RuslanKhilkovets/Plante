@@ -23,12 +23,13 @@
     gap: $gap;
 }
 
-@mixin flexbox($jc: flex-start, $ai: flex-start, $fd: row, $gap: 0px) {
+@mixin flexbox($jc: flex-start, $ai: flex-start, $fd: row, $gap: 0px, $fw: no-wrap) {
     display: flex;
     justify-content: $jc;
     align-items: $ai;
     flex-direction: $fd;
     gap: $gap;
+    flex-wrap: $fw;
 }
 
 @mixin f-between($gap: 0px, $ai: flex-start, $fw: no-wrap, $fd: row) {

@@ -1,12 +1,16 @@
 import { FC, useRef, useEffect } from "react";
-import { Button } from '@mui/base';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import cl from "./ProductsContainer.module.scss";
-import ProductItem from "../ProductItem/ProductItem";
 import clsx from 'clsx';
+
+import { Button } from '@mui/base';
+
+import ProductItem from "../ProductItem/ProductItem";
+
 import { TProductItem } from "../../../types/IProductItem";
-import getClassName from "../../../helpers/getClassNameByProductsType";
 import IProductsContainerProps from "../../../types/IProductsContainerProps";
+import getClassName from "../../../helpers/getClassNameByProductsType";
+
+import cl from "./ProductsContainer.module.scss";
 
 const ProductsContainer: FC<IProductsContainerProps> = ({ products, title, subtitle, type }) => {
     const splideRef = useRef<Splide>(null);

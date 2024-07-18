@@ -1,12 +1,12 @@
 import { FC } from 'react';
-import { TProductItem } from '../../../types/IProductItem';
-import cl from "./ProductItem.module.scss"
+
 import { Button } from '@mui/base';
 
-enum STOCK_VARIANT {
-    EXISTS = "В наявності",
-    NOT_EXISTS = "Немає в наявності",
-}
+import { TProductItem } from '../../../types/IProductItem';
+import STOCK_VARIANT from '../../../constants/StockVariants';
+
+import cl from "./ProductItem.module.scss"
+
 
 const ProductItem: FC<{product: TProductItem}> = ( { product } ) => {
     
