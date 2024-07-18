@@ -4,18 +4,25 @@ import * as React from 'react';
 import clsx from 'clsx';
 
 import { Button } from '@mui/base';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 import ConnectModal from '../ConnectModal/ConnectModal';
 import CustomInput from '../StyledComponents/CustomInput';
 import CustomLink from '../StyledComponents/CustomLink';
 import Logo from '../Logo/Logo';
+import CatalogMenu from '../CatalogMenu/CatalogMenu';
+import Overlay from '../Overlay/Overlay';
 
 import navbarLinks from '../../constants/navbarLinks';
 
+import personIcon from "../../icons/person.svg";
+import likesIcon from "../../icons/like.svg";
+import cartIcon from "../../icons/cart.svg";
+
 import cl from "./Header.module.scss";
 import "../../fonts/index.css";
-import SliderMenu from '../SliderMenu/SliderMenu';
-import Overlay from '../Overlay/Overlay';
+import { IconButton } from '@mui/material';
 
 
 const Header = () => {
@@ -43,7 +50,9 @@ const Header = () => {
                         </ul>
                         <div className={cl.navbar__contacts}>
                             <div className={cl.navbar__phones}></div>
-                            <Button className={cl.navbar__connect + " " + cl.navbar__link} onClick={() => setIsConnectModalOpen(!isConnectModalOpen)}>Зворотній зв’язок</Button>
+                            <Button className={clsx(cl.navbar__connect,  cl.navbar__link)} onClick={() => setIsConnectModalOpen(!isConnectModalOpen)}>
+                                Зворотній зв’язок
+                            </Button>
                         </div>
                     </div>
                     <div className={cl["header-actions"]}>
@@ -54,12 +63,11 @@ const Header = () => {
                             })}                            
                             onClick={() => setIsCatalogOpen(!isCatalogOpen)}
                         >
-                            <div 
-                                className={clsx(cl["header-actions__catalog_button"], {
-                                    [cl["header-actions__catalog_button_active"]]: isCatalogOpen
-                                })}
-                            >
-                            </div>
+                            {
+                                isCatalogOpen ?
+                                <CloseIcon /> :
+                                <MenuIcon style={{ transform: "scale(1.1, 1.5)"}}/>
+                            }
                             <p className={cl["header-actions__catalog_title"]}>Каталог</p>
                         </Button>
 
@@ -73,16 +81,29 @@ const Header = () => {
                         />
 
                         <div className={cl["header-actions__icons"]}>
-                            <Button className={cl["header-actions__icon"]}></Button>
-                            <Button className={cl["header-actions__icon"]}></Button>
-                            <Button className={cl["header-actions__icon"]}></Button>
+
+                            <IconButton>
+                                <img
+                                    src={ personIcon }
+                                />
+                            </IconButton>
+                            <IconButton>
+                                <img
+                                    src={ likesIcon }
+                                />
+                            </IconButton>
+                            <IconButton>
+                                <img
+                                    src={ cartIcon }
+                                />
+                            </IconButton>
+                            
                         </div>
                     </div>
                 </div>
 
-                <Overlay active={isCatalogOpen} onClick={() => setIsCatalogOpen(false)} />
-
-                <SliderMenu 
+                <CatalogMenu
+                    visible={isCatalogOpen}
                     active={isCatalogOpen} 
                     isHeaderMenu={true}
                     setActive={setIsCatalogOpen} 

@@ -6,6 +6,7 @@ interface ICustomLinkProps {
     to: string | object;
     className?: string;
     children?: React.ReactNode;
+    [key: string]: any; 
 }
 
 const StyledLink = styled(Link)(({ theme }) => ({
@@ -21,9 +22,9 @@ const StyledLink = styled(Link)(({ theme }) => ({
     }
 }));
 
-const CustomLink: FC<ICustomLinkProps> = ({ to, className, children, onMouseOver }) => {
+const CustomLink: FC<ICustomLinkProps> = ({ to, className, children, onMouseOver, ...rest }) => {
     return (
-        <StyledLink to={to} className={className} onMouseOver={onMouseOver}>
+        <StyledLink to={to} className={className} onMouseOver={onMouseOver} {...rest}>
             {children}
         </StyledLink>
     );

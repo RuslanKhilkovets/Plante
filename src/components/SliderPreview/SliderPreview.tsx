@@ -1,33 +1,29 @@
 import { FC, useState } from 'react';
 import CustomSlider from '../Slider/CustomSlider';
-import SliderMenu from '../SliderMenu/SliderMenu';
+import CatalogMenu from '../CatalogMenu/CatalogMenu';
 import cl from "./SliderPreview.module.scss"
+import Overlay from '../Overlay/Overlay';
 
 const SliderPreview: FC = () => {
     const [isMenuActive, setIsMenuActive] = useState<boolean>(false)
 
     return (
-        <>
-            {
-                isMenuActive
-                &&
-                <div className={cl["catalog-overlay"]} onClick={() => setIsMenuActive(false)}></div>
-            }
-
-            <div className="global-container-no-padding">
-                <div className={cl["slider-preview"]}>
-                    <div 
-                        className={cl["slider-preview__menu"]}
-                        onMouseOver={() => setIsMenuActive(true)} 
-                        onMouseLeave={() => setIsMenuActive(false)} 
-                    >
-                        <SliderMenu active={isMenuActive} setActive={setIsMenuActive}/>
-                    </div>
-
-                    <CustomSlider/>
+        <div className="global-container-no-padding">
+            <div className={cl["slider-preview"]}>
+                <div 
+                    className={cl["slider-preview__menu"]}
+                    onMouseOver={() => setIsMenuActive(true)} 
+                >
+                    <CatalogMenu 
+                        visible={true}
+                        active={isMenuActive} 
+                        setActive={setIsMenuActive}
+                    />
                 </div>
-            </div>  
-        </>     
+
+                <CustomSlider/>
+            </div>
+        </div>  
     );
 };
 

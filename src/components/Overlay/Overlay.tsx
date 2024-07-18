@@ -1,6 +1,6 @@
 import cl from "./Overlay.module.scss"
 
-const Overlay: FC = ( {active, onClick}) => {
+const Overlay: FC = ( { active, onClick }) => {
     
     return (
         <>

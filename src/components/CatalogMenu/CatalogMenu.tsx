@@ -11,18 +11,19 @@ import ICustomSliderProps from '../../types/ICustomSliderProps';
 import navbarLinks from '../../constants/navbarLinks';
 import catalogMenuItems from '../../constants/catalogMenuItems';
 
-import cl from "./SliderMenu.module.scss";
+import cl from "./CatalogMenu.module.scss";
 import PATHS from '../../router/paths';
+import Overlay from '../Overlay/Overlay';
 
 
-const SliderMenu: FC<ICustomSliderProps> = ({ active, setActive, isHeaderMenu }) => {
+const CatalogMenu: FC<ICustomSliderProps> = ({ active, setActive, visible, isHeaderMenu }) => {
     const [activeMenuItem, setActiveMenuItem] = useState<IMenuItem | null>(null);
     const [isConnectModalOpen, setIsConnectModalOpen] = useState<boolean>(false);    
 
     return (
         <>
             {
-                !!active 
+                !!visible 
                 &&
                 <div className={
                     clsx(cl["menu-container"], {
@@ -33,7 +34,7 @@ const SliderMenu: FC<ICustomSliderProps> = ({ active, setActive, isHeaderMenu })
                         <ul className={cl["menu__list"]}>
                             {
                                 catalogMenuItems.map((item: any) => {
-                                    const url = `${PATHS.CATALOG}?category=${item.to}`;
+                                    const url = `${PATHS.CATALOG}?category=${item.to || ""}`;
     
                                     return (
                                             <CustomLink to={url} className={cl.menu__item}                                         
@@ -103,10 +104,11 @@ const SliderMenu: FC<ICustomSliderProps> = ({ active, setActive, isHeaderMenu })
                     }
                 </div>
             }
+            <Overlay active={active} onClick={() => setActive(false)}/>
 
             <ConnectModal open={isConnectModalOpen} onClose={() => setIsConnectModalOpen(false)}/>
         </>
     );
 };
 
-export default SliderMenu;
+export default CatalogMenu;

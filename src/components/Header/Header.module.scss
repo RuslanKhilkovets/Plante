@@ -53,10 +53,10 @@
         z-index: 9;
         width: 24px;
         height: 24px;
+        display: flex;
+        align-items: center;
     }
-    &__catalog_button_active{
-        @include back-image("../../icons/close.svg");
-    }
+
     &__catalog_title{
         @include font($fsz: 1.2rem);
     }
@@ -68,7 +68,6 @@
         padding: 0 1rem;
     }
     &__search_btn{
-        position: relative;
         width: 19px;
         height: 19px;
         @include back-image("../../icons/search.svg");
@@ -81,20 +80,7 @@
     &__icons{
         @include f-between($gap: 5px, $ai: center);
     }
-    &__icon{
-        height: 24px;
-        width: 24px;
-        cursor: pointer;
-    }
-    &__icon:nth-child(1){
-        @include back-image("../../icons/person.svg");
-    }
-    &__icon:nth-child(2){
-        @include back-image("../../icons/like.svg");
-    }
-    &__icon:nth-child(3){
-        @include back-image("../../icons/cart.svg");
-    }
+
 }
 
 @media screen and (max-width: 1024px){
