@@ -7,45 +7,29 @@ import CustomCollapse from '../StyledComponents/CustomCollapse';
 import CustomInput from '../StyledComponents/CustomInput';
 
 import ICatalogFilterProps from '../../types/ICatalogFilterProps';
-import { ProductWeight } from '../../constants/productWeight';
-import ProductAge from '../../constants/productAge';
 import { MIN_RANGE_STEP } from '../../constants/globals';
+import filterProductTypes from '../../constants/filterProductTypes';
+import filterProductWeight from '../../constants/filterProductWeight';
 
 import cl from "./CatalogFilter.module.scss";
 import Overlay from '../Overlay/Overlay';
 import FilterItem from '../FilterItem/FilterItem';
 
-
 const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilters, open, setOpen }) => {
-    const [openChosenOptionCollapse, setOpenChosenOptionCollapse] = useState(true);
-    const [openProductWeightCollapse, setOpenProductWeightCollapse] = useState(true);
-    const [openProductAgeCollapse, setOpenProductAgeCollapse] = useState(true);
+    const [openCollapses, setOpenCollapses] = useState({
+        optionCollapse: true,
+        productWeightCollapse: true,
+        productAgeCollapse: true,
+    })
 
-    const productTypes = [
-        { id: 1, value: ProductAge.PERENNIAL, title: "Багаторічний" },
-        { id: 2, value: ProductAge.BIENNIAL, title: "Дворічний" },
-        { id: 3, value: ProductAge.INDOOR, title: "Кімнатний" },
-        { id: 4, value: ProductAge.ANNUAL, title: "Однорічний" },
-    ];
-
-    const productWeight = [
-        { id: 1, value: ProductWeight.FIRST, title: "0.1" },
-        { id: 2, value: ProductWeight.SECOND, title: "0.2" },
-    ];
-    
-    const handleAgeChange = (value: number) => {
-        const newSelectedProductAgeType = filters.selectedProductAgeType.includes(value)
-            ? filters.selectedProductAgeType.filter(filter => filter !== value)
-            : [...filters.selectedProductAgeType, value];
-        setFilters({ ...filters, selectedProductAgeType: newSelectedProductAgeType });
+    const handleFilterChange = (key: 'productAgeTypes' | 'productWeightTypes', value: number) => {
+        const newSelectedTypes = (filters[key] as number[]).includes(value)
+            ? filters[key].filter((filter: number) => filter !== value)
+            : [...filters[key], value];
+        setFilters({ ...filters, [key]: newSelectedTypes });
     };
-
-    const handleWeightChange = (value: number) => {
-        const newSelectedProductWeightType = filters.selectedProductWeightType.includes(value)
-            ? filters.selectedProductWeightType.filter(filter => filter !== value)
-            : [...filters.selectedProductWeightType, value];
-        setFilters({ ...filters, selectedProductWeightType: newSelectedProductWeightType });
-    };
+    const handleAgeChange = (value: number) => handleFilterChange('productAgeTypes', value);
+    const handleWeightChange = (value: number) => handleFilterChange('productWeightTypes', value);
 
     const handlePriceRangeChange = (
         event: Event,
@@ -71,7 +55,8 @@ const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilt
 
     const handleInputChange = (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
         const newPrice = [...filters.price];
-        newPrice[index] = event.target.value === '' ? 0 : Number(event.target.value);
+        const { value } = event.target;
+        newPrice[index] = value === '' ? 0 : +value;
         setFilters({ ...filters, price: newPrice as number[] });
     };
 
@@ -79,22 +64,19 @@ const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilt
         setOpen(false);
     }
 
-    const handleRemoveFilter = (value) => {
+    const handleRemoveFilter = (value: any) => {
         setFilters({
           ...filters,
-          selectedProductAgeType: filters.selectedProductAgeType.filter((item) => item !== value),
+          productAgeTypes: filters.productAgeTypes.filter((item) => item !== value),
         });
-      };
-console.log(filters.price[1])
+    };
+
     return (
         <>
-            <div className={cl["overlay-container"]}>
-                <Overlay active={open} onClick={handleMenuClose}/>
-            </div>
+            <Overlay active={open} onClick={handleMenuClose}/>
             <div className={clsx(cl["catalog-filter"], {
                 [cl["catalog-filter_active"]]: open,
             })}>
-
                 <Button 
                     className={cl["catalog-filter__title"]}
                     onClick={handleMenuClose}
@@ -103,18 +85,18 @@ console.log(filters.price[1])
                 </Button>
                 <div>
                     <CustomCollapse 
-                        open={openChosenOptionCollapse}
-                        setOpen={setOpenChosenOptionCollapse}
+                        open={openCollapses.optionCollapse}
+                        setOpen={() => setOpenCollapses((prev: any) => ({ ...prev, optionCollapse: !openCollapses.optionCollapse}))}
                         title={"Ви обрали"}
                     >
                         {
-                            filters.selectedProductAgeType?.length !== 0
+                            filters.productAgeTypes?.length !== 0
                             &&
                             <>
                                 <p className={cl["choosen-title"]}>Вид:</p>
                                 {
-                                    filters.selectedProductAgeType.map((item) => {
-                                        const productType = productTypes.find((type) => type.value === item);
+                                    filters.productAgeTypes.map((item) => {
+                                        const productType = filterProductTypes.find((type) => type.value === item);
                                             return (
                                                 <FilterItem key={item} onClick={() => handleRemoveFilter(item)}>
                                                     {productType ? productType.title : ''}
@@ -124,19 +106,6 @@ console.log(filters.price[1])
                                 }
                             </> 
                         }
-                        {
-                            <>
-                                {
-                                    <>
-                                        <p className={cl["choosen-title"]}>Ціна:</p>
-                                        <FilterItem onClick={() => setFilters(prev => ({ ...prev, price: [0, 0]}))}>
-                                            {`${filters.price[0]} - ${filters.price[1]} грн`}
-                                        </FilterItem>
-                                    </>
-                                }
-                                
-                            </> 
-                        }
                         <br/>
                         <Button className={cl["catalog-filter__clear-filters-btn"]} onClick={clearFilters}>
                             Очистити фільтри
@@ -144,17 +113,17 @@ console.log(filters.price[1])
                     </CustomCollapse>
 
                     <CustomCollapse 
-                        open={openProductAgeCollapse}
-                        setOpen={setOpenProductAgeCollapse}
+                        open={openCollapses.productAgeCollapse}
+                        setOpen={() => setOpenCollapses((prev: any) => ({ ...prev, optionCollapse: !openCollapses.productAgeCollapse}))}
                         title={"Вид"}
                     >
                         <div className={cl["catalog-filter__checkboxes"]}>
-                            {productTypes.map(checkbox => (
+                            {filterProductTypes.map(checkbox => (
                                 <FormControlLabel
                                     key={checkbox.id}
                                     control={
                                         <Checkbox
-                                            checked={filters.selectedProductAgeType.includes(checkbox.value)}
+                                            checked={filters.productAgeTypes.includes(checkbox.value)}
                                             onChange={() => handleAgeChange(checkbox.value)}
                                             value={checkbox.value}
                                             color="success"
@@ -172,24 +141,24 @@ console.log(filters.price[1])
                     </CustomCollapse>
 
                     <CustomCollapse 
-                        open={openProductWeightCollapse}
-                        setOpen={setOpenProductWeightCollapse}
+                        open={openCollapses.productWeightCollapse}
+                        setOpen={() => setOpenCollapses((prev: any) => ({ ...prev, optionCollapse: !openCollapses.productWeightCollapse}))}
                         title={"Грами"}
                     >
                         <div className={cl["catalog-filter__checkboxes"]}>
-                            {productWeight.map(checkbox => (
+                            {filterProductWeight.map(checkbox => (
                                 <FormControlLabel
                                     key={checkbox.id}
                                     control={
                                         <Checkbox
-                                            checked={filters.selectedProductWeightType.includes(checkbox.value)}
+                                            checked={filters.productWeightTypes.includes(checkbox.value)}
                                             onChange={() => handleWeightChange(checkbox.value)}
                                             value={checkbox.value}
                                             color="success"
                                             disableRipple
                                             sx={{
-                                            transform: "scale(1.5)",
-                                            px: 2
+                                                transform: "scale(1.5)",
+                                                px: 2
                                             }}
                                         />
                                     }

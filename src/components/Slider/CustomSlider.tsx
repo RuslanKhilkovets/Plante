@@ -1,9 +1,11 @@
-import  "./CustomSlider.scss";
+import { FC } from "react";
 import clsx from 'clsx';
 
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import { FC } from "react";
+
+import  "./CustomSlider.scss";
+
 
 const CustomSlider: FC = () => {
     const settings = {

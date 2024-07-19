@@ -52,6 +52,7 @@
 @media screen and (max-width: 768px){
     .about{
         flex-wrap: wrap;
+        margin: 40px 0;
     }
     .about-text{
         &__item_title{
@@ -60,6 +61,7 @@
         }
     }
     .about-experience{
+        padding: 15px;
         width: 100%;
     }
 }

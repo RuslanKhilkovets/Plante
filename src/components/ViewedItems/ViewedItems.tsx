@@ -6,17 +6,13 @@ const ViewedItems = () => {
     const [items, setItems] = useState([]);
     
     return (
-        <>
-            {
-                items?.length !== 0
-                &&
-                <ProductsContainer 
-                    products={items} 
-                    title='Ви переглядали'
-                />
-            }
-        </>
-    );
+        items?.length !== 0
+        &&
+        <ProductsContainer 
+            products={items} 
+            title='Ви переглядали'
+        />
+    )
 };
 
 export default ViewedItems;

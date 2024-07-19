@@ -1,8 +1,9 @@
 import { FC, useState } from 'react';
+
 import CustomSlider from '../Slider/CustomSlider';
 import CatalogMenu from '../CatalogMenu/CatalogMenu';
+
 import cl from "./SliderPreview.module.scss"
-import Overlay from '../Overlay/Overlay';
 
 const SliderPreview: FC = () => {
     const [isMenuActive, setIsMenuActive] = useState<boolean>(false)

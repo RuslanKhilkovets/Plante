@@ -35,12 +35,16 @@
     }
     &__link{
         @include font($lh: 1.2rem);
+        @include flexbox($gap: 1rem, $ai: center);
         color: $text-primary-color;
         transition: $trans-time;
         &:hover {
             color: $text-secondary-color;
             transition: $trans-time;
         }
+    }
+    &__contact{
+        @include flexbox($ai: center, $gap: 20px)
     }
 }
 

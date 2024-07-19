@@ -38,6 +38,10 @@
         border-radius: 50%;
         background-color: $button-secondary-color;
         cursor: pointer;
+        &:disabled{
+            opacity: .5;
+            cursor: default;
+        }
     }
     &__nav_prev{
         @include back-image($url: "@/icons/arrow-left.svg", $size: 70%)

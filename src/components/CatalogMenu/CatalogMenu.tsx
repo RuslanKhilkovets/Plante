@@ -99,7 +99,6 @@ const CatalogMenu: FC<ICustomSliderProps> = ({ active, setActive, visible, isHea
                                     })
                                 }
                             </ul>
-    
                         </div>
                     }
                 </div>

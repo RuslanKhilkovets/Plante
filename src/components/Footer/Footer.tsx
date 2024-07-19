@@ -1,41 +1,16 @@
-import { Box } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 
 import Logo from "../Logo/Logo";
-
-import PATHS from "../../router/paths";
-import cl from "./Footer.module.scss";
-
-import YoutubeIcon from "../../icons/Youtube.svg";
-import ViberIcon from "../../icons/Viber.svg";
-import FacebookIcon from "../../icons/Facebook.svg";
 import CustomLink from "../StyledComponents/CustomLink";
 
-const footerLinksBlock1 = [
-    { id: 1, text: 'Культура', path: PATHS.MAIN_PAGE },
-    { id: 2, text: 'Про компанію', path: PATHS.MAIN_PAGE },
-    { id: 3, text: 'Прайс', path: PATHS.MAIN_PAGE },
-    { id: 4, text: 'Акції', path: PATHS.MAIN_PAGE },
-    { id: 5, text: 'Доставка', path: PATHS.MAIN_PAGE },
-    { id: 6, text: 'Замовлення', path: PATHS.MAIN_PAGE }
-];
+import { footerLinksBlock1, footerLinksBlock2, footerLinksBlock3 } from "../../constants/footerLinks";
 
-const footerLinksBlock2 = [
-    { id: 1, text: 'Умови використання сайту', path: PATHS.MAIN_PAGE },
-    { id: 2, text: 'Усі категорії', path: PATHS.MAIN_PAGE },
-    { id: 3, text: 'Доставка та оплата', path: PATHS.MAIN_PAGE },
-    { id: 4, text: 'Повернення товару', path: PATHS.MAIN_PAGE },
-    { id: 5, text: 'Контакти', path: PATHS.MAIN_PAGE },
-    { id: 6, text: 'Співпраця з нами', path: PATHS.MAIN_PAGE }
-];
+import phoneIcon from "../../icons/call.svg";
+import mailIcon from "../../icons/mail.svg";
+import locationIcon from "../../icons/location_on.svg";
 
-const footerLinksBlock3 = [
-    { id: 1, text: 'Популярні статті', path: PATHS.MAIN_PAGE },
-    { id: 2, text: '"Євро Овочі"', path: PATHS.MAIN_PAGE },
-    { id: 3, text: '"Саджанці Профі"', path: PATHS.MAIN_PAGE },
-    { id: 4, text: '"Ботанічний Кошик"', path: PATHS.MAIN_PAGE },
-    { id: 5, text: '"Експерт Агро"', path: PATHS.MAIN_PAGE },
-    { id: 6, text: '"Екологічне Поле"', path: PATHS.MAIN_PAGE }
-];
+import cl from "./Footer.module.scss";
+
 
 const Footer = () => {
     return (
@@ -88,26 +63,55 @@ const Footer = () => {
                         </ul>
                         <ul className={cl.footer__list}>
                             <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>
-                                    <span>Kyivstar</span>
-                                    <a href="tel:+38(099)323-55-03" className={cl.footer__link}>+38 (099) 323-55-03</a>
+                                <CustomLink to={""} className={cl.footer__contact}>
+                                    <a href="tel:+38(099)323-55-03" className={cl.footer__link}> 
+                                        <IconButton>
+                                            <img
+                                                src={phoneIcon}
+                                            />
+                                        </IconButton>
+                                        <span>Kyivstar</span>
+                                        <span>+38 (099) 323-55-03</span>
+                                    </a>
                                 </CustomLink>
                             </li>
                             <li className={cl.footer__item}>
-                                <CustomLink to={PATHS.MAIN_PAGE} className={cl.footer__link}>
-                                    <span>Lifecell</span>
-                                    <a href="tel:+38 (067) 282-52-44" className={cl.footer__link}>+38 (067) 282-52-44</a>
+                                <CustomLink to={""} className={cl.footer__contact}>
+                                    <a href="tel:+38 (067) 282-52-44" className={cl.footer__link}>
+                                        <IconButton>
+                                            <img
+                                                src={phoneIcon}
+                                            />
+                                        </IconButton>
+                                        <span>Lifecell</span> 
+                                        <span>+38 (067) 282-52-44</span>
+                                    </a>
                                 </CustomLink>
                             </li>
-                            <li className={cl.footer__item}>
-                                <a href="mailto:planteua2017@gmail.com" className={cl.footer__link}>planteua2017@gmail.com</a>
+                            <li className={cl.footer__contact}>
+                                <a href="mailto:planteua2017@gmail.com" className={cl.footer__link}>
+                                    <IconButton>
+                                        <img
+                                            src={mailIcon}
+                                        />
+                                    </IconButton>
+                                    <span>planteua2017@gmail.com</span>
+                                </a>
                             </li>
-                            <li className={cl.footer__item}>
-                                <p className={cl.footer__link}>
-                                    Україна, <br/>
-                                    Хмельницька область, <br/>
-                                    м. Хмельницький, <br/>
-                                </p>
+                            <li className={cl.footer__contact}>
+                                <div className={cl.footer__link}>
+                                    <IconButton>
+                                        <img
+                                            src={locationIcon}
+                                        />
+                                    </IconButton>
+                                    <span className={cl.footer__link}>
+                                        Україна, <br/>
+                                        Хмельницька область, <br/>
+                                        м. Хмельницький, <br/>
+                                    </span>
+                                </div>
+
                             </li>
                         </ul>
                     </div>

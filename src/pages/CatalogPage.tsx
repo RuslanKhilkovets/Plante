@@ -1,11 +1,11 @@
 import { Typography } from '@mui/material';
 import Catalog from '../components/Catalog/Catalog';
 import ViewedItems from '../components/ViewedItems/ViewedItems';
-import useQuery from '../hools/useQuery';
+import useQuery from '../hooks/useQuery';
 
 const CatalogPage = () => {
     const query = useQuery();
-    const currentCategory = query.get('category');
+    const currentCategory = query.get('category') || "";
     
     return (
         <div className='global-container'>

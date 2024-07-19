@@ -13,15 +13,17 @@ import SortType from '../../constants/sortType';
 
 
 interface ISortingProps {
-    
+    sort: SortType;
+    setSort: (sortType: SortType) => void;
+    setFiltersMenuOpen: (open: boolean) => void;
 };
 
-const Sortings: FC = ( { setSort, sort, setFiltersMenuOpen } ) => {
+const Sortings: FC<ISortingProps> = ( { setSort, sort, setFiltersMenuOpen } ) => {
 
-    const handleSortChange = (e: SelectChangeEvent) => {
-        const { value } = e.target;
+    const handleSortChange = (event: SelectChangeEvent<unknown>) => {
+        const { value } = event.target;
 
-        setSort(value);
+        setSort(value as SortType);
     }
 
     const handleFiltersMenuOpen = () => {
