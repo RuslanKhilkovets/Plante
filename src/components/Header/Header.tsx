@@ -100,13 +100,14 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-
-                <CatalogMenu
-                    visible={isCatalogOpen}
-                    active={isCatalogOpen} 
-                    isHeaderMenu={true}
-                    setActive={setIsCatalogOpen} 
-                />       
+                <div className="global-container-no-padding">
+                    <CatalogMenu
+                        visible={isCatalogOpen}
+                        active={isCatalogOpen} 
+                        isHeaderMenu={true}
+                        setActive={setIsCatalogOpen} 
+                    />     
+                </div>
 
             </header>
             <ConnectModal 

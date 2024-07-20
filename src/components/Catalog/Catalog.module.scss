@@ -2,7 +2,8 @@
 @import "../../components/UI/mixins.scss";
 
 .catalog{
-    @include f-between($gap: 30px);
+    width: 100%;
+    @include flexbox($gap: 30px);
 }
 
 @media screen and (max-width: 768px){

@@ -56,6 +56,7 @@ class ApiClient {
         if(!category) {
             return [];
         }
+        
         const { price, productAgeTypes, productWeightTypes } = filters;
     
         let requestUrl = `${category}?`;

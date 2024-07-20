@@ -1,16 +1,15 @@
 import { FC } from 'react';
-
 import { Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import { styled } from '@mui/material/styles';
-
 import ICustomSelectProps from '../../types/ICustomSelectProps';
+import ArrowIcon from "../../icons/down.svg"; 
 
 const StyledSelect = styled(Select)(() => ({
   '&.MuiOutlinedInput-root': {
     borderRadius: '40px',
     padding: "2px",
     border: '2px solid green',
-    minWidth: "170px",
+    width: "100%",
     '& .MuiOutlinedInput-input': {
       color: 'green',
     },
@@ -18,17 +17,12 @@ const StyledSelect = styled(Select)(() => ({
   '& .MuiSelect-icon': {
     color: 'green',
   },
-  "&.MuiList-root": {
-    height: "100px"
-  },
 }));
 
 const StyledMenuItem = styled(MenuItem)(() => ({
-  
   '&.MuiMenuItem-root': {
-    boxShadow: "none",
     color: 'black',
-    fontWeight: "600",
+    fontWeight: "500",
     '&.Mui-selected': {
       backgroundColor: '#e8e8e8',
     },
@@ -38,28 +32,39 @@ const StyledMenuItem = styled(MenuItem)(() => ({
   },
 }));
 
-const CustomSelect: FC<ICustomSelectProps> = ( { onChange, value, options, label, className } ) => {
+const CustomArrowIcon = () => <img src={ArrowIcon} alt="Arrow Icon" style={{ width: '1em', height: '1em' }} />;
+
+const CustomSelect: FC<ICustomSelectProps> = ({ onChange, value, options, label, className }) => {
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        marginTop: '10px',
+        borderRadius: '20px',
+        boxShadow: "none",
+        border: "2px solid #2A8927",
+      },
+    },
+  };
 
   return (
-    <FormControl variant="outlined">
-        <InputLabel id="sorting-label">
-            {label}
-        </InputLabel>
-        <StyledSelect
-            labelId="sorting-label"
-            value={value}
-            onChange={onChange}
-            label={label}
-            className={className}
-        >
-            {
-                options.map(option => {
-                    return(
-                        <StyledMenuItem key={option.id} value={option.value}>{option.label}</StyledMenuItem>
-                    )
-                })
-            }
-        </StyledSelect>
+    <FormControl variant="outlined" fullWidth>
+      <InputLabel id="sorting-label">
+        {label}
+      </InputLabel>
+      <StyledSelect
+        labelId="sorting-label"
+        value={value}
+        onChange={onChange}
+        label={label}
+        className={className}
+        MenuProps={MenuProps}
+      >
+        {options.map(option => (
+          <StyledMenuItem key={option.id} value={option.value}>
+            {option.label}
+          </StyledMenuItem>
+        ))}
+      </StyledSelect>
     </FormControl>
   );
 };

@@ -1,12 +1,13 @@
 @import "../../components/UI/vars.scss";
 @import "../../components/UI/mixins.scss";
 
+
 .header{
     width: 100%;
     position: sticky;
     top: 0;
-    z-index: 999;
-    background-color: $main-secondary-color;
+    z-index: 10000000;
+    background-color: $main-primary-color;
 }
 
 .navbar{
@@ -39,7 +40,7 @@
         position: relative;
         border-radius: 30px;
         transition: $trans-time;
-        z-index: 9999;
+        z-index: 2;
         background: $button-secondary-color;
         cursor: pointer;
         &:hover{
@@ -49,8 +50,7 @@
     }
     &__catalog_button{
         @include back-image("../../icons/catalog.svg");
-        position: relative;
-        z-index: 9;
+
         width: 24px;
         height: 24px;
         display: flex;

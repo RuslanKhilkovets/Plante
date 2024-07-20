@@ -16,7 +16,7 @@ import ApiClient from '../../api/ApiClient';
 
 
 const initialFilters = {
-    price: [0, 20],
+    price: [0, 10],
     productWeightTypes: [],
     productAgeTypes: [] 
 };
@@ -33,14 +33,14 @@ const Catalog: FC<ICatalogProps> = ( { category } ) => {
         setFilters(initialFilters);
     };
 
-    useEffect(() => {
-        const fetchItems = async () => {
-            const items = await ApiClient.GetFilteredItems(category, filters);
-            
-            setCatalogItems(items as TProductItem[]);
-        };
+    const filterItems = async () => {
+        const items = await ApiClient.GetFilteredItems(category, filters);
         
-        fetchItems();
+        setCatalogItems(items as TProductItem[]);
+    };
+
+    useEffect(() => {
+        filterItems();
     }, [filters.productAgeTypes, filters.productWeightTypes]);
 
     useEffect(() => {
@@ -52,13 +52,14 @@ const Catalog: FC<ICatalogProps> = ( { category } ) => {
     return (
         <div className={cl["catalog"]}>
             <CatalogFilter 
+                onFilter={filterItems}
                 open={filterMenuOpen}
                 setOpen={setFiltersMenuOpen}
                 setFilters={setFilters}
                 filters={filters}
                 clearFilters={onFiltersClear}
             />
-            <div className="">
+            <div style={{ width: "100%" }}>
                 <Sortings
                     setSort={setSort}
                     sort={sort}

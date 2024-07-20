@@ -6,4 +6,5 @@ export default interface ICatalogFilterProps {
     clearFilters: () => void;
     open: boolean;
     setOpen: (open: boolean) => void;
+    onFilter?: () => void;
 }

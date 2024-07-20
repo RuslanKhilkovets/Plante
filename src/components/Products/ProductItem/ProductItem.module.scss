@@ -9,6 +9,7 @@
         @include back-image("@/icons/like.svg");
     }
     &__item{
+        width: 240px;
         @include flexbox($fd: column, $gap: 1rem);
     }
     &__footer{
@@ -23,7 +24,7 @@
     &__img{
         background-color: #333;
         height: 246px;
-        width: 246px;
+        width: 100%;
         border-radius: 10px;
     }
     &__title{
@@ -50,9 +51,11 @@
 
 @media screen and (max-width: 768px){
     .product-item{
+        &__item{
+            width: 150px;
+        }
         &__img{
             height: 150px;
-            width: 150px;
         }
     }
 }

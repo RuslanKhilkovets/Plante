@@ -1,29 +1,27 @@
-import PATHS from "../router/paths";
-
 export const navbarLinks = [
     {
         id: 1,
-        to: PATHS.MAIN_PAGE,
+        to: "/culture",
         text: "Культура"
     },
     {
         id: 2,
-        to: PATHS.MAIN_PAGE,
+        to: "/price",
         text: "Прайс"
     },
     {
         id: 3,
-        to: PATHS.MAIN_PAGE,
+        to: "/promotions",
         text: "Акції"
     },
     {
         id: 4,
-        to: PATHS.MAIN_PAGE,
+        to: "/delivery",
         text: "Доставка"
     },
     {
         id: 5,
-        to: PATHS.MAIN_PAGE,
+        to: "/contacts",
         text: "Контакти"
     },
 ]

@@ -5,7 +5,6 @@
     @include f-between($gap: 2rem);
     position: relative;
     margin: 0 auto;
-    padding: 20px;
     width: max-content;
     height: max-content;
     max-height: 437px;
@@ -17,6 +16,11 @@
         @include f-center();
         padding: 10px;  
     }
+}
+
+.menu-wrapper{
+    @include f-between($gap: 2rem);
+    position: relative;
 }
 
 .header-menu{
@@ -65,12 +69,12 @@
 }
 
 .menu-navbar{
-    background-color: #e9e8e8;
+    background-color: $button-secondary-color;
     border-radius: 20px;
     display: none;
     width: 100%;
     &__header{
-        background-color: #caf0d2;
+        background-color: $light-green;
         padding: 10px;
         border-radius: 20px;
         display: none;
@@ -115,8 +119,9 @@
 
 .menu-items{
     position: absolute;
-    z-index: 10;
     left: 350px;
+    display: block;
+    z-index: 10;
     width: max-content;
     height: 100%;
     padding: 10px;
@@ -142,22 +147,25 @@
         padding: 10px;
     }
     &__item{
-        transition: .3s;
+        @include font;
+        @include flexbox($ai: center);
+        transition: $trans-time;
         cursor: pointer;
         width: 100%;
         position: relative;
-        display: flex;
-        align-items: center;
         color: #121212;
-        font-family: "Roboto", sans-serif;
     }
     &__item_title{
         @include font($fsz: 1.2rem);
         color: #2a8927!important;
+        white-space: nowrap;       
+        overflow: hidden;          
+        text-overflow: ellipsis;  
+        width: 250px;   
     }
     &__item_text{
         font-size: 1rem;
-        color: #121212;
+        color: $text-primary-color;
     }
 }
 

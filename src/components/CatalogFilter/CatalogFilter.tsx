@@ -15,7 +15,8 @@ import cl from "./CatalogFilter.module.scss";
 import Overlay from '../Overlay/Overlay';
 import FilterItem from '../FilterItem/FilterItem';
 
-const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilters, open, setOpen }) => {
+
+const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilters, open, setOpen, onFilter }) => {
     const [openCollapses, setOpenCollapses] = useState({
         optionCollapse: true,
         productWeightCollapse: true,
@@ -42,7 +43,7 @@ const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilt
     
         if (newValue[1] - newValue[0] < MIN_RANGE_STEP) {
           if (activeThumb === 0) {
-            const clamped = Math.min(newValue[0], 100 - MIN_RANGE_STEP);
+            const clamped = Math.min(newValue[0], 10 - MIN_RANGE_STEP);
             setFilters({ ...filters, price: [clamped, clamped + MIN_RANGE_STEP] });
           } else {
             const clamped = Math.max(newValue[1], MIN_RANGE_STEP);
@@ -54,8 +55,13 @@ const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilt
     };
 
     const handleInputChange = (index: number) => (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newPrice = [...filters.price];
         const { value } = event.target;
+        const newPrice = [...filters.price];
+
+        if(isNaN(+value)){
+            return;
+        }
+
         newPrice[index] = value === '' ? 0 : +value;
         setFilters({ ...filters, price: newPrice as number[] });
     };
@@ -104,17 +110,18 @@ const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilt
                                             );
                                     })
                                 }
+                                    <br/>
+                                    <Button className={cl["catalog-filter__clear-filters-btn"]} onClick={clearFilters}>
+                                        Очистити фільтри
+                                    </Button>
                             </> 
                         }
-                        <br/>
-                        <Button className={cl["catalog-filter__clear-filters-btn"]} onClick={clearFilters}>
-                            Очистити фільтри
-                        </Button>
+                      
                     </CustomCollapse>
 
                     <CustomCollapse 
                         open={openCollapses.productAgeCollapse}
-                        setOpen={() => setOpenCollapses((prev: any) => ({ ...prev, optionCollapse: !openCollapses.productAgeCollapse}))}
+                        setOpen={() => setOpenCollapses((prev: any) => ({ ...prev, productAgeCollapse: !openCollapses.productAgeCollapse}))}
                         title={"Вид"}
                     >
                         <div className={cl["catalog-filter__checkboxes"]}>
@@ -142,7 +149,7 @@ const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilt
 
                     <CustomCollapse 
                         open={openCollapses.productWeightCollapse}
-                        setOpen={() => setOpenCollapses((prev: any) => ({ ...prev, optionCollapse: !openCollapses.productWeightCollapse}))}
+                        setOpen={() => setOpenCollapses((prev: any) => ({ ...prev, productWeightCollapse: !openCollapses.productWeightCollapse}))}
                         title={"Грами"}
                     >
                         <div className={cl["catalog-filter__checkboxes"]}>
@@ -158,7 +165,8 @@ const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilt
                                             disableRipple
                                             sx={{
                                                 transform: "scale(1.5)",
-                                                px: 2
+                                                px: 2,
+                                                borderColor: "green"
                                             }}
                                         />
                                     }
@@ -178,11 +186,23 @@ const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilt
                             valueLabelDisplay="auto"
                             disableSwap
                             color="success"
+                            max={10}
+                            sx={{
+                                '& .MuiSlider-thumb': {
+                                    backgroundColor: 'white', 
+                                    border: '2px solid green', 
+                                  },
+                                  '& .MuiSlider-track': {
+                                    color: 'green',
+                                  },
+                                  '& .MuiSlider-rail': {
+                                    color: '#d3d3d3', 
+                                  },
+                            }}
                         />
 
                         <div className={cl["price-inputs"]}>
                             <CustomInput
-                                type='number'
                                 className={cl["price-inputs__input"]}
                                 value={filters.price[0]}
                                 onChange={handleInputChange(0)}
@@ -192,14 +212,13 @@ const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilt
                             </div>
 
                             <CustomInput
-                                type='number'
                                 className={cl["price-inputs__input"]}
                                 value={filters.price[1]}
                                 onChange={handleInputChange(1)}
                             />
                             <Button 
                                 className={cl["price-btn"]}
-                                onClick={() => {}}
+                                onClick={onFilter}
                             >
                                 OK
                             </Button>

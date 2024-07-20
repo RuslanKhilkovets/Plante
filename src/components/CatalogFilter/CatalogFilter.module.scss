@@ -3,8 +3,9 @@
 @import "../../components/UI/mixins.scss";
 
 .catalog-filter{
-    background-color: #fff;
-    width: min(100%, 400px);
+    background-color: $main-primary-color;
+    max-width: 304px;
+    min-width: 200px;
     height: 100%;
     &__checkboxes{
         @include flexbox($fd: column) 
@@ -23,11 +24,10 @@
             margin-right: 12px;
             @include back-image($url: "@/icons/trash.svg");
         }
-
     }
     &__title{
         display: none!important;
-        background-color: #fff;
+        background-color: $main-primary-color;
         color: #000!important;
         margin-bottom: 2rem;
         padding-left: 30px!important;
@@ -79,9 +79,11 @@
     margin-top: 20px;
     padding-bottom: 20px;
 }
+
 @media screen and (max-width: 768px){
 
     .catalog-filter{
+        width: min(400px, 100%);
         overflow: auto;
         top: 0;
         left: -100%;
