@@ -1,4 +1,4 @@
-export default interface ICustomSliderProps{
+export default interface ICatalogMenuProps{
     visible?: boolean;
     active: boolean;
     isHeaderMenu?: boolean;

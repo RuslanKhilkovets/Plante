@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 
-import CustomSlider from '../Slider/CustomSlider';
+import ProductsSlider from '../Slider/ProductsSlider';
 import CatalogMenu from '../CatalogMenu/CatalogMenu';
 
 import cl from "./SliderPreview.module.scss"
@@ -22,7 +22,7 @@ const SliderPreview: FC = () => {
                     />
                 </div>
 
-                <CustomSlider/>
+                <ProductsSlider/>
             </div>
         </div>  
     );

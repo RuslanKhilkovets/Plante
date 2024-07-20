@@ -10,9 +10,9 @@ import ICatalogProps from '../../types/ICatalogProps';
 import SortType from '../../constants/sortType';
 
 import sortItems from '../../helpers/sortCatalogItems';
-import getFilteredItems from '../../helpers/filterCatalogItems';
 
 import cl from "./Catalog.module.scss";
+import ApiClient from '../../api/ApiClient';
 
 
 const initialFilters = {
@@ -35,8 +35,9 @@ const Catalog: FC<ICatalogProps> = ( { category } ) => {
 
     useEffect(() => {
         const fetchItems = async () => {
-            const items = await getFilteredItems(category, filters);
-            setCatalogItems(items);
+            const items = await ApiClient.GetFilteredItems(category, filters);
+            
+            setCatalogItems(items as TProductItem[]);
         };
         
         fetchItems();

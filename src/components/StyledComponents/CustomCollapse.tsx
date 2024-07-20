@@ -1,29 +1,31 @@
-import { Button, Collapse, IconButton } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { FC } from 'react';
 import clsx from 'clsx';
 
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Button, Collapse, IconButton } from '@mui/material';
+
+import ICustomCollapseProps from '../../types/ICustomCollapseProps';
+
 import cl from "./CustomCollapse.module.scss";
-import { FC, ReactNode } from 'react';
 
-interface CustomCollapseProps {
-    open: boolean;
-    setOpen: (open: boolean) => void;
-    title: string;
-    children: ReactNode; 
-}
 
-const CustomCollapse: FC<CustomCollapseProps> = ({ open, setOpen, title, children }) => {
+const CustomCollapse: FC<ICustomCollapseProps> = ({ open, setOpen, title, children }) => {
     const toggleCollapse = () => {
         setOpen(!open);
     };
 
     return (
         <div className={cl["collapse"]}>
-            <Button onClick={toggleCollapse} disableRipple className={cl["collapse__btn"]} fullWidth sx={{
-                p: 0,
-                display: "flex",
-                justifyContent: "space-between"
-            }}>
+            <Button 
+                onClick={toggleCollapse} 
+                disableRipple 
+                className={cl["collapse__btn"]} 
+                fullWidth 
+                sx={{
+                    p: 0,
+                    display: "flex",
+                    justifyContent: "space-between"
+                }}>
                 {title}
                 <IconButton
                     className={clsx(cl['expand'], {

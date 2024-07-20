@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import ProductsContainer from '../ProductContainer/ProductsContainer';
 import IProductItems from '../../../types/IProductItem';
-import axios from 'axios';
 import ProductType from '../../../constants/productsTypes';
+import ApiClient from '../../../api/ApiClient';
 
 const ProductsMain = () => {
     const [products, setProducts] = useState<IProductItems>({
@@ -14,9 +14,8 @@ const ProductsMain = () => {
     useEffect(() => {
         const getProducts = async () => {
           try {
-            const response = await axios.get<IProductItems>("http://localhost:5000/products");
-
-            setProducts(response.data);
+            const response = await ApiClient.GetProducts();
+            setProducts(response as IProductItems);
           } catch (error) {
             console.error("Error fetching menu items:", error);
           }

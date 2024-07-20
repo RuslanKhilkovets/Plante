@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 
 import { Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import { styled } from '@mui/material/styles';

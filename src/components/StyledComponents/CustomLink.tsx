@@ -1,13 +1,10 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
+
 import { styled } from '@mui/material/styles';
 
-interface ICustomLinkProps {
-    to: string | object;
-    className?: string;
-    children?: React.ReactNode;
-    [key: string]: any; 
-}
+import ICustomLinkProps from '../../types/ICustomLinkProps';
+
 
 const StyledLink = styled(Link)(({ theme }) => ({
     fontFamily: "'Roboto', sans-serif",

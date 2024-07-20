@@ -5,9 +5,8 @@ import { TProductItem } from '../../types/IProductItem';
 import cl from "./FilteredItems.module.scss";
 import ProductItem from '../Products/ProductItem/ProductItem';
 
-const FilteredItems: FC<{ items: TProductItem[] }> = ({ items }) => {
-    console.log(items);
-    
+const FilteredItems: FC<{ items: TProductItem[] }> = ({ items = [] }) => {
+    console.log(items)
     return (
         <div className={cl["filtered-items"]}>
             {

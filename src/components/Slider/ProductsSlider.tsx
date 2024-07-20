@@ -4,10 +4,10 @@ import clsx from 'clsx';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
-import  "./CustomSlider.scss";
+import  "./ProductsSlider.scss";
 
 
-const CustomSlider: FC = () => {
+const ProductsSlider: FC = () => {
     const settings = {
         type: 'loop',
         perPage: 1,
@@ -51,4 +51,4 @@ const CustomSlider: FC = () => {
     );
   };
   
-export default CustomSlider;
+export default ProductsSlider;

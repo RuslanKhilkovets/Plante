@@ -7,7 +7,7 @@ import CustomLink from '../StyledComponents/CustomLink';
 import ConnectModal from '../ConnectModal/ConnectModal';
 
 import IMenuItem from '../../types/IMenuItem';
-import ICustomSliderProps from '../../types/ICustomSliderProps';
+import ICatalogMenuProps from '../../types/ICatalogMenuProps';
 import navbarLinks from '../../constants/navbarLinks';
 import catalogMenuItems from '../../constants/catalogMenuItems';
 
@@ -16,7 +16,7 @@ import PATHS from '../../router/paths';
 import Overlay from '../Overlay/Overlay';
 
 
-const CatalogMenu: FC<ICustomSliderProps> = ({ active, setActive, visible, isHeaderMenu }) => {
+const CatalogMenu: FC<ICatalogMenuProps> = ({ active, setActive, visible, isHeaderMenu }) => {
     const [activeMenuItem, setActiveMenuItem] = useState<IMenuItem | null>(null);
     const [isConnectModalOpen, setIsConnectModalOpen] = useState<boolean>(false);    
 
@@ -37,7 +37,10 @@ const CatalogMenu: FC<ICustomSliderProps> = ({ active, setActive, visible, isHea
                                     const url = `${PATHS.CATALOG}?category=${item.to || ""}`;
     
                                     return (
-                                            <CustomLink to={url} className={cl.menu__item}                                         
+                                            <CustomLink 
+                                                to={url} 
+                                                key={item.id}
+                                                className={cl.menu__item}                                         
                                                 onMouseOver={() => setActiveMenuItem(item)}
                                             >
                                                 <p className={clsx(cl.menu__item_icon, "material-symbols-outlined")}>{item.iconName}</p>
@@ -64,7 +67,13 @@ const CatalogMenu: FC<ICustomSliderProps> = ({ active, setActive, visible, isHea
                                 <ul className={cl["menu-navbar__list"]}>
                                     {navbarLinks.map(link => {
                                         return (
-                                            <CustomLink to={link.to} className={cl.navbar__link}>{link.text}</CustomLink>
+                                            <CustomLink 
+                                                to={link.to} 
+                                                key={link.id}
+                                                className={cl.navbar__link}
+                                            >
+                                                    {link.text}
+                                            </CustomLink>
                                         )
                                     })}
                                 </ul>
@@ -93,7 +102,13 @@ const CatalogMenu: FC<ICustomSliderProps> = ({ active, setActive, visible, isHea
                                         
                                         return (
                                             <li className={cl[`menu-items__item`]}>
-                                                <CustomLink to={item.to} className={cl["menu-items__item_text"]}>{item.text}</CustomLink>
+                                                <CustomLink 
+                                                    to={item.to} 
+                                                    key={item.id}
+                                                    className={cl["menu-items__item_text"]}
+                                                >
+                                                    {item.text}
+                                                </CustomLink>
                                             </li>
                                         )
                                     })
