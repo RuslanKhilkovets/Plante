@@ -29,7 +29,12 @@ const CatalogMenu: FC<ICatalogMenuProps> = ({ active, setActive, visible, isHead
                     clsx(cl["menu-container"], {
                         [cl["header-menu"]]: isHeaderMenu
                     })}
-                    // onMouseLeave={() => setActiveMenuItem(null)}
+                    onMouseLeave={() => {
+                        setActiveMenuItem(null);
+                        if(!isHeaderMenu){
+                            setActive(false);
+                        }
+                    }}
                 >
                     <div className={cl["menu-wrapper"]}>
                         <div className={cl["menu"]}>
@@ -91,29 +96,31 @@ const CatalogMenu: FC<ICatalogMenuProps> = ({ active, setActive, visible, isHead
                             activeMenuItem !== null
                             &&
                             <div className={cl["menu-items"]}>
-                                <div className={cl["menu-items__header"]}>
-                                    <p className={cl["menu-items__header--title"]}>{activeMenuItem.title}</p>
-                                    <Button className={cl["menu-items__header--close-icon"]} onClick={() => setActiveMenuItem(null)}></Button>
+                                <div>
+                                    <div className={cl["menu-items__header"]}>
+                                        <p className={cl["menu-items__header--title"]}>{activeMenuItem.title}</p>
+                                        <Button className={cl["menu-items__header--close-icon"]} onClick={() => setActiveMenuItem(null)}></Button>
+                                    </div>
+                                    <ul className={cl["menu-items__list"]}>
+                                        <p className={`${cl["menu-items__item_text"]} ${cl["menu-items__item_title"]}`}>{activeMenuItem.title}</p>
+                                        {
+                                            activeMenuItem?.items.map((item: any) => {
+                                                
+                                                return (
+                                                    <li className={cl[`menu-items__item`]}>
+                                                        <CustomLink 
+                                                            to={item.to} 
+                                                            key={item.id}
+                                                            className={cl["menu-items__item_text"]}
+                                                        >
+                                                            {item.text}
+                                                        </CustomLink>
+                                                    </li>
+                                                )
+                                            })
+                                        }
+                                    </ul>
                                 </div>
-                                <ul className={cl["menu-items__list"]}>
-                                    <p className={`${cl["menu-items__item_text"]} ${cl["menu-items__item_title"]}`}>{activeMenuItem.title}</p>
-                                    {
-                                        activeMenuItem?.items.map((item: any) => {
-                                            
-                                            return (
-                                                <li className={cl[`menu-items__item`]}>
-                                                    <CustomLink 
-                                                        to={item.to} 
-                                                        key={item.id}
-                                                        className={cl["menu-items__item_text"]}
-                                                    >
-                                                        {item.text}
-                                                    </CustomLink>
-                                                </li>
-                                            )
-                                        })
-                                    }
-                                </ul>
                             </div>
                         }
                     </div>
