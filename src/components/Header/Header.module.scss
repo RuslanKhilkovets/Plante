@@ -6,11 +6,12 @@
     width: 100%;
     position: sticky;
     top: 0;
-    z-index: 10000000;
+    z-index: 13;
     background-color: $main-primary-color;
 }
 
 .navbar{
+    position: relative;
     padding: 17.5px 0;
     @include f-between;    
     &__list{
@@ -29,7 +30,6 @@
 }
 
 .header-actions{
-    position: relative;
     display: grid;
     grid-template-columns: 1fr 2fr 10fr 2fr;
     gap: 20px;
@@ -38,9 +38,9 @@
     &__catalog{
         @include f-center($gap: 10px);
         position: relative;
+        z-index: 9;
         border-radius: 30px;
         transition: $trans-time;
-        z-index: 2;
         background: $button-secondary-color;
         cursor: pointer;
         &:hover{
@@ -50,7 +50,6 @@
     }
     &__catalog_button{
         @include back-image("../../icons/catalog.svg");
-
         width: 24px;
         height: 24px;
         display: flex;

@@ -3,6 +3,7 @@
 
 .product-item {
     @include flexbox($fd: column, $gap: 3rem);
+    cursor: pointer;
     &__likes{
         height: 24px;
         width: 24px;

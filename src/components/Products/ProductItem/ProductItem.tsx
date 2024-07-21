@@ -6,12 +6,20 @@ import { TProductItem } from '../../../types/IProductItem';
 import STOCK_VARIANT from '../../../constants/StockVariants';
 
 import cl from "./ProductItem.module.scss"
+import { useNavigate } from 'react-router-dom';
+import PATHS from '../../../router/paths';
 
 
 const ProductItem: FC<{product: TProductItem}> = ( { product } ) => {
     
+    const navigate = useNavigate();
+
+    const handleNavigation = () => {
+        navigate(`${PATHS.ITEM}?url=${product.url || ""}`);
+    };
+    
     return (
-        <div className={cl["product-item"]}>
+        <div className={cl["product-item"]} onClick={handleNavigation}>
             <div className={cl["product-item__item"]}>
                 <div className={cl["product-item__img"]} style={{
                     backgroundImage: `url(${product.img})`,
