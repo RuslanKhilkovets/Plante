@@ -4,6 +4,9 @@
 
 .slider-preview{
     @include flexbox($gap: 1rem);
+    &__slider .slider__slide{
+        height: 575px;
+    }
 }
 
 @media screen and (max-width: 1120px) {

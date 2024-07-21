@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 
-import ProductsSlider from '../Slider/ProductsSlider';
+import ProductsSlider from '../ProductsSlider/ProductsSlider';
 import CatalogMenu from '../CatalogMenu/CatalogMenu';
 
 import cl from "./SliderPreview.module.scss"
@@ -13,15 +13,16 @@ const SliderPreview: FC = () => {
             <div className={cl["slider-preview"]}>
                 <div 
                     className={cl["slider-preview__menu"]}
-                    onMouseOver={() => setIsMenuActive(true)} 
+                    onMouseOver={() => setIsMenuActive(false)} 
                 >
+
                     <CatalogMenu 
                         visible={true}
                         active={isMenuActive} 
                         setActive={setIsMenuActive}
                     />
                 </div>
-
+                
                 <ProductsSlider/>
             </div>
         </div>  

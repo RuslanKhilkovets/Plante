@@ -1,0 +1,99 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.slider {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.slide {
+    background-color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    height: 575px;
+    &__heading {
+        width: max-content;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: $light-green;
+    }
+
+    &__title {
+        @include font($fw: 700, $fsz: 3.5rem);
+        color: $text-secondary-color;
+    }
+
+    &__subtitle {
+        @include font($fw: 700, $fsz: 2rem);
+        color: $text-secondary-color;
+    }
+}
+
+.splide__arrow {
+    background-color: $main-primary-color !important;
+    border: 1px solid #ccc;
+    color: #000;
+    font-size: 1.5rem;
+    height: 48px;
+    width: 42px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 1 !important;
+
+    &:hover {
+        background-color: #f0f0f0;
+    }
+
+    &--prev {
+        left: 0 !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        border-top-right-radius: 20px !important;
+        border-bottom-right-radius: 20px !important;
+    }
+
+    &--next {
+        right: 0 !important;
+        border-top-left-radius: 20px !important;
+        border-bottom-left-radius: 20px !important;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+}
+
+.splide__pagination {
+    .splide__pagination__page {
+        margin: 0 5px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .slide {
+        padding: 15px;
+        height: 230px;
+
+        &__heading {
+            padding: 10px;
+        }
+
+        &__title {
+            @include font($fsz: 1.6rem);
+        }
+
+        &__subtitle {
+            @include font($fsz: 1, $fw: normal);
+        }
+    }
+
+    .splide__arrow {
+        &--prev, &--next {
+            display: none !important;
+        }
+    }
+}
