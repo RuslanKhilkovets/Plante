@@ -7,6 +7,8 @@ import { Button } from '@mui/base';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 import ConnectModal from '../ConnectModal/ConnectModal';
 import CustomInput from '../StyledComponents/CustomInput';
@@ -22,13 +24,15 @@ import cartIcon from "../../icons/cart.svg";
 
 import cl from "./Header.module.scss";
 import "../../fonts/index.css";
+import PhonesMenu from '../PhonesMenu/PhonesMenu';
 
 
 const Header = () => {
     const [searchPrompt, setSearchPrompt] = useState<string>('');
     const [isConnectModalOpen, setIsConnectModalOpen] = useState<boolean>(false);    
     const [isCatalogOpen, setIsCatalogOpen] = useState<boolean>(false);
-  
+
+
     const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const { value } = e.target;
 
@@ -48,8 +52,12 @@ const Header = () => {
                             })}
                         </ul>
                         <div className={cl.navbar__contacts}>
-                            <div className={cl.navbar__phones}></div>
-                            <Button className={clsx(cl.navbar__connect,  cl.navbar__link)} onClick={() => setIsConnectModalOpen(!isConnectModalOpen)}>
+                            <PhonesMenu />
+
+                            <Button 
+                                className={clsx(cl.navbar__connect, cl.navbar__link)} 
+                                onClick={() => setIsConnectModalOpen(!isConnectModalOpen)}
+                            >
                                 Зворотній зв’язок
                             </Button>
                         </div>

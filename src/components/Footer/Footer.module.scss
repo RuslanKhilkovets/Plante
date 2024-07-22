@@ -2,7 +2,8 @@
 @import "../../components/UI/mixins.scss";
 
 .footer{
-    margin: 50px 0;
+    padding: 50px 0;
+    background-color: $main-primary-color;
     &__wrapper{
         @include f-between(10vw);    
 

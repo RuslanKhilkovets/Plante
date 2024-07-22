@@ -4,101 +4,110 @@ export const catalogMenuItems = [
         title: "Насіння овочів європакет",
         iconName: "eco",
         to: "vegetables-euro-package",
-        items: [
-            { text: "Арахіс (малий європакет)", to: "/" },
-            { text: "Баклажани (малий європакет)", to: "/" },
-            { text: "Буряк (малий європакет)", to: "/" },
-            { text: "Диня (малий європакет)", to: "/" },
-            { text: "Гарбуз (малий європакет)", to: "/" },
-            { text: "Горох (малий європакет)", to: "/" },
-            { text: "Кабачок (малий європакет)", to: "/" },
-            { text: "Кавун (малий європакет)", to: "/" },
-            { text: "Капуста (малий європакет)", to: "/" }
-        ]        
+        items:[
+            { "text": "Арахіс (малий європакет)", "to": "arachis" },
+            { "text": "Баклажани (малий європакет)", "to": "baklazhan" },
+            { "text": "Буряк (малий європакет)", "to": "buryak" },
+            { "text": "Диня (малий європакет)", "to": "dynia" },
+            { "text": "Гарбуз (малий європакет)", "to": "harbuz" },
+            { "text": "Горох (малий європакет)", "to": "horoh" },
+            { "text": "Кабачок (малий європакет)", "to": "kabachok" },
+            { "text": "Кавун (малий європакет)", "to": "kavun" },
+            { "text": "Капуста (малий європакет)", "to": "kapusta" }
+        ]    
     },
     {
         id: 2,
         title: "Насіння квітів",
         iconName: "psychiatry",
+        to: "flowers-seeds",
         items: [
-            { text: "Троянди (малий європакет)", to: "/" },
-            { text: "Тюльпани (малий європакет)", to: "/" },
-            { text: "Орхідеї (малий європакет)", to: "/" },
-            { text: "Нарциси (малий європакет)", to: "/" },
-            { text: "Ромашки (малий європакет)", to: "/" }
+            { "text": "Троянди (малий європакет)", "to": "trojandi" },
+            { "text": "Тюльпани (малий європакет)", "to": "tulipany" },
+            { "text": "Орхідеї (малий європакет)", "to": "orhideyi" },
+            { "text": "Нарциси (малий європакет)", "to": "narcisi" },
+            { "text": "Ромашки (малий європакет)", "to": "romashki" }
         ]
+        
     },
     {
         id: 3,
         title: "Насіння овочів пакет гигант",
         iconName: "filter_vintage",
+        to: "vegetables-gigant-package",
         items: [
-            { text: "Морква (пакет гигант)", to: "/" },
-            { text: "Капуста (пакет гигант)", to: "/" },
-            { text: "Перець (пакет гигант)", to: "/" },
-            { text: "Томати (пакет гигант)", to: "/" },
-            { text: "Цибуля (пакет гигант)", to: "/" }
-        ]
+            { "text": "Морква (пакет гигант)", "to": "morkva" },
+            { "text": "Капуста (пакет гигант)", "to": "kapusta" },
+            { "text": "Перець (пакет гигант)", "to": "perets" },
+            { "text": "Томати (пакет гигант)", "to": "tomati" },
+            { "text": "Цибуля (пакет гигант)", "to": "tsibulya" }
+        ]        
     },
     {
         id: 4,
         title: "Газонні трави",
+        to: "lawn-grasses",
         iconName: "grass",
         items: [
-            { text: "Газонна трава універсальна", to: "/" },
-            { text: "Газонна трава спортивна", to: "/" },
-            { text: "Газонна трава декоративна", to: "/" },
-            { text: "Газонна трава тіньова", to: "/" },
-            { text: "Газонна трава швидкоростуча", to: "/" }
+            { "text": "Газонна трава універсальна", "to": "gazonna-trava-universalna" },
+            { "text": "Газонна трава спортивна", "to": "gazonna-trava-sportivna" },
+            { "text": "Газонна трава декоративна", "to": "gazonna-trava-dekorativna" },
+            { "text": "Газонна трава тіньова", "to": "gazonna-trava-tinova" },
+            { "text": "Газонна трава швидкоростуча", "to": "gazonna-trava-shvidkorostucha" }
         ]
     },
     {
         id: 5,
         title: "Кормові культури",
         iconName: "cruelty_free",
-        items: [
-            { text: "Кукурудза (кормова)", to: "/" },
-            { text: "Соя (кормова)", to: "/" },
-            { text: "Люцерна (кормова)", to: "/" },
-            { text: "Суданська трава (кормова)", to: "/" },
-            { text: "Конюшина (кормова)", to: "/" }
+        to: "fodder-crops",
+        items:[
+            { "text": "Кукурудза (кормова)", "to": "kukurudza-kormova" },
+            { "text": "Соя (кормова)", "to": "soya-kormova" },
+            { "text": "Люцерна (кормова)", "to": "lyutserna-kormova" },
+            { "text": "Суданська трава (кормова)", "to": "sudanska-trava-kormova" },
+            { "text": "Конюшина (кормова)", "to": "konyushina-kormova" }
         ]
     },
     {
         id: 6,
         title: "Серія Зарубіжної селекції",
         iconName: "map",
+        to: "foreign-selection",
         items: [
-            { text: "Помідори черрі (імпортні)", to: "/" },
-            { text: "Баклажани японські", to: "/" },
-            { text: "Капуста китайська", to: "/" },
-            { text: "Морква німецька", to: "/" },
-            { text: "Перець італійський", to: "/" }
-        ]
+            { "text": "Помідори черрі (імпортні)", "to": "pomidori-cherri-importni" },
+            { "text": "Баклажани японські", "to": "baklazhani-yaponski" },
+            { "text": "Капуста китайська", "to": "kapusta-kitayska" },
+            { "text": "Морква німецька", "to": "morkva-nimetska" },
+            { "text": "Перець італійський", "to": "perets-italijski" }
+        ]        
     },
     {
         id: 7,
         title: "Серія Пропуск в світ високого врожаю інкрустоване",
         iconName: "search",
+        to: "high-yield",
         items: [
-            { text: "Буряк цукровий (інкрустоване)", to: "/" },
-            { text: "Кукурудза солодка (інкрустоване)", to: "/" },
-            { text: "Гарбуз (інкрустоване)", to: "/" },
-            { text: "Морква (інкрустоване)", to: "/" },
-            { text: "Кавун (інкрустоване)", to: "/" }
-        ]
+            { "text": "Буряк цукровий (інкрустоване)", "to": "buryak-tsukrovij-inkrustovane" },
+            { "text": "Кукурудза солодка (інкрустоване)", "to": "kukurudza-solodka-inkrustovane" },
+            { "text": "Гарбуз (інкрустоване)", "to": "garbuz-inkrustovane" },
+            { "text": "Морква (інкрустоване)", "to": "morkva-inkrustovane" },
+            { "text": "Кавун (інкрустоване)", "to": "kavun-inkrustovane" }
+        ]        
     },
     {
         id: 8,
         title: "Серія Щедра грядка (інкрустоване)",
         iconName: "volunteer_activism",
+        to: "generous-bed-grasses",
         items: [
-            { text: "Редиска (інкрустоване)", to: "/" },
-            { text: "Цибуля ріпчаста (інкрустоване)", to: "/" },
-            { text: "Часник (інкрустоване)", to: "/" },
-            { text: "Салат (інкрустоване)", to: "/" },
-            { text: "Капуста броколі (інкрустоване)", to: "/" }
+            { "text": "Редиска (інкрустоване)", "to": "rediska-inkrustovane" },
+            { "text": "Цибуля ріпчаста (інкрустоване)", "to": "tsibulya-ripchasta-inkrustovane" },
+            { "text": "Часник (інкрустоване)", "to": "chasnik-inkrustovane" },
+            { "text": "Салат (інкрустоване)", "to": "salat-inkrustovane" },
+            { "text": "Шпинат (інкрустоване)", "to": "shpinat-inkrustovane" }
         ]
+        
     }
 ];
 

@@ -3,8 +3,9 @@ import CustomSlider from '../StyledComponents/CustomSlider';
 import { SplideSlide } from '@splidejs/react-splide';
 
 const slides = [
-    { id: 1, img: '/img/main-slide-3.png', thumbnail: '/img/thumb-slide-3.png' },
-    { id: 2, img: '/img/main-slide-2.png', thumbnail: '/img/thumb-slide-2.png' },
+    { id: 1, img: null, thumbnail: null },
+    { id: 2, img: null, thumbnail: null },
+    { id: 3, img: null, thumbnail: null },
 ];
 
 const ItemSlider = () => {
@@ -12,7 +13,7 @@ const ItemSlider = () => {
         <CustomSlider thumbnails>
             {slides.map(slide => (
                 <SplideSlide key={slide.id} className={clsx("slide")} style={{
-                    backgroundImage: `url(${slide.img})`,
+                    backgroundImage: `url(${slide.img !== null ? slide.img : "../../icons/empty.png"})`,
                 }}>
                 </SplideSlide>
             ))}

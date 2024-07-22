@@ -57,6 +57,8 @@ const ProductsContainer: FC<IProductsContainerProps> = ({ products, title, subti
     }, []);
 
     return (
+        !!products && products?.length !== 0
+        &&
         <div className="global-container">
             <section className={cl["products"]}>
                 <div className={cl["products__heading"]}>

@@ -3,6 +3,8 @@ import clsx from "clsx";
 
 const ItemInfo = ( { item }) => {
     return (
+        item !== null
+        &&
         <div className={cl["item-info"]} >
             <div className={clsx(cl["item-info__item"], cl["item-info__item-gray-bg"])}>
                 <p className={cl["item-info__item--title"]}>Опис</p>

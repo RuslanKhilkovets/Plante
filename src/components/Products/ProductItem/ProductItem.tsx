@@ -15,6 +15,8 @@ const ProductItem: FC<{product: TProductItem}> = ( { product } ) => {
     const navigate = useNavigate();
 
     const handleNavigation = () => {
+        console.log(product)
+
         navigate(`${PATHS.ITEM}?url=${product.url || ""}`);
     };
     
@@ -22,7 +24,7 @@ const ProductItem: FC<{product: TProductItem}> = ( { product } ) => {
         <div className={cl["product-item"]} onClick={handleNavigation}>
             <div className={cl["product-item__item"]}>
                 <div className={cl["product-item__img"]} style={{
-                    backgroundImage: `url(${product.img})`,
+                    backgroundImage: `url(${product?.img})`,
                 }}></div>  
                 <div className={cl["product-item__heading"]}>
                     <p className={cl["product-item__title"]}>

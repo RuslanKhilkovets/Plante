@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from "axios";
 import config from "./config";
 import ICatalogFilters from "../types/ICatalogFilters";
-import { TProductItem } from "../types/IProductItem";
+import { TProductFullData } from "../types/IProductItem";
 
 class ApiClient {
     static Headers = (options: any) => {
@@ -50,7 +50,7 @@ class ApiClient {
     //// Requests
 
     static GetCatalogItems = async (category: string) =>
-        this.get(`/${category}`);
+        this.get(`/catalog?catalog=${category}`);
 
     static GetFilteredItems = async (category: string, filters: ICatalogFilters) => {
         if(!category) {
@@ -59,7 +59,7 @@ class ApiClient {
         
         const { price, productAgeTypes, productWeightTypes } = filters;
     
-        let requestUrl = `${category}?`;
+        let requestUrl = `catalog?catalog=${category}&`;
     
         if (price.length === 2) {
             requestUrl += `price_gte=${price[0]}&price_lte=${price[1]}&`;
@@ -74,15 +74,18 @@ class ApiClient {
         try {
             const response = await this.get(`/${requestUrl}`);
             
-            return response as TProductItem[];
+            return response as TProductFullData[];
         } catch (error) {
             console.error("Error fetching menu items:", error);
         }
-        this.get(`/${requestUrl}`);
     }
 
     static GetProducts = async () =>
         this.get(`/products`);
+
+    static GetProductDetails = async (item: string) =>
+        this.get(`/catalog?url=${item}`);
+
 } 
 
 export default ApiClient;

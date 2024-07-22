@@ -19,7 +19,7 @@ import cl from "./CatalogMenu.module.scss";
 const CatalogMenu: FC<ICatalogMenuProps> = ({ active, setActive, visible, isHeaderMenu }) => {
     const [activeMenuItem, setActiveMenuItem] = useState<IMenuItem | null>(null);
     const [isConnectModalOpen, setIsConnectModalOpen] = useState<boolean>(false);    
-
+    
     return (
         <>
             {
@@ -105,11 +105,12 @@ const CatalogMenu: FC<ICatalogMenuProps> = ({ active, setActive, visible, isHead
                                         <p className={`${cl["menu-items__item_text"]} ${cl["menu-items__item_title"]}`}>{activeMenuItem.title}</p>
                                         {
                                             activeMenuItem?.items.map((item: any) => {
-                                                
+                                                const url = `${PATHS.ITEM}?url=${item.to}`
+
                                                 return (
                                                     <li className={cl[`menu-items__item`]}>
                                                         <CustomLink 
-                                                            to={item.to} 
+                                                            to={url} 
                                                             key={item.id}
                                                             className={cl["menu-items__item_text"]}
                                                         >
@@ -126,7 +127,7 @@ const CatalogMenu: FC<ICatalogMenuProps> = ({ active, setActive, visible, isHead
                     </div>
                 </div>
             }
-            <Overlay active={active} onClick={() => setActive(false)}/>
+            <Overlay active={!!activeMenuItem || active} onClick={() => setActive(false)}/>
 
             <ConnectModal open={isConnectModalOpen} onClose={() => setIsConnectModalOpen(false)}/>
         </>
