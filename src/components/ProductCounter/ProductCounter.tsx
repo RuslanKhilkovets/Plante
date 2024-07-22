@@ -25,7 +25,7 @@ const ProductCounter: FC<IProductCounterProps> = ( { setCount, count }) => {
     
     const handleDecrement = () => {
         setCount((prev: number) => {
-            if(prev <= 0){
+            if(prev <= 1){
                 return prev;
             }
             return --prev;
@@ -36,7 +36,7 @@ const ProductCounter: FC<IProductCounterProps> = ( { setCount, count }) => {
         <div className={cl["product-counter"]}>
             <Button 
                 className={cl["product-counter__btn"]}
-                disabled={count <= 0}
+                disabled={count <= 1}
                 onClick={handleDecrement}
             >
                 -

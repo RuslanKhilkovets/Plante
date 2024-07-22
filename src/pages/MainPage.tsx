@@ -15,7 +15,6 @@ const MainPage = () => {
             <SliderPreview />
             <ProductsMain />
             <About />
-            <UpdatesForm />
         </>
     );
 };

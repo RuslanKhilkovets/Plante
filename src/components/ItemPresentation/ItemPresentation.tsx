@@ -4,14 +4,15 @@ import { Button } from "@mui/base";
 import ProductCounter from "../ProductCounter/ProductCounter";
 import CustomButton from "../StyledComponents/CustomButton";
 import { IconButton } from "@mui/material";
-import cartIcon from "../../icons/cart.svg";
+import cartIcon from "../../icons/white-cart.svg";
 import STOCK_VARIANT from "../../constants/StockVariants";
 import clsx from "clsx";
 import ItemSlider from "../ItemSlider/ItemSlider";
 
 
-const ItemPresentation: FC = ( { item } ) => {
+const ItemPresentation: FC = ( { item } : any) => {
     const [count, setCount] = useState<number>(1);
+    const [selectedWeight, setSelectedWeight] = useState<number | null>(null);
 
     return (
         <div className={cl["item"]}>
@@ -21,11 +22,12 @@ const ItemPresentation: FC = ( { item } ) => {
             <div className={cl["item-description"]}>
                     <p className={cl["item-description__title"]}>{item?.title}</p>
                     <div className={cl["item-description__info"]}>
-                        <p className={clsx(cl["item-description__info--text"], {
+                        <p className={clsx(cl["item-description__info--text_existing"], {
                             [cl["item-description__info--exists"]]: item.isInStock,
                             [cl["item-description__info--non-exists"]]: !item.isInStock,
                         })}>
-                            {item.isInStock ? `${STOCK_VARIANT.EXISTS} (${item.count} од.)` : STOCK_VARIANT.NOT_EXISTS} 
+                            {item.isInStock ? STOCK_VARIANT.EXISTS: STOCK_VARIANT.NOT_EXISTS}
+                            <span className={cl["item-description__info--text_count"]}> ({item.count} од.)</span> 
                         </p>
                         <p className={cl["item-description__info--text"]}>Код: {item?.code}</p>
                         <p className={cl["item-description__info--text"]}>Виробник: {item?.producer}</p>
@@ -35,25 +37,27 @@ const ItemPresentation: FC = ( { item } ) => {
                            Вага
                         </p> 
                         <div className={cl["item-description__item_wrapper"]}>
-                            {
-                                item?.weightItems?.map((item: number) => {
-                                    return  (
-                                        <Button className={cl["item-description__weight-item"]}>
-                                            <p>{item}</p>
-                                        </Button>  
-                                    )
-                                })
-                            }
+                            {item?.weightItems?.map((weight: number) => (
+                                <Button 
+                                    key={weight}
+                                    onClick={() => setSelectedWeight(weight)}
+                                    className={clsx(cl["item-description__weight-item"], {
+                                        [cl["item-description__weight-item_active"]]: selectedWeight === weight
+                                    })}
+                                >
+                                    <p>{weight}</p>
+                                </Button>
+                            ))}
                         </div>
                     </div>
                     <div className={cl["item-description__item"]}>
                         <div className={cl["item-description__item_wrapper"]}>
-                           <p>Ціна</p>
-                           <h6>{item?.price} грн</h6>
+                           <p className={cl["item-description__item_price_text"]}>Ціна</p>
+                           <h4 className={cl["item-description__item_price_number"]}>{item?.price} грн</h4>
                         </div>
                     </div>
                     <div className={cl["item-description__item"]}>
-                        <div className={cl["item-description__item_wrapper"]}>
+                        <div className={clsx(cl["item-description__item_wrapper"], cl["item-description__item_wrapper_buy"])}>
                            <ProductCounter
                                 count={count}
                                 setCount={setCount}

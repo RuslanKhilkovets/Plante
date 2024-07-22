@@ -1,5 +1,7 @@
-import React from 'react';
 import ItemPresentation from '../components/ItemPresentation/ItemPresentation';
+import ItemInfo from '../components/ItemInfo/ItemInfo';
+import ProductsContainer from '../components/Products/ProductContainer/ProductsContainer';
+import ViewedItems from '../components/ViewedItems/ViewedItems';
 
 const ItemPage = () => {
 
@@ -21,6 +23,14 @@ const ItemPage = () => {
     return (
         <div className='global-container'>
             <ItemPresentation item={item} />
+            <ItemInfo 
+                item={item}
+            />
+            <ProductsContainer 
+                title="Подібні товари"
+                products={[item, item]}
+            />
+            <ViewedItems />
         </div>
     );
 };
