@@ -1,5 +1,6 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import clsx from 'clsx';
+import { useLocation } from 'react-router-dom';
 
 import { Button } from '@mui/base';
 
@@ -20,6 +21,13 @@ const CatalogMenu: FC<ICatalogMenuProps> = ({ active, setActive, visible, isHead
     const [activeMenuItem, setActiveMenuItem] = useState<IMenuItem | null>(null);
     const [isConnectModalOpen, setIsConnectModalOpen] = useState<boolean>(false);    
     
+    const location = useLocation();
+
+    useEffect(() => {
+        setActive(false);
+        setActiveMenuItem(null);
+    }, [location])
+
     return (
         <>
             {

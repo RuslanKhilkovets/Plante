@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { Button } from '@mui/base';
 
-import { TProductItem } from '../../../types/IProductItem';
+import { TProductFullData } from '../../../types/IProductItem';
 import STOCK_VARIANT from '../../../constants/StockVariants';
 
 import cl from "./ProductItem.module.scss"
@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 import PATHS from '../../../router/paths';
 
 
-const ProductItem: FC<{product: TProductItem}> = ( { product } ) => {
+const ProductItem: FC<{product: TProductFullData}> = ( { product } ) => {
     
     const navigate = useNavigate();
 

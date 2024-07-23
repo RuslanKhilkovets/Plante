@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
+
 import ProductsContainer from '../ProductContainer/ProductsContainer';
+
 import IProductItems from '../../../types/IProductItem';
 import ProductType from '../../../constants/productsTypes';
 import ApiClient from '../../../api/ApiClient';
+
 
 const ProductsMain = () => {
     const [products, setProducts] = useState<IProductItems>({

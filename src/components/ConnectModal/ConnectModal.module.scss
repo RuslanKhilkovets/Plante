@@ -3,7 +3,7 @@
 
 .connect-dialog{
     &__header{
-        @include f-between;
+        @include f-between($ai: center);
     }
     &__title{
         margin-top: 1rem;

@@ -4,7 +4,7 @@ import CatalogFilter from '../CatalogFilter/CatalogFilter';
 import FilteredItems from '../FilteredItems/FilteredItems';
 import Sortings from '../Sortings/Sortings';
 
-import { TProductItem } from '../../types/IProductItem';
+import { TProductFullData } from '../../types/IProductItem';
 import ICatalogFilters from '../../types/ICatalogFilters';
 import ICatalogProps from '../../types/ICatalogProps';
 import SortType from '../../constants/sortType';
@@ -26,7 +26,7 @@ const Catalog: FC<ICatalogProps> = ( { category } ) => {
        ...initialFilters
     });
     const [sort, setSort] = useState(SortType.CHEAP);
-    const [catalogItems, setCatalogItems] = useState<TProductItem[]>([]);
+    const [catalogItems, setCatalogItems] = useState<TProductFullData[]>([]);
     const [filterMenuOpen, setFiltersMenuOpen] = useState<boolean>(false);
 
     const onFiltersClear = () => {
@@ -36,7 +36,7 @@ const Catalog: FC<ICatalogProps> = ( { category } ) => {
     const filterItems = async () => {
         const items = await ApiClient.GetFilteredItems(category, filters);
         
-        setCatalogItems(items as TProductItem[]);
+        setCatalogItems(items as TProductFullData[]);
     };
 
     useEffect(() => {
@@ -46,7 +46,7 @@ const Catalog: FC<ICatalogProps> = ( { category } ) => {
     useEffect(() => {
         const sortedItems = sortItems(sort, catalogItems);
 
-        setCatalogItems(sortedItems);
+        setCatalogItems(sortedItems as TProductFullData[]);
     }, [sort]);
 
     return (

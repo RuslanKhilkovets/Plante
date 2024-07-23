@@ -5,6 +5,8 @@ import { Button, Checkbox, FormControlLabel, Slider, Typography } from '@mui/mat
 
 import CustomCollapse from '../StyledComponents/CustomCollapse';
 import CustomInput from '../StyledComponents/CustomInput';
+import Overlay from '../Overlay/Overlay';
+import FilterItem from '../FilterItem/FilterItem';
 
 import ICatalogFilterProps from '../../types/ICatalogFilterProps';
 import { MIN_RANGE_STEP } from '../../constants/globals';
@@ -12,8 +14,7 @@ import filterProductTypes from '../../constants/filterProductTypes';
 import filterProductWeight from '../../constants/filterProductWeight';
 
 import cl from "./CatalogFilter.module.scss";
-import Overlay from '../Overlay/Overlay';
-import FilterItem from '../FilterItem/FilterItem';
+
 
 
 const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilters, open, setOpen, onFilter }) => {

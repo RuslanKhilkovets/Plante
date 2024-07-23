@@ -1,11 +1,15 @@
 import { FC } from 'react';
-import cl from "./ProductCounter.module.scss"
 import { Button } from '@mui/base';
+
 import CustomInput from '../StyledComponents/CustomInput';
+
 import IProductCounterProps from '../../types/IProductCounterProps';
 
+import cl from "./ProductCounter.module.scss"
+import clsx from 'clsx';
 
-const ProductCounter: FC<IProductCounterProps> = ( { setCount, count }) => {
+
+const ProductCounter: FC<IProductCounterProps> = ( { setCount, count, cartMode }) => {
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = event.target;
@@ -33,7 +37,9 @@ const ProductCounter: FC<IProductCounterProps> = ( { setCount, count }) => {
     }
 
     return (
-        <div className={cl["product-counter"]}>
+        <div className={clsx(cl["product-counter"], {
+            [cl["product-counter_cart"]]: cartMode
+        })}>
             <Button 
                 className={cl["product-counter__btn"]}
                 disabled={count <= 1}

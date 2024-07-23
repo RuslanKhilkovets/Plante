@@ -7,14 +7,15 @@ import { Button } from '@mui/base';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { IconButton } from '@mui/material';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import PhonesMenu from '../PhonesMenu/PhonesMenu';
+
 
 import ConnectModal from '../ConnectModal/ConnectModal';
 import CustomInput from '../StyledComponents/CustomInput';
 import CustomLink from '../StyledComponents/CustomLink';
 import Logo from '../Logo/Logo';
 import CatalogMenu from '../CatalogMenu/CatalogMenu';
+import Cart from '../Cart/Cart';
 
 import navbarLinks from '../../constants/navbarLinks';
 
@@ -24,13 +25,13 @@ import cartIcon from "../../icons/cart.svg";
 
 import cl from "./Header.module.scss";
 import "../../fonts/index.css";
-import PhonesMenu from '../PhonesMenu/PhonesMenu';
 
 
 const Header = () => {
     const [searchPrompt, setSearchPrompt] = useState<string>('');
     const [isConnectModalOpen, setIsConnectModalOpen] = useState<boolean>(false);    
     const [isCatalogOpen, setIsCatalogOpen] = useState<boolean>(false);
+    const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
 
 
     const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,7 +100,9 @@ const Header = () => {
                                     src={ likesIcon }
                                 />
                             </IconButton>
-                            <IconButton>
+                            <IconButton
+                                onClick={() => setIsCartOpen(!isCartOpen)}
+                            >
                                 <img
                                     src={ cartIcon }
                                 />
@@ -121,6 +124,10 @@ const Header = () => {
             <ConnectModal 
                 open={isConnectModalOpen} 
                 onClose={() => setIsConnectModalOpen(false)}
+            />
+            <Cart
+                open={isCartOpen}
+                onClose={() => setIsCartOpen(false)}
             />
         </>
     );

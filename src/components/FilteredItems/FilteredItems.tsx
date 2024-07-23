@@ -1,11 +1,11 @@
 import { FC } from 'react';
 
-import { TProductItem } from '../../types/IProductItem';
+import { TProductFullData } from '../../types/IProductItem';
 
 import cl from "./FilteredItems.module.scss";
 import ProductItem from '../Products/ProductItem/ProductItem';
 
-const FilteredItems: FC<{ items: TProductItem[] }> = ({ items = [] }) => {
+const FilteredItems: FC<{ items: TProductFullData[] }> = ({ items = [] }) => {
 
     return (
         <div className={cl["filtered-items"]}>

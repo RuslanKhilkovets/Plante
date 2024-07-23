@@ -5,15 +5,17 @@ import { Box, Dialog, DialogContent, DialogTitle, Typography } from "@mui/materi
 import CustomInput from "../StyledComponents/CustomInput";
 import CustomButton from "../StyledComponents/CustomButton";
 import CloseModalButton from "../StyledComponents/CloseModalButton";
+import CustomLink from "../StyledComponents/CustomLink";
 
-import IConnectModalProps from "../../types/IConnectModalProps";
+import IDialogProps from "../../types/IDialogProps";
 import IContactFormProps from "../../types/IContactFormProps";
 
-import cl from "./ConnectModal.module.scss";
-import CustomLink from "../StyledComponents/CustomLink";
 import PATHS from "../../router/paths";
 
-const ConnectModal: React.FC<IConnectModalProps> = ({ open, onClose }) => {
+import cl from "./ConnectModal.module.scss";
+
+
+const ConnectModal: React.FC<IDialogProps> = ({ open, onClose }) => {
 
   const [form, setForm] = useState<IContactFormProps>({ phone: "", name: "" });
 
@@ -34,7 +36,7 @@ const ConnectModal: React.FC<IConnectModalProps> = ({ open, onClose }) => {
   return (
     <Dialog
       open={open}
-      fullWidth={true}
+      fullWidth
       onClose={onClose}
       sx={{ ".MuiDialog-paper": dialogPaperStyles }}
       className={cl["connect-dialog"]}

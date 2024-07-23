@@ -1,24 +1,40 @@
+import { Helmet } from 'react-helmet';
+
 import { Typography } from '@mui/material';
+
 import Catalog from '../components/Catalog/Catalog';
 import ViewedItems from '../components/ViewedItems/ViewedItems';
+import CustomBreadcrumps from '../components/StyledComponents/CustomBreadcrumps';
+
 import useQuery from '../hooks/useQuery';
-import { Helmet } from 'react-helmet';
+import catalogMenuItems from '../constants/catalogMenuItems';
 
 
 const CatalogPage = () => {
+
     const query = useQuery();
     const currentCategory = query.get('category') || "";
     
+    const getPageTitle = () => {
+        return catalogMenuItems.find(item => item.to === currentCategory)?.title || "Каталог";
+    }
+
+    const pageTitle = getPageTitle();
+
     return (
         <div className='global-container'>
+            <CustomBreadcrumps />
+
+            <Typography variant='h4'>{pageTitle}</Typography>
+            <Catalog 
+                category={currentCategory}
+            />
+            <ViewedItems />
             <Helmet>
                 <title>
-                    Каталог - Лікарські рослини
-                </title>
+                    {pageTitle}
+                </title> 
             </Helmet>
-            <Typography variant='h4'>Лікарські рослини</Typography>
-            <Catalog category={currentCategory}/>
-            <ViewedItems />
         </div>
     );
 };

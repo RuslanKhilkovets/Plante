@@ -1,7 +1,7 @@
 import SortType from "../constants/sortType";
-import { TProductItem } from "../types/IProductItem";
+import { TProductFullData } from "../types/IProductItem";
 
-export const sortItems = ( sortType: SortType, itemsToSort: TProductItem[]) => {
+export const sortItems = ( sortType: SortType, itemsToSort: TProductFullData[]) => {
     switch (sortType) {
         case SortType.CHEAP:
             return itemsToSort.sort((a, b) => b.price - a.price);

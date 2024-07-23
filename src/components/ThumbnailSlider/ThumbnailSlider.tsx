@@ -1,12 +1,12 @@
 import React, { useRef, useEffect } from "react";
+
 import { Splide, SplideSlide } from '@splidejs/react-splide';
+
 import '@splidejs/react-splide/css';
 import "./ThumbnailSlider.scss";
+import IThumbnailSlider from "../../types/IThumbnailSlider";
 
-interface IThumbnailSlider {
-    children: React.ReactNode;
-    mainSliderRef: React.RefObject<Splide>;
-}
+
 
 const ThumbnailSlider: React.FC<IThumbnailSlider> = ({ children, mainSliderRef }) => {
     const thumbnailSliderRef = useRef<Splide>(null);

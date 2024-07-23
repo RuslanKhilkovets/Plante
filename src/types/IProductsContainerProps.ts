@@ -1,9 +1,9 @@
 import ProductType from "../constants/productsTypes";
 
-import { TProductItem } from "./IProductItem";
+import { TProductFullData } from "./IProductItem";
 
 export default interface IProductsContainerProps {
-    products: TProductItem[];
+    products: TProductFullData[];
     title: string;
     subtitle?: string;
     type?: ProductType;

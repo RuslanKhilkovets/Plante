@@ -5,6 +5,7 @@ import ProductsContainer from '../Products/ProductContainer/ProductsContainer';
 import useQuery from '../../hooks/useQuery';
 import getItemFromStorage from '../../helpers/getItemFromStotage';
 
+
 const ViewedItems = () => {
     const [items, setItems] = useState([]);
     

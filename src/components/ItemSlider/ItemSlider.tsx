@@ -1,6 +1,7 @@
 import clsx from 'clsx';
-import CustomSlider from '../StyledComponents/CustomSlider';
 import { SplideSlide } from '@splidejs/react-splide';
+
+import CustomSlider from '../StyledComponents/CustomSlider';
 
 const slides = [
     { id: 1, img: null, thumbnail: null },

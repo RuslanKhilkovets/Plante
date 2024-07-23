@@ -84,7 +84,7 @@ class ApiClient {
         this.get(`/products`);
 
     static GetProductDetails = async (item: string) =>
-        this.get(`/catalog?url=${item}`);
+        this.get(`/catalog?url=${item}`) as Promise<TProductFullData[]>;
 
 } 
 

@@ -6,7 +6,7 @@ import { Button } from '@mui/base';
 
 import ProductItem from "../ProductItem/ProductItem";
 
-import { TProductItem } from "../../../types/IProductItem";
+import { TProductFullData } from "../../../types/IProductItem";
 import IProductsContainerProps from "../../../types/IProductsContainerProps";
 import getClassName from "../../../helpers/getClassNameByProductsType";
 
@@ -86,7 +86,7 @@ const ProductsContainer: FC<IProductsContainerProps> = ({ products, title, subti
                     </div>
                 </div>
                 <Splide ref={splideRef} className={cl["products__slider"]} options={settings}>
-                    {products?.map((product: TProductItem, index: number) => (
+                    {products?.map((product: TProductFullData, index: number) => (
                         <SplideSlide key={index} className={cl["products__slider_item"]}>
                             <ProductItem product={product} />
                         </SplideSlide>

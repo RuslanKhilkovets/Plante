@@ -22,7 +22,7 @@ export type TProductFullData = TProductItem & {
 }
 
 export default interface IProductItems {
-    popular: TProductItem[];
-    discounts: TProductItem[];
-    news: TProductItem[];
+    popular: TProductFullData[];
+    discounts: TProductFullData[];
+    news: TProductFullData[];
 }

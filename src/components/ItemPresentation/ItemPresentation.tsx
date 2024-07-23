@@ -9,13 +9,14 @@ import CustomButton from "../StyledComponents/CustomButton";
 import ItemSlider from "../ItemSlider/ItemSlider";
 
 import STOCK_VARIANT from "../../constants/StockVariants";
-import IProductDetailsItem from "../../types/IProductDetailsItem";
+import ItemPresentationProps from "../../types/ItemPresentationProps";
 
 import cartIcon from "../../icons/white-cart.svg";
 
 import cl from "./ItemPresentation.module.scss"
 
-const ItemPresentation: FC = ( { item }: { item: IProductDetailsItem | null } ) => {
+
+const ItemPresentation: FC<ItemPresentationProps> = ( { item } ) => {
     const [count, setCount] = useState<number>(1);
     const [selectedWeight, setSelectedWeight] = useState<number | null>(null);
 

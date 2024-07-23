@@ -1,0 +1,51 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.cart{
+    &__header{
+        @include f-between($ai: center);
+        padding: 0 10px;
+    }
+    &__content_empty{
+        @include f-center;
+    }
+    &__content{
+        @include f-between($fd: column);
+    }
+    &__title{
+        margin-top: 1rem;
+        @include font($fsz: 2rem, $fw: 700, $lh: 150%);
+        color: $text-primary-color;
+    }
+    &__cart-data{
+        width: 100%;
+        height: 100%;
+    }
+    &__cart-container{
+        @include flexbox($fd: column, $gap: 10px);
+    }
+}
+
+.cart-price{
+    padding: 20px 0;
+    width: 100%;
+    @include f-between($gap: 10px, $ai: flex-end);
+    &__text{
+        @include font($fw: 500, $fsz: 1.5rem);
+        color: #000;
+        text-wrap: nowrap;
+    }
+    &__line{
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid $button-secondary-color;
+    }
+}
+.empty-cart{
+    height: 100%;
+    @include f-center($gap: 2rem, $fd: column);
+    &__text{
+        @include font($fsz: 1.5rem, $fw: 700);
+        color: #000;
+    }
+}
