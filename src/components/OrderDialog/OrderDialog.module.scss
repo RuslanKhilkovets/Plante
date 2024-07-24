@@ -1,0 +1,207 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.order{
+    &__heading{
+        padding: 3rem 0;
+    }
+    &__title{
+        @include font($fsz: 2.5rem, $fw: 700, $lh: 150%);
+    }
+}
+
+.login{
+    margin: 10px 0;
+    border-radius: 100px;
+    padding: 20px;
+    background-color: $button-secondary-color;
+    @include flexbox($gap: 20px, $ai: center, $fw: wrap);
+    &__text{
+        @include font;
+        color: $text-primary-color;
+    }
+    &__link{
+        color: $text-secondary-color!important;
+    }
+}
+
+.order-form{
+    padding: 15px 0;
+    &__input{
+        background-color: $button-secondary-color;
+    }
+    &__input-label{
+        @include font($fw: 500);
+        color: $text-primary-color;
+        display: block;
+        padding: 15px 0;
+    }
+    &__radio{
+        width: 100%;
+        padding: 1rem;
+        border-radius: 20px;
+    }
+    &__radio_active{
+        background-color: $button-secondary-color;
+    }
+    &__radio-btn{
+        @include font($fsz: 1.1rem);
+    }
+    &__manager{
+        padding: 10px;
+        @include font;
+        color: $text-primary-color
+    }
+}
+
+.self-pickup{
+    padding: 1rem;
+    background-color: $button-secondary-color;
+    border-radius: 20px;
+    &__title{
+        @include font;
+        color: #868686
+    }
+    &__content{
+        margin-top: 10px;
+        @include flexbox($gap: 1rem)
+    }
+    &__address{
+        @include font($lh: 200%);
+        color: $text-primary-color;
+        font-size: 1.2rem;
+        position: relative;
+    }
+    &__schedule{
+        @include font($lh: 200%);
+        color: #868686;
+        font-size: 1.2rem;
+    }
+}
+
+.order-cart{
+    padding: 2rem;
+    background-color: $button-secondary-color;
+    border-radius: 30px;
+    &__heading{
+        @include f-between;
+        margin-bottom: 1rem;
+    }
+    &__title{
+        @include font($fw: 700, $fsz: 1.3rem);
+    }
+    &__edit {
+        @include font;
+        color: $text-secondary-color;
+    }
+    &__items{
+        @include flexbox($fd: column, $gap: 1rem, $ai: center);
+        max-width: 700px;
+        overflow-y: auto;
+    }
+    &__item{
+        width: 100%;
+        @include f-between($ai: center, $gap: 1rem);
+    }
+    &__item-item{
+        @include flexbox($gap: 1rem, $ai: center)
+    }
+    &__item--img{
+        height: 50px;
+        width: 50px;
+        background-color: #333;
+        border-radius: 10px;
+    }
+    &__item--text{
+        @include font;
+    }
+    &__sum-item{
+        width: 100%;
+        @include f-between($ai: center);
+    }
+    &__policies{
+        margin: 1rem ;
+        @include font;
+        text-align: center;
+    }
+    &__invalid-data{
+        margin-top: 15px;
+        @include font;
+        color: red;
+        text-align: center;
+    }
+}
+
+.order-form{
+    &__text{
+        @include font;
+    }
+    &__text_bold{
+        @include font($fw: 700, $fsz: 1.5rem);
+    }
+    &__sum-item{
+        margin: 10px 0;
+        @include f-between($ai: center);
+    }
+}
+
+.line{
+    margin: 20px 0;
+    height: 1px;
+    background-color: #868686;
+}
+
+.order-success{
+    max-width: 300px;
+    margin: 0 auto;
+    @include f-center;
+    text-align: center;
+    &__content{
+        @include flexbox($fd: column, $ai: center, $gap: 20px);
+        width: 100%;
+    }
+    &__content-item{
+        width: 100%;
+    }
+    &__title{
+        @include font($fsz: 2rem, $fw: 700)
+    }
+    &__subtitle{
+        @include font;
+    }
+    &__number-item{
+        @include f-between($gap: 10px, $ai: center);
+        width: max-content;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: $light-green;
+        vertical-align: middle;
+    }
+    &__number{
+        @include font;
+    }
+    &__number_bold{
+        @include font($fw: 700);
+    }
+    &__btn{
+        @include f-center;
+        vertical-align: middle;
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .order{
+        &__heading{
+            padding: 3rem 0;
+        }
+        &__title{
+            @include font($fsz: 1.8rem);
+        }
+    }
+    .login{
+        border-radius: 20px;
+    }
+}
