@@ -13,7 +13,7 @@ import crossIcon from "../../icons/close.svg";
 
 import cl from "./CartItem.module.scss";
 
-
+ 
 const CartItem: FC<{item: TProductFullData}> = ({ item }) => {
     const dispatch = useAppDispatch();
     const [count, setCount] = useState(item.count);
