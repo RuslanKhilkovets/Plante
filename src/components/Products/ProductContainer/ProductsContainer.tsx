@@ -14,7 +14,7 @@ import cl from "./ProductsContainer.module.scss";
 
 
 const ProductsContainer: FC<IProductsContainerProps> = ({ products, title, subtitle, type }) => {
-    const splideRef = useRef<Splide>(null);
+    const splideRef = useRef<any>(null);
     const prevButtonRef = useRef<HTMLButtonElement>(null);
     const nextButtonRef = useRef<HTMLButtonElement>(null);
 
@@ -41,20 +41,28 @@ const ProductsContainer: FC<IProductsContainerProps> = ({ products, title, subti
             }
         };
 
+        const handlePrevClick = () => {
+            splide.go('<');
+        };
+
+        const handleNextClick = () => {
+            splide.go('>');
+        };
+
         if (splide && prevButton && nextButton) {
             splide.on('mounted move', updateButtonStates);
-            prevButton.addEventListener('click', () => splide.go('<'));
-            nextButton.addEventListener('click', () => splide.go('>'));
+            prevButton.addEventListener('click', handlePrevClick);
+            nextButton.addEventListener('click', handleNextClick);
 
             updateButtonStates();
 
             return () => {
                 splide.off('mounted move', updateButtonStates);
-                prevButton.removeEventListener('click', () => splide.go('<'));
-                nextButton.removeEventListener('click', () => splide.go('>'));
+                prevButton.removeEventListener('click', handlePrevClick);
+                nextButton.removeEventListener('click', handleNextClick);
             };
         }
-    }, []);
+    }, [products]);
 
     return (
         !!products && products?.length !== 0
