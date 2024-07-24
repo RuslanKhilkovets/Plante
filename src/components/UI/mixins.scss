@@ -1,0 +1,49 @@
+@mixin adaptive-font($min-size, $max-size, $min-vw: 360px, $max-vw: 1440px) {
+    font-size: clamp(
+      $min-size,
+      calc(#{$min-size} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-vw}) / (#{$max-vw} - #{$min-vw}))),
+      $max-size
+    )!important;
+  }
+  
+  
+@mixin font($ff: "Roboto", $fw: 400, $fs: normal, $fsz: 1rem, $lh: 120%){
+    font-family: $ff, sans-serif!important;
+    font-weight: $fw!important;
+    font-style: $fs!important;
+    font-size: $fsz!important;
+    line-height: $lh!important;
+}
+
+@mixin f-center($gap: 0px, $jc: center, $fd: row) {
+    display: flex;
+    justify-content: $jc;
+    align-items: center;
+    flex-direction: $fd;
+    gap: $gap;
+}
+
+@mixin flexbox($jc: flex-start, $ai: flex-start, $fd: row, $gap: 0px, $fw: no-wrap) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+    gap: $gap;
+    flex-wrap: $fw;
+}
+
+@mixin f-between($gap: 0px, $ai: flex-start, $fw: no-wrap, $fd: row) {
+    display: flex;
+    justify-content: space-between;
+    align-items: $ai;
+    flex-direction: $fd;
+    flex-wrap: $fw;
+    gap: $gap;
+}
+
+@mixin back-image($url: "", $size: contain, $repeat: no-repeat) {
+    background-image: url($url);
+    background-size: $size;
+    background-repeat: $repeat;
+    background-position: center;
+}

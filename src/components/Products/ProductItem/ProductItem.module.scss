@@ -1,0 +1,62 @@
+@import "../../../components/UI/vars.scss";
+@import "../../../components/UI/mixins.scss";
+
+.product-item {
+    @include flexbox($fd: column, $gap: 3rem);
+    cursor: pointer;
+    &__likes{
+        height: 24px;
+        width: 24px;
+        @include back-image("@/icons/like.svg");
+    }
+    &__item{
+        width: 240px;
+        @include flexbox($fd: column, $gap: 1rem);
+    }
+    &__footer{
+        width: 100%;
+        @include f-between($ai: center);
+    }
+    &__item_basket{
+        height: 24px;
+        width: 24px;
+        @include back-image("@/icons/cart.svg");
+    }
+    &__img{
+        background-color: #333;
+        height: 246px;
+        width: 100%;
+        border-radius: 10px;
+    }
+    &__title{
+        @include font;
+    }
+    &__heading{
+        @include f-between($gap: 20px);
+        width: 100%;
+    }
+    &__heading_title{
+        @include font($fsz: 1.6rem, $fw: 700);
+    }
+    &__item_price_text{
+        @include font;
+    }
+    &__item_price_stock{
+        @include font;
+        color: $text-secondary-color;
+    }
+    &__item_info{
+        @include flexbox($fd: column, $gap: .5rem)
+    }
+}
+
+@media screen and (max-width: 768px){
+    .product-item{
+        &__item{
+            width: 150px;
+        }
+        &__img{
+            height: 150px;
+        }
+    }
+}

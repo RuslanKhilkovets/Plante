@@ -1,0 +1,66 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.footer{
+    padding: 50px 0;
+    background-color: $main-primary-color;
+    &__wrapper{
+        @include f-between(10vw);    
+
+    }
+    &__links{
+        @include f-between($gap: 30px, $fw: wrap);    
+        width: 100%;
+    }
+    &__item_contacts{
+        @include flexbox($fd: column, $gap: 2rem);
+    }
+    &__item_contacts_icons{
+        @include flexbox($gap: 1rem);
+    }
+    &__item_contacts_link{
+        width: 30px;
+        height: 30px;
+        &:nth-child(1){
+            @include back-image("../../icons/Youtube.svg");
+        }
+        &:nth-child(2){
+            @include back-image("../../icons/Viber.svg");
+        }
+        &:nth-child(3){
+            @include back-image("../../icons/Facebook.svg");
+        }
+    }
+    &__list{
+        @include flexbox($gap: 1rem, $fd: column);
+    }
+    &__link{
+        @include font($lh: 1.2rem);
+        @include flexbox($gap: 1rem, $ai: center);
+        color: $text-primary-color;
+        transition: $trans-time;
+        &:hover {
+            color: $text-secondary-color;
+            transition: $trans-time;
+        }
+    }
+    &__contact{
+        @include flexbox($ai: center, $gap: 20px)
+    }
+}
+
+@media screen and (max-width: 768px){
+    .footer{
+        &__wrapper{
+            flex-wrap: wrap;
+        }
+        &__item_contacts{
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &__article{
+            display: none;
+        }
+    }
+}

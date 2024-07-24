@@ -1,0 +1,28 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.cart-item{
+    @include f-between($ai: center);
+    width: 100%;
+    &__info{
+        @include flexbox($gap: 1rem);
+    }
+    &__img{
+        height: 90px;
+        width: 90px;
+        border-radius: 5px;
+        background-color: #333;
+    }
+    &__content{
+        @include flexbox($gap: 1rem, $fd: column);
+    }   
+    &__title{
+        @include font;
+    }
+    &__actions{
+        @include flexbox($gap: 20px, $ai: center);
+    }
+    &__price{
+        @include font($fsz: 1.7rem, $fw: 700)
+    }
+}

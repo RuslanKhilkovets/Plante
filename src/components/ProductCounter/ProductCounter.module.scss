@@ -1,0 +1,20 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.product-counter{
+    @include f-between($gap: 1rem, $ai: center);
+    &__btn{
+        @include font($fw: 700);
+        padding: 20px 25px;
+        border-radius: 50%;
+        background-color: $button-secondary-color;
+        &:disabled{
+            cursor: default;
+            opacity: .5;
+        }
+    }
+    &__input{
+        width: 4rem!important;
+        border: 2px solid  $button-secondary-color!important;
+    }
+}
