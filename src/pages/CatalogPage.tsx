@@ -11,7 +11,6 @@ import catalogMenuItems from '../constants/catalogMenuItems';
 
 
 const CatalogPage = () => {
-
     const query = useQuery();
     const currentCategory = query.get('category') || "";
     

@@ -3,6 +3,7 @@ import CheckoutPage from "../pages/CheckoutPage";
 import ErrorPage from "../pages/ErrorPage";
 import ItemPage from "../pages/ItemPage";
 import MainPage from "../pages/MainPage";
+
 import PATHS from "./paths";
 
 export const routes = [

@@ -6,4 +6,5 @@ export default interface ICustomSelectProps {
     options: { id: number; value: any; label: string }[];
     label?: string;
     className?: string;
+    name?: string; 
 }

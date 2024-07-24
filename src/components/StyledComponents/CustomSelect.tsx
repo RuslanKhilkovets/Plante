@@ -1,8 +1,10 @@
 import { FC } from 'react';
+
 import { Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import { styled } from '@mui/material/styles';
+
 import ICustomSelectProps from '../../types/ICustomSelectProps';
-import ArrowIcon from "../../icons/down.svg"; 
+
 
 const StyledSelect = styled(Select)(() => ({
   '&.MuiOutlinedInput-root': {
@@ -32,9 +34,7 @@ const StyledMenuItem = styled(MenuItem)(() => ({
   },
 }));
 
-const CustomArrowIcon = () => <img src={ArrowIcon} alt="Arrow Icon" style={{ width: '1em', height: '1em' }} />;
-
-const CustomSelect: FC<ICustomSelectProps> = ({ onChange, value, options, label, className }) => {
+const CustomSelect: FC<ICustomSelectProps> = ({ onChange, value, options, label, className, name }) => {
   const MenuProps = {
     PaperProps: {
       style: {
@@ -58,6 +58,7 @@ const CustomSelect: FC<ICustomSelectProps> = ({ onChange, value, options, label,
         label={label}
         className={className}
         MenuProps={MenuProps}
+        name={name}
       >
         {options.map(option => (
           <StyledMenuItem key={option.id} value={option.value}>

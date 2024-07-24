@@ -11,14 +11,24 @@ import ItemSlider from "../ItemSlider/ItemSlider";
 import STOCK_VARIANT from "../../constants/StockVariants";
 import ItemPresentationProps from "../../types/ItemPresentationProps";
 
+import { useAppDispatch } from "../../hooks/redux";
+import { addItemToCart } from "../../redux/slices/CartSlice";
+
 import cartIcon from "../../icons/white-cart.svg";
 
 import cl from "./ItemPresentation.module.scss"
 
 
+
 const ItemPresentation: FC<ItemPresentationProps> = ( { item } ) => {
     const [count, setCount] = useState<number>(1);
     const [selectedWeight, setSelectedWeight] = useState<number | null>(null);
+    
+    const dispatch = useAppDispatch();
+
+    const addNewItemToCart = () => {
+        dispatch((addItemToCart(item)));
+    }
 
     return (
         item !== null
@@ -70,12 +80,18 @@ const ItemPresentation: FC<ItemPresentationProps> = ( { item } ) => {
                                 count={count}
                                 setCount={setCount}
                         />
-                        <CustomButton className={cl["item-description__item_buy-btn"]}
+                        <CustomButton 
+                            onClick={addNewItemToCart}
+                            className={cl["item-description__item_buy-btn"]}
                             sx={{
                                 p: 1
                             }}
                         >
-                                <p className={cl["item-description__item_buy-btn--text"]}>Купити</p>
+                                <p 
+                                    className={cl["item-description__item_buy-btn--text"]}
+                                >
+                                    Купити
+                                </p>
                                 <IconButton>
                                     <img
                                         src={ cartIcon }

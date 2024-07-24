@@ -1,16 +1,30 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
 
 import { IconButton } from '@mui/material';
 
 import ProductCounter from '../ProductCounter/ProductCounter';
 
+import { useAppDispatch } from '../../hooks/redux';
+import { removeItemFromCart, updateItemCount } from '../../redux/slices/CartSlice';
+
+import { TProductFullData } from '../../types/IProductItem';
+
 import crossIcon from "../../icons/close.svg";
 
-import cl from "./CartItem.module.scss"
+import cl from "./CartItem.module.scss";
 
 
-const CartItem: FC = ( { item } : any ) => {
-    const [count, setCount] = useState<number>(0);
+const CartItem: FC<{item: TProductFullData}> = ({ item }) => {
+    const dispatch = useAppDispatch();
+    const [count, setCount] = useState(item.count);
+
+    useEffect(() => {
+        dispatch(updateItemCount({ id: item.id, count }));
+    }, [count, item.id]);
+
+    const deleteItemFromCart = () => {
+        dispatch(removeItemFromCart(item.id));
+    }
 
     return (
         <div className={cl["cart-item"]}>
@@ -18,14 +32,15 @@ const CartItem: FC = ( { item } : any ) => {
                 <img
                     src={item?.img}
                     className={cl["cart-item__img"]}
+                    alt={item?.title}
                 />
                 <div className={cl["cart-item__content"]}>
                     <p className={cl["cart-item__title"]}>{item?.title}</p>
                     <div className={cl["cart-item__actions"]}>
                         <ProductCounter
-                            cartMode
                             count={count}
                             setCount={setCount}
+                            cartMode
                         />
                         <p className={cl["cart-item__price"]}>
                             {item?.price} грн
@@ -33,9 +48,13 @@ const CartItem: FC = ( { item } : any ) => {
                     </div>
                 </div>
             </div>
-            <IconButton>
+            <IconButton
+                onClick={deleteItemFromCart}
+                aria-label="Remove item"
+            >
                 <img
-                    src={ crossIcon }
+                    src={crossIcon}
+                    alt="Close"
                 />
             </IconButton>
         </div>

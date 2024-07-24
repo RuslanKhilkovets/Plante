@@ -1,10 +1,22 @@
-import React from 'react';
+import { Helmet } from 'react-helmet';
+import OrderDialog from '../components/OrderDialog/OrderDialog';
 
 const CheckoutPage = () => {
     return (
-        <div>
-            CheckoutPage
-        </div>
+        <>
+        
+            <OrderDialog
+                open
+                onClose={() => {}}
+            />
+
+            <Helmet>
+                <title>
+                    Оформлення замовлення
+                </title> 
+            </Helmet>
+
+        </>
     );
 };
 

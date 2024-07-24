@@ -3,11 +3,11 @@ import routes from '../routes';
 import { useLayoutEffect } from 'react';
 
 const AppRouter = () => {
-    const { pathname } = useLocation();
+    const location = useLocation();
 
     useLayoutEffect(() => {
       window.scrollTo(0, 0);
-    }, [pathname]);
+    }, [location]);
 
     return (
         <Routes>
