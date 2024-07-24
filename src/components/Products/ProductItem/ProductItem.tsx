@@ -1,14 +1,17 @@
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { IconButton } from '@mui/material';
 import { useSnackbar } from 'notistack';
+
+import { useAppDispatch } from '../../../hooks/redux';
+import { addItemToCart } from '../../../redux/slices/CartSlice';
 
 import { TProductFullData } from '../../../types/IProductItem';
 import STOCK_VARIANT from '../../../constants/StockVariants';
 import PATHS from '../../../router/paths';
 
-import { useAppDispatch } from '../../../hooks/redux';
-import { addItemToCart } from '../../../redux/slices/CartSlice';
+import cartIcon from "../../../icons/cart.svg"
+import likeIcon from "../../../icons/like.svg"
 
 import cl from './ProductItem.module.scss';
 
@@ -37,7 +40,11 @@ const ProductItem: FC<{ product: TProductFullData }> = ({ product }) => {
         ></div>
         <div className={cl['product-item__heading']}>
           <p className={cl['product-item__title']}>{product.title}</p>
-          <Button className={cl['product-item__likes']}></Button>
+          <IconButton sx={{p: 0}}>
+            <img
+              src={ likeIcon }
+            />
+          </IconButton>
         </div>
       </div>
       <div className={cl['product-item__footer']}>
@@ -47,7 +54,11 @@ const ProductItem: FC<{ product: TProductFullData }> = ({ product }) => {
             {product.isInStock ? STOCK_VARIANT.EXISTS : STOCK_VARIANT.NOT_EXISTS}
           </p>
         </div>
-        <Button className={cl['product-item__item_basket']} onClick={addToCart}></Button>
+        <IconButton onClick={addToCart} sx={{p: 0}}>
+          <img 
+            src={ cartIcon }
+          />
+        </IconButton>
       </div>
     </div>
   );

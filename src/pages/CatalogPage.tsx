@@ -5,6 +5,7 @@ import { Typography } from '@mui/material';
 import Catalog from '../components/Catalog/Catalog';
 import ViewedItems from '../components/ViewedItems/ViewedItems';
 import CustomBreadcrumps from '../components/StyledComponents/CustomBreadcrumps';
+import UpdatesForm from '../components/UpdatesForm/UpdatesForm';
 
 import useQuery from '../hooks/useQuery';
 import catalogMenuItems from '../constants/catalogMenuItems';
@@ -29,6 +30,9 @@ const CatalogPage = () => {
                 category={currentCategory}
             />
             <ViewedItems />
+
+            <UpdatesForm />
+            
             <Helmet>
                 <title>
                     {pageTitle}

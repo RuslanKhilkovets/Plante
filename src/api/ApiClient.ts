@@ -49,8 +49,8 @@ class ApiClient {
 
     //// Requests
 
-    static GetCatalogItems = async (category: string) =>
-        this.get(`/catalog?catalog=${category}`);
+    static GetCatalogItems = async (category: string, limit = 100) =>
+        this.get(`/catalog?catalog=${category}&_limit=${limit}`);
 
     static GetFilteredItems = async (category: string, filters: ICatalogFilters) => {
         if(!category) {

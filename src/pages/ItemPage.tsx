@@ -8,12 +8,14 @@ import ItemInfo from '../components/ItemInfo/ItemInfo';
 import ProductsContainer from '../components/Products/ProductContainer/ProductsContainer';
 import ViewedItems from '../components/ViewedItems/ViewedItems';
 import CustomBreadcrumps from '../components/StyledComponents/CustomBreadcrumps';
-
-import { TProductFullData } from '../types/IProductItem';
+import UpdatesForm from '../components/UpdatesForm/UpdatesForm';
+import SimilarProducts from '../components/SimilarProducts/SimilarProducts';
 
 import addItemToStorage from '../helpers/addItemToStorage';
 import ApiClient from '../api/ApiClient';
 import useQuery from '../hooks/useQuery';
+
+import { TProductFullData } from '../types/IProductItem';
 
 
 const ItemPage = () => {
@@ -54,14 +56,19 @@ const ItemPage = () => {
                     products={[]}
                 />
             </Suspense>
+            
+            <SimilarProducts
+                category={currentItem?.catalog}
+            />            
+            <ViewedItems />
+
+            <UpdatesForm />
 
             <Helmet>
                 <title>
                     {currentItem?.title || ""}
                 </title>
             </Helmet>
-            
-            <ViewedItems />
         </div>
     );
 };
