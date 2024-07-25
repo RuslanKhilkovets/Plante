@@ -8,7 +8,7 @@ export default defineConfig({
       icon: true,
     },
   })],
-  base: "/Plante/",
+  base: "/",
   resolve: {
     alias: {
       '@': '/src',
