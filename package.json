@@ -7,7 +7,7 @@
   "scripts": {
     "vite": "vite",
     "json-server": "json-server --watch src/server/db.json --port 5000",
-    "render:start": "node ./src/json-server/index.js & npx vite"    
+    "render:start": "node ./src/json-server/index.js & npx vite",    
     "dev": "concurrently \"npm run vite\" \"npm run json-server\"",
     "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
