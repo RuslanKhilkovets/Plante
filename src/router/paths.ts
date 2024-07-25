@@ -3,7 +3,8 @@ export const PATHS = {
     CATALOG: "/catalog",
     CHECKOUT: "/checkout",
     ITEM: "/item",
-    ERROR: "/*"
+    ERROR: "/*",
+    Plante: "Plante",
 }
 
 export default PATHS;
