@@ -17,6 +17,8 @@ import Logo from '../Logo/Logo';
 import CatalogMenu from '../CatalogMenu/CatalogMenu';
 import Cart from '../Cart/Cart';
 
+import { useAppSelector } from '../../hooks/redux';
+
 import navbarLinks from '../../constants/navbarLinks';
 
 import personIcon from "../../icons/person.svg";
@@ -28,6 +30,8 @@ import "../../fonts/index.css";
 
 
 const Header = () => {
+    const { items: cart } = useAppSelector(state => state.cartReducer)
+
     const [searchPrompt, setSearchPrompt] = useState<string>('');
     const [isConnectModalOpen, setIsConnectModalOpen] = useState<boolean>(false);    
     const [isCatalogOpen, setIsCatalogOpen] = useState<boolean>(false);
@@ -39,6 +43,10 @@ const Header = () => {
 
       setSearchPrompt(value);
     }
+    
+    const calculateCartCount = () => cart.reduce((prev, next) => {
+        return prev + next.count;
+    }, 0)
     
     return (
         <>
@@ -90,18 +98,22 @@ const Header = () => {
 
                         <div className={cl["header-actions__icons"]}>
 
-                            <IconButton>
+                            <IconButton className={cl["header-actions__icon"]}>
                                 <img
                                     src={ personIcon }
                                 />
                             </IconButton>
-                            <IconButton>
+                            <IconButton className={cl["header-actions__icon"]}>
                                 <img
                                     src={ likesIcon }
                                 />
                             </IconButton>
                             <IconButton
                                 onClick={() => setIsCartOpen(!isCartOpen)}
+                                aria-count={ calculateCartCount() }
+                                className={clsx({
+                                    [cl["cart"]]: cart.length > 0
+                                })}
                             >
                                 <img
                                     src={ cartIcon }

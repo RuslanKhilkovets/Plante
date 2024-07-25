@@ -26,3 +26,11 @@
         @include font($fsz: 1.7rem, $fw: 700)
     }
 }
+
+@media (max-width: 768px){
+    .cart-item{
+        &__price{
+            @include font( $fsz: 1rem);
+        }
+    }
+}
