@@ -58,7 +58,7 @@ const ItemPage = () => {
             </Suspense>
             
             <SimilarProducts
-                category={currentItem?.catalog}
+                currentItem={currentItem}
             />            
             <ViewedItems />
 

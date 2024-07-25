@@ -4,7 +4,7 @@
 
 .products{
     @include flexbox($gap: 1rem, $fd: column);
-    margin-bottom: 50px;
+    margin: 50px 0;
     &__slider{
         margin-top: 5px;
         overflow: hidden;

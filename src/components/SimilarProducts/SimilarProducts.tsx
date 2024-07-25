@@ -2,36 +2,35 @@ import { FC, useEffect, useState } from 'react';
 
 import ProductsContainer from '../Products/ProductContainer/ProductsContainer';
 
-import useQuery from '../../hooks/useQuery';
-import getItemFromStorage from '../../helpers/getItemFromStotage';
 import ApiClient from '../../api/ApiClient';
+import { TProductFullData } from '../../types/IProductItem';
 
 
 interface ISimilarProductsProps {
-    category?: string;
+    currentItem: TProductFullData | null;
 }
 
-const SimilarProducts: FC<ISimilarProductsProps> = ( { category = "" } ) => {
+const SimilarProducts: FC<ISimilarProductsProps> = ( { currentItem } ) => {
     const [items, setItems] = useState([]);
-    
-    const query = useQuery();
-    const currentItemUrl = query.get('item') || "";
+
 
     useEffect(() => {
 
         const getItems = async () => {
             try{
-                const items = await ApiClient.GetCatalogItems(category);
+                const productItems: TProductFullData[] = await ApiClient.GetCatalogItems(currentItem?.catalog || "") as TProductFullData[];
 
-                setItems(items)
 
+                const preparedItems = productItems.filter(item => item.id !== currentItem?.id)  as TProductFullData[];
+                
+                setItems(preparedItems)
             } catch(e){
                 console.log(e)
             }
         }
                 
         getItems()
-    }, [currentItemUrl])
+    }, [currentItem])
 
     return (
         items?.length !== 0 && items !== null

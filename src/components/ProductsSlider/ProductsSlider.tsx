@@ -4,11 +4,9 @@ import clsx from 'clsx';
 import { SplideSlide } from '@splidejs/react-splide';
 
 import CustomSlider from "../StyledComponents/CustomSlider";
-import  "./ProductsSlider.scss";
-
 
 const ProductsSlider: FC = () => {
-  
+    
     return (
         <CustomSlider>
             <SplideSlide className={clsx("slider__slide", "slide")} style={{

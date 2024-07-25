@@ -12,6 +12,7 @@ import CustomSelect from "../StyledComponents/CustomSelect";
 import CustomRadioButton from "../StyledComponents/CustomRadioGroup";
 import CustomLink from "../StyledComponents/CustomLink";
 import CustomButton from "../StyledComponents/CustomButton";
+import Cart from "../Cart/Cart";
 
 import { useAppSelector } from "../../hooks/redux";
 import calculateTotalPrice from "../../helpers/calculateTotalPrice";
@@ -58,6 +59,8 @@ const OrderDialog: React.FC<IDialogProps> = ({ open, onClose }) => {
 
     const [isFormCorrectFilled, setIsFormCorrectFilled] = useState<boolean>(false); 
     const [isOrderingCompleted, setIsOrderingCompleted] = useState<boolean>(false);
+    const [isCartOpen, setIsCartOpen] = useState(false);
+
 	const [orderForm, setOrderForm] = useState<IOrderData>({
         name: "",
         surname: "",
@@ -332,7 +335,11 @@ const OrderDialog: React.FC<IDialogProps> = ({ open, onClose }) => {
                     <div className={clsx(cl["order__cart"], cl["order-cart"])}>
                         <div className={cl["order-cart__heading"]}>
                             <p className={cl["order-cart__title"]}>Ваше замовлення</p>
-                            <Button className={cl["order-cart__edit"]}>Редагувати</Button>
+                            <Button className={cl["order-cart__edit"]}
+                                onClick={() => setIsCartOpen(true)}
+                            >
+                                Редагувати
+                            </Button>
                         </div>
                         <ul className={cl["order-cart__items"]}>
                             {
@@ -489,6 +496,10 @@ const OrderDialog: React.FC<IDialogProps> = ({ open, onClose }) => {
                 </div>
 				
 			</DialogContent>
+            <Cart
+                open={isCartOpen}
+                onClose={() => setIsCartOpen(false)}
+            />
 		</Dialog>
 	);
 };

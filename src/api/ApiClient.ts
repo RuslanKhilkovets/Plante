@@ -53,32 +53,42 @@ class ApiClient {
         this.get(`/catalog?catalog=${category}&_limit=${limit}`);
 
     static GetFilteredItems = async (category: string, filters: ICatalogFilters) => {
-        if(!category) {
+        if (!category) {
             return [];
         }
-        
+    
         const { price, productAgeTypes, productWeightTypes } = filters;
     
-        let requestUrl = `catalog?catalog=${category}&`;
+        let requestUrl = `catalog?catalog=${category}`;
     
         if (price.length === 2) {
-            requestUrl += `price_gte=${price[0]}&price_lte=${price[1]}&`;
+            requestUrl += `&price_gte=${price[0]}&price_lte=${price[1]}`;
         }
         if (productAgeTypes.length > 0) {
-            requestUrl += productAgeTypes.map(type => `type=${type}`).join('&') + '&';
+            requestUrl += '&' + productAgeTypes.map(type => `type=${type}`).join('&');
         }
         if (productWeightTypes.length > 0) {
-            requestUrl += productWeightTypes.map(type => `type=${type}`).join('&') + '&';
+            requestUrl += '&' + productWeightTypes.map(type => `weight=${type}`).join('&');
         }
     
         try {
             const response = await this.get(`/${requestUrl}`);
+            const data = response as TProductFullData[];
+    
+            const filteredItems = data.filter(item => {
+                const meetsPriceCriteria = item.price >= price[0] && item.price <= price[1];
+                const meetsAgeTypeCriteria = productAgeTypes.length ? productAgeTypes.includes(item.type) : true;
+                const meetsWeightTypeCriteria = productWeightTypes.length ? productWeightTypes.includes(item.weight) : true;
+                
+                return meetsPriceCriteria && meetsAgeTypeCriteria && meetsWeightTypeCriteria;
+            });
             
-            return response as TProductFullData[];
+            return filteredItems;
         } catch (error) {
             console.error("Error fetching menu items:", error);
+            return [];
         }
-    }
+    }    
 
     static GetProducts = async () =>
         this.get(`/products`);

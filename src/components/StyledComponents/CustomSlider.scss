@@ -16,7 +16,6 @@
     background-position: center;
     height: 575px;
     &__heading {
-        width: max-content;
         padding: 20px;
         border-radius: 10px;
         background-color: $light-green;
@@ -83,11 +82,11 @@
         }
 
         &__title {
-            @include font($fsz: 1.6rem);
+            @include font($fsz: 2rem);
         }
 
         &__subtitle {
-            @include font($fsz: 1, $fw: normal);
+            @include font($fsz: 1.5rem, $fw: normal);
         }
     }
 
