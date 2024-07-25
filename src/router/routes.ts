@@ -12,6 +12,7 @@ export const routes = [
     { path: PATHS.CHECKOUT, component: CheckoutPage },
     { path: PATHS.ITEM, component: ItemPage },
     { path: PATHS.ERROR, component: ErrorPage },
+    { path: PATHS.Plante, component: MainPage },
 ];
 
 export default routes;
