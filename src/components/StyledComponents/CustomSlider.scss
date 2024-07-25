@@ -16,6 +16,8 @@
     background-position: center;
     height: 575px;
     &__heading {
+        width: 100%;
+        max-width: max-content;
         padding: 20px;
         border-radius: 10px;
         background-color: $light-green;
