@@ -10,8 +10,8 @@
     &__img{
         height: 90px;
         width: 90px;
-        border-radius: 5px;
         background-color: #333;
+        border-radius: 5px;
     }
     &__content{
         @include flexbox($gap: 1rem, $fd: column);
@@ -24,5 +24,13 @@
     }
     &__price{
         @include font($fsz: 1.7rem, $fw: 700)
+    }
+}
+
+@media (max-width: 768px){
+    .cart-item{
+        &__price{
+            @include font( $fsz: 1rem);
+        }
     }
 }

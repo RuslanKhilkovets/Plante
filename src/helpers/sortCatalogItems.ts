@@ -1,16 +1,18 @@
 import SortType from "../constants/sortType";
 import { TProductFullData } from "../types/IProductItem";
 
-export const sortItems = ( sortType: SortType, itemsToSort: TProductFullData[]) => {
+export const sortItems = (sortType: SortType, itemsToSort: TProductFullData[]) => {
+    const sortedItems = [...itemsToSort]; // Create a shallow copy to avoid mutating the original array
+
     switch (sortType) {
-        case SortType.CHEAP:
-            return itemsToSort.sort((a, b) => b.price - a.price);
         case SortType.EXPENSIVE:
-            return itemsToSort.sort((a, b) => a.price - b.price);
+            return sortedItems.sort((a, b) => b.price - a.price);
+        case SortType.CHEAP:
+            return sortedItems.sort((a, b) => a.price - b.price);
         case SortType.POPULARITY:
-            return itemsToSort.sort((a, b) => b.popularity - a.popularity);
+            return sortedItems.sort((a, b) => b.popularity - a.popularity);
         default:
-            return itemsToSort;
+            return sortedItems;
     }
 };
 

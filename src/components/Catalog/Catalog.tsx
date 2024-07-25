@@ -10,13 +10,13 @@ import ICatalogProps from '../../types/ICatalogProps';
 import SortType from '../../constants/sortType';
 
 import sortItems from '../../helpers/sortCatalogItems';
+import ApiClient from '../../api/ApiClient';
 
 import cl from "./Catalog.module.scss";
-import ApiClient from '../../api/ApiClient';
 
 
 const initialFilters = {
-    price: [0, 10],
+    price: [0, 20],
     productWeightTypes: [],
     productAgeTypes: [] 
 };
@@ -36,6 +36,8 @@ const Catalog: FC<ICatalogProps> = ( { category } ) => {
     const filterItems = async () => {
         const items = await ApiClient.GetFilteredItems(category, filters);
         
+        // TODO: Додати обробку помилок
+
         setCatalogItems(items as TProductFullData[]);
     };
 

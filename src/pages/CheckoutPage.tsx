@@ -1,5 +1,7 @@
 import { Helmet } from 'react-helmet';
+
 import OrderDialog from '../components/OrderDialog/OrderDialog';
+import UpdatesForm from '../components/UpdatesForm/UpdatesForm';
 
 const CheckoutPage = () => {
     return (
@@ -9,6 +11,8 @@ const CheckoutPage = () => {
                 open
                 onClose={() => {}}
             />
+
+            <UpdatesForm />
 
             <Helmet>
                 <title>

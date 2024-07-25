@@ -38,6 +38,11 @@ const Cart: React.FC<IDialogProps> = ({ open, onClose }) => {
 	const navigate = useNavigate();
 	const { items: cart } = useAppSelector(state => state.cartReducer)
 	
+	const bookOrder = () => {
+		navigate(PATHS.CHECKOUT);
+		onClose();
+	}
+
   	const renderActionsButtons = () => {
 		return cart.length === 0 ? 
 			(
@@ -45,7 +50,7 @@ const Cart: React.FC<IDialogProps> = ({ open, onClose }) => {
 			) : (
 				<Grid container spacing={2}>
 					<Grid item xs={12}>
-						<CustomButton onClick={() => navigate(PATHS.CHECKOUT)}>Оформити замовлення</CustomButton>
+						<CustomButton onClick={bookOrder}>Оформити замовлення</CustomButton>
 					</Grid>
 					<Grid item xs={12}>
 						<CustomButton onClick={onClose} variant="secondary">Продовжити покупки</CustomButton>

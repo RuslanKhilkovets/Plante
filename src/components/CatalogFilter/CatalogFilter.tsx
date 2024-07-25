@@ -44,7 +44,7 @@ const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilt
     
         if (newValue[1] - newValue[0] < MIN_RANGE_STEP) {
           if (activeThumb === 0) {
-            const clamped = Math.min(newValue[0], 10 - MIN_RANGE_STEP);
+            const clamped = Math.min(newValue[0], 20 - MIN_RANGE_STEP);
             setFilters({ ...filters, price: [clamped, clamped + MIN_RANGE_STEP] });
           } else {
             const clamped = Math.max(newValue[1], MIN_RANGE_STEP);
@@ -187,7 +187,7 @@ const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilt
                             valueLabelDisplay="auto"
                             disableSwap
                             color="success"
-                            max={10}
+                            max={20}
                             sx={{
                                 '& .MuiSlider-thumb': {
                                     backgroundColor: 'white', 

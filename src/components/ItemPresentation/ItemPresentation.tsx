@@ -45,7 +45,7 @@ const ItemPresentation: FC<ItemPresentationProps> = ( { item } ) => {
                             [cl["item-description__info--non-exists"]]: !item?.isInStock,
                         })}>
                             {item?.isInStock ? STOCK_VARIANT.EXISTS: STOCK_VARIANT.NOT_EXISTS}
-                            <span className={cl["item-description__info--text_count"]}> ({item.count} од.)</span> 
+                            <span className={cl["item-description__info--text_count"]}> ({item?.count} од.)</span> 
                         </p>
                         <p className={cl["item-description__info--text"]}>Код: {item?.code}</p>
                         <p className={cl["item-description__info--text"]}>Виробник: {item?.producer}</p>
@@ -77,8 +77,8 @@ const ItemPresentation: FC<ItemPresentationProps> = ( { item } ) => {
                     <div className={cl["item-description__item"]}>
                         <div className={clsx(cl["item-description__item_wrapper"], cl["item-description__item_wrapper_buy"])}>
                         <ProductCounter
-                                count={count}
-                                setCount={setCount}
+                            count={count}
+                            setCount={setCount}
                         />
                         <CustomButton 
                             onClick={addNewItemToCart}
