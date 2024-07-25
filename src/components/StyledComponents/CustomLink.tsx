@@ -6,7 +6,7 @@ import { styled } from '@mui/material/styles';
 import ICustomLinkProps from '../../types/ICustomLinkProps';
 
 
-const StyledLink = styled(Link)(({ theme }) => ({
+const StyledLink = styled(Link)(() => ({
     fontFamily: "'Roboto', sans-serif",
     fontSize: "1rem",
     fontWeight: 400,
