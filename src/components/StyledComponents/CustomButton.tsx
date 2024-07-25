@@ -15,7 +15,7 @@ const Button = React.forwardRef(function CustomButton(
 });
 
 const CustomButton = styled(Button)(
-  ({ theme, variant, fontWeight }) => `
+  ({ variant, fontWeight }) => `
   font-family: "Roboto", sans-serif;
   font-weight: ${fontWeight || 400};
   font-style: normal;

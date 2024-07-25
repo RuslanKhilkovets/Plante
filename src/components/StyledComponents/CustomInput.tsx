@@ -4,7 +4,7 @@ import { styled } from '@mui/system';
 import { InputBase, InputBaseProps, InputAdornment } from '@mui/material';
 
 const StyledInput = styled(InputBase)(
-  ({ theme }) => `
+  () => `
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;

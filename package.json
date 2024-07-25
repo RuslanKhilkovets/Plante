@@ -3,13 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://github.com/RuslanKhilkovets/Plante",
   "scripts": {
     "vite": "vite",
     "json-server": "json-server --watch src/server/db.json --port 5000",
+    "render:start": "node ./src/json-server/index.js & npx vite",    
     "dev": "concurrently \"npm run vite\" \"npm run json-server\"",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/styled": "^11.11.5",
@@ -22,7 +26,7 @@
     "@splidejs/splide": "^4.1.4",
     "axios": "^1.7.2",
     "clsx": "^2.1.1",
-    "json-server": "^1.0.0-beta.1",
+    "json-server": "^0.17.3",
     "notistack": "^3.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -45,6 +49,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
+    "gh-pages": "^6.1.1",
     "postcss": "^7.0.39",
     "postcss-import-alias": "^0.0.1",
     "typescript": "^5.5.3",
