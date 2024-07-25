@@ -5,7 +5,7 @@
               "id": 1,
               "title": "Баклажани японські",
               "price": 3.40,
-              "img": "/img/baklazhany.png",
+              "img": "/public/img/baklazhany.png",
               "isInStock": true,
               "url": "baklazhani-yaponski"
           },
