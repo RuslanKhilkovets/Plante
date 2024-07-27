@@ -1,0 +1,28 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.slider-thumbnails {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    .slide {
+        height: 80px;
+        width: 80px;
+    }
+    .thumbnail-slide{
+        width: max-content!important;
+        height: max-content!important;
+    }
+    
+}
+.splide__track--nav>.splide__list>.splide__slide{
+    &.is-active{
+        border: 2px solid transparent;
+        transition: $trans-time;
+    }
+    &.is-active .slide{
+        border: 2px solid $text-secondary-color;
+        opacity: .7;
+        transition: $trans-time;
+    }
+}

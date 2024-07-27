@@ -1,0 +1,16 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+
+.slider-preview{
+    @include flexbox($gap: 1rem);
+    &__slider .slider__slide{
+        height: 575px;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .slider-preview__menu{
+        display: none;
+    }
+}

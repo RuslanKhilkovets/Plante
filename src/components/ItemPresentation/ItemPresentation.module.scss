@@ -1,0 +1,124 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+
+.item{
+    @include f-between($gap: 2rem);
+}
+
+.item-slider{
+    width: 100%;
+    overflow: hidden;
+}
+
+.item-description{
+    width: 100%;
+    @include flexbox($gap: 20px, $fd: column);
+    &__title{
+        @include font($fsz: 2.5rem, $fw: 700);
+        color: $text-primary-color;
+    }
+    &__info{
+        @include flexbox($gap: 1rem);
+    }
+    &__info--text{
+        @include font($fsz: 1rem, $fw: 500);
+        color: $text-primary-color;
+    }
+    &__info--count{
+        @include font($fsz: 1rem, $fw: 500);
+        color: $text-primary-color;
+    }
+    &__info--text_existing{
+        @include font($fsz: 1rem, $fw: 500);
+        margin-left: 2rem;
+        color: $text-primary-color;
+    }
+    &__info--exists{
+        position: relative;
+        color: $text-secondary-color;
+        &::before{
+            content: "";
+            position: absolute;
+            left: -1.5rem;
+            width: 1rem;
+            height: 1rem;
+            @include back-image("@/icons/item-exists.svg");
+        }
+    }
+    &__info--non-exists{
+        color: red;
+    }
+    &__item{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid $button-secondary-color;
+        border-radius: 10px;
+    }
+    &__item--title{
+        @include font($fsz: 1rem);
+        color: $overlay-color;
+    }
+    &__weight-item{
+        display: block;
+        @include font();
+        @include f-center();
+
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        background-color: $button-secondary-color;
+        transition: $trans-time border;
+        &:hover{
+            transition: $trans-time border;
+            border-color: $text-secondary-color;
+        }
+        input[type="radio"] {
+            display: none;
+        }
+    }
+    &__weight-item_active{
+        border: 2px solid $text-secondary-color;
+    }
+    &__item_wrapper{
+        @include flexbox($gap: 1rem, $ai: center);
+    }
+    &__item_buy-btn{
+        @include f-center()
+    }
+    &__item_buy-btn-text{
+        @include font($fw: 700);
+        color: $main-primary-color;
+    }
+    &__item_price_number{
+        @include font($fsz: 2.5rem, $fw: 700);
+    }
+    &__item_price_text{
+        @include font($fsz: 1.5rem)
+    }
+}
+
+@media screen and (max-width: 768px){
+    .item{
+        flex-direction: column;
+        .slide{
+            height: 600px!important;
+        }
+    }
+    .item-description{
+        &__title{
+            font-size: 2rem!important;
+        }
+        &__item_wrapper_buy{
+            flex-direction: column;
+            gap: 1rem;
+        }
+        &__item{
+            padding: 20px;
+        }
+        &__info--text_count{
+            display: none;
+        }
+    }
+}

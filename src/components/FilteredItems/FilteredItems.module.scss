@@ -1,0 +1,28 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+
+.filtered-items{
+    margin: 0 auto;
+    @include flexbox($fw: wrap, $gap: 40px);
+}
+
+.empty{
+    min-height: 600px;
+    @include f-center;
+    &__text{
+        @include font($fsz: 3rem);
+    }
+}
+@media screen and (max-width: 768px){
+
+    .filtered-items{
+        @include flexbox($gap: 25px);
+    }
+}
+@media screen and (max-width: 360px){
+
+    .filtered-items{
+        @include f-between($gap: 15px);
+    }
+}

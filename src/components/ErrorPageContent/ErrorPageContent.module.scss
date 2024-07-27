@@ -1,0 +1,31 @@
+@import "../../components/UI/mixins.scss";
+@import "../../components/UI/vars.scss";
+
+
+.error-page{
+    height: 50vh;
+    width: 100%;
+    @include f-center($fd: column);
+    &__title{
+        @include font($fsz: 15rem, $fw: 700);
+        color: $text-icons-color;
+        text-align: center;
+    }
+    &__subtitle{
+        @include font($fsz: 3rem, $fw: 700);
+        color: $text-icons-color;
+        text-align: center;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .error-page{
+        &__title{
+           font-size: 8rem!important;
+        }
+        &__subtitle{
+            font-size: 2rem!important;
+        }
+    }
+}

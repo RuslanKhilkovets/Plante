@@ -1,0 +1,20 @@
+
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.breadcrumb-link {
+    @include font($fsz: 14px);
+    text-decoration: none !important;
+    color: $overlay-color;
+    transition: $trans-time;
+    max-width: 200px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:hover {
+        transition: $trans-time;
+        color: $text-secondary-color;
+    }
+}

@@ -1,0 +1,23 @@
+@import "../../components/UI/vars.scss";
+@import "../../components/UI/mixins.scss";
+
+.order-form{
+    padding: 30px 0;
+    border-bottom: 1px solid $button-secondary-color;
+    &__heading{
+        @include flexbox($gap: 1rem, $ai: center);
+    }
+    &__number{
+        height: 32px;
+        width: 32px;
+        @include font($fsz: 1.2rem);
+        @include f-center;
+        color: $main-primary-color;
+        background-color: $text-secondary-color;
+        border-radius: 50%;
+    }
+    &__title{
+        @include font($fsz: 1.2rem);
+        color: $text-primary-color;
+    }
+}
