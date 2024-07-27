@@ -5,11 +5,8 @@
   "type": "module",
   "homepage": "https://github.com/RuslanKhilkovets/Plante",
   "scripts": {
-    "vite": "vite",
-    "json-server": "json-server --watch src/server/db.json --port 8080",
-    "render:start": "node ./src/json-server/index.js & npx vite",    
-    "dev": "concurrently \"npm run vite\" \"npm run json-server\"",
-    "build": "vite build",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
