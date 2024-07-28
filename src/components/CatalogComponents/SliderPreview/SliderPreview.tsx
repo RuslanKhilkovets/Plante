@@ -15,7 +15,6 @@ const SliderPreview: FC = () => {
                     className={cl["slider-preview__menu"]}
                     onMouseOver={() => setIsMenuActive(false)} 
                 >
-
                     <CatalogMenu 
                         visible={true}
                         active={isMenuActive} 

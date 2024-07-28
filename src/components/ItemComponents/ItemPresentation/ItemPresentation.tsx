@@ -35,7 +35,7 @@ const ItemPresentation: FC<ItemPresentationProps> = ( { item } ) => {
         &&
         <div className={cl["item"]}>
             <div className={cl["item-slider"]}>
-                <ItemSlider/>
+                <ItemSlider slides={item?.img}/>
             </div>
             <div className={cl["item-description"]}>
                     <p className={cl["item-description__title"]}>{item?.title}</p>

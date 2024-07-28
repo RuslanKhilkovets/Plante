@@ -21,12 +21,15 @@ const ProductItem: FC<{ product: TProductFullData }> = ({ product }) => {
   const dispatch = useAppDispatch();
   const { enqueueSnackbar } = useSnackbar();
 
+  
   const addToCart = (event: React.MouseEvent) => {
     event.stopPropagation();
     dispatch(addItemToCart(product));
     enqueueSnackbar('Продукт було додано в кошик!', { variant: 'success' });
   };
 
+  console.log(product.img);
+  
   const handleNavigation = () => {
     navigate(`${PATHS.ITEM}?url=${product.url || ''}`);
   };
@@ -36,7 +39,7 @@ const ProductItem: FC<{ product: TProductFullData }> = ({ product }) => {
       <div className={cl['product-item__item']}>
         <div
           className={cl['product-item__img']}
-          style={{ backgroundImage: `url(${product?.img})` }}
+          style={{ backgroundImage: `url(${product.img ? product?.img[0] : ""})` }}
         ></div>
         <div className={cl['product-item__heading']}>
           <p className={cl['product-item__title']}>{product.title}</p>

@@ -4,6 +4,7 @@ import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css';
 import "./ThumbnailSlider.scss";
+
 import IThumbnailSlider from "../../../types/IThumbnailSlider";
 
 

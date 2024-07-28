@@ -10,11 +10,11 @@ import FilterItem from '../../globals/FilterItem/FilterItem';
 
 import ICatalogFilterProps from '../../../types/ICatalogFilterProps';
 import { MIN_RANGE_STEP } from '../../../constants/globals';
+
 import filterProductTypes from '../../../constants/filterProductTypes';
 import filterProductWeight from '../../../constants/filterProductWeight';
 
 import cl from "./CatalogFilter.module.scss";
-
 
 
 const CatalogFilter: FC<ICatalogFilterProps> = ({ filters, setFilters, clearFilters, open, setOpen, onFilter }) => {

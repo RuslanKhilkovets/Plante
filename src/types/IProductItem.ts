@@ -2,7 +2,7 @@ export type TProductItem = {
     id: number;
     title: string;
     price: number;
-    img: string;
+    img: string[];
     isInStock: boolean;
     popularity: number;
     url?: string;
@@ -18,6 +18,7 @@ export type TProductFullData = TProductItem & {
     category: string;
     weight: number;
     count: number;
+    img: string[];
     type: number;
 }
 

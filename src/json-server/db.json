@@ -1,251 +1,317 @@
 {
   "products": {
-    "popular": [
-        {
-            "id": 1,
-            "title": "Баклажани японські",
-            "price": 3.40,
-            "img": "/img/baklazhany.png",
-            "isInStock": true,
-            "url": "baklazhani-yaponski"
-        },
-        {
-            "id": 2,
-            "title": "Буряк",
-            "price": 3.40,
-            "img": "/img/buraki.png",
-            "isInStock": false,
-            "url": "buryak-tsukrovij-inkrustovane"
-        },
-        {
-            "id": 3,
-            "title": "Перець італійський",
-            "img": "/img/perec.png",
-            "price": 3.40,
-            "isInStock": true,
-            "url": "perets-italijski"
-        },
-        {
-            "id": 4,
-            "title": "Кабачок",
-            "img": "/img/kabachki.png",
-            "price": 3.40,
-            "isInStock": true,
-            "url": "kabachok"
-        },
-        {
-            "id": 5,
-            "title": "Капуста китайська",
-            "price": 3.40,
-            "img": "/img/kapusta.png",
-            "isInStock": true,
-            "url": "kapusta-kitayska"
-        },
-        {
-            "id": 6,
-            "title": "Баклажани японські",
-            "img": "/img/baklazhany.png",
-            "price": 3.40,
-            "isInStock": true,
-            "url": "baklazhani-yaponski"
-        }
-    ],
-    "discounts": [
+    "popular": [{
+        "id": 1,
+        "title": "Баклажани японські",
+        "price": 3.40,
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/baklazhany.png",
+          "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRGBp8TV7biD-OLlWhuDDYF1y1RbmTKwdIZGhrDbSQ-EBZbQ5WRWCtVz0_OdkX0OhVNoTEAhovtrdYiFW5ko7oNo8-vhPep2WFe4dxPSAhii_Tf4elbMIwArQ&usqp=CAE"
+        ],
+        "isInStock": true,
+        "url": "baklazhani-yaponski"
+      },
       {
-            "id": 1,
-            "title": "Помідори черрі",
-            "img": "/img/tomatos.png",
-            "price": 3.40,
-            "isInStock": true,
-            "url": "pomidori-cherri-importni"
-        },
-        {
-            "id": 2,
-            "title": "Капуста китайська",
-            "img": "/img/kapusta.png",
-            "price": 3.40,
-            "isInStock": false,
-            "url": "kapusta-kitayska"
-        },
-        {
-            "id": 3,
-            "title": "Гарбуз",
-            "img": "/img/garbuza.png",
-            "price": 3.40,
-            "isInStock": true
-        },
-        {
-            "id": 4,
-            "title": "Огірок",
-            "img": "/img/cucumbers.png",
-            "price": 3.40,
-            "isInStock": true,
-            "url": "garbuz-inkrustovane"
-        },
-        {
-            "id": 5,
-            "title": "Салат",
-            "price": 3.40,
-            "img": "/img/salade.png",
-            "isInStock": true,
-            "url": "salat-inkrustovane"
-        },
-        {
-            "id": 6,
-            "title": "Салат",
-            "price": 3.40,
-            "img": "/img/salade.png",
-            "isInStock": true,
-            "url": "salat-inkrustovane"
-        }
+        "id": 2,
+        "title": "Буряк",
+        "price": 3.40,
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/buraki.png",
+          "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRwfVL4uKAfvhkA8PaN8ouPm4E6mKwdg7Efliv_7zIPnGaSXoSBOkieb-2SUuQNDp68gbD7H8RC_dVH5s6hh9YixAmXCzG_&usqp=CAE"
+        ],
+        "isInStock": false,
+        "url": "buryak-tsukrovij-inkrustovane"
+      },
+      {
+        "id": 3,
+        "title": "Перець італійський",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/perec.png",
+          "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTNGMhR-D8OlrFEU58LOXv41MqiKYrkDR2Whx_DBICOJPmpEWF4w2Dmq_AezrEenrwjnch7AWNA7pwHWwsuqnN6IrQwiv9P-Lb6GrVk9pl9UecY4HwFoE9BxA&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": true,
+        "url": "perets-italijski"
+      },
+      {
+        "id": 4,
+        "title": "Кабачок",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/kabachki.png",
+          "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTNGMhR-D8OlrFEU58LOXv41MqiKYrkDR2Whx_DBICOJPmpEWF4w2Dmq_AezrEenrwjnch7AWNA7pwHWwsuqnN6IrQwiv9P-Lb6GrVk9pl9UecY4HwFoE9BxA&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": true,
+        "url": "kabachok"
+      },
+      {
+        "id": 5,
+        "title": "Капуста китайська",
+        "price": 3.40,
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/kapusta.png",
+          "hhttps://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS6FCGODSG7GK5MHrwKqUqErlHplrFNx5-W1JkpackjN0Tq6XP9EocHm7QV9ghIDskLuC4cK3lSGyV7itcGmFQnD6JvtwoJ1gnyYnlVHeyISvn7pH-mpXmw&usqp=CAE"
+        ],
+        "isInStock": true,
+        "url": "kapusta-kitayska"
+      },
+      {
+        "id": 6,
+        "title": "Баклажани японські",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/baklazhany.png",
+          "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRGBp8TV7biD-OLlWhuDDYF1y1RbmTKwdIZGhrDbSQ-EBZbQ5WRWCtVz0_OdkX0OhVNoTEAhovtrdYiFW5ko7oNo8-vhPep2WFe4dxPSAhii_Tf4elbMIwArQ&usqp=CAE"
+
+        ],
+        "price": 3.40,
+        "isInStock": true,
+        "url": "baklazhani-yaponski"
+      }
     ],
-    "news": [
-        {
-            "id": 1,
-            "title": "Перець італійський",
-            "img": "/img/perec.png",
-            "price": 3.40,
-            "isInStock": true,
-            "url": "perets-italijski"
-        },
-        {
-            "id": 2,
-            "title": "Буряк",
-            "img": "/img/buraki.png",
-            "price": 3.40,
-            "isInStock": false,
-            "url": "buryak-tsukrovij-inkrustovane"
-        },
-        {
-            "id": 3,
-            "title": "Диня",
-            "img": "/img/dynya.png",
-            "price": 3.40,
-            "isInStock": true,
-            "url": "rediska-inkrustovane"
-        },
-        {
-            "id": 4,
-            "title": "Капуста китайська",
-            "img": "/img/kapusta.png",
-            "price": 3.40,
-            "isInStock": true,
-            "url": "kapusta-kitayska"
-        },
-        {
-            "id": 5,
-            "title": "Помідори черрі (імпортні)",
-            "img": "/img/tomatos.png",
-            "price": 3.40,
-            "isInStock": true,
-            "url": "pomidori-cherri-importni"
-        },
-        {
-            "id": 6,
-            "title": "Салат",
-            "img": "/img/salade.png",
-            "price": 3.40,
-            "isInStock": true,
-            "url": "salat-inkrustovane"
-        }
+    "discounts": [{
+        "id": 1,
+        "title": "Помідори черрі",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/tomatos.png",
+          "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ8lBy8XguFf62uDmNbutpAjFoJFZWUBCV-wSUiLm2DggaIBWn6XddK4FZcn6PAcPU8A6BVOMlXNargAkdlMcKL8M49Ij08PI4-H0wxp6tdqsQQ_lALH39ShQ&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": true,
+        "url": "pomidori-cherri-importni"
+      },
+      {
+        "id": 2,
+        "title": "Капуста китайська",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/kapusta.png",
+          "hhttps://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS6FCGODSG7GK5MHrwKqUqErlHplrFNx5-W1JkpackjN0Tq6XP9EocHm7QV9ghIDskLuC4cK3lSGyV7itcGmFQnD6JvtwoJ1gnyYnlVHeyISvn7pH-mpXmw&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": false,
+        "url": "kapusta-kitayska"
+      },
+      {
+        "id": 3,
+        "title": "Гарбуз",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/garbuza.png",
+          "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRT527rbhamz0kX7OUwlgmVOzwcCLdfmZaTZC6T6ZbCm--bjfu-hyrhSHSmLk0YmgRn6B09OVwxzcGEjcRZUvszs-PETdQCdaT3iOq8Azw_&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": true
+      },
+      {
+        "id": 4,
+        "title": "Огірок",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/cucumbers.png",
+          "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT5Lz3djeRg2vMvKiP9c1R-sp56299phDKOlQ1vVuxjEoP9Xjsq3Qg7V9LdBtxdpdyq027QYUbExt25zLleO0cEscv-XDzlJ7F6Hf1_941BdooJ0cHQLxrD&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": true,
+        "url": "garbuz-inkrustovane"
+      },
+      {
+        "id": 5,
+        "title": "Салат",
+        "price": 3.40,
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/salade.png",
+          "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQJpSrga5Hr8sBO-NJwumvNQEVIFhAvwhdSTPn2hh_PSNsluVdyeLHT20CPe95mmlu3ytzyn22vmmBJw8vWKDjn9dnlYmwSCBgQPZ-oh1Y&usqp=CAE"
+        ],
+        "isInStock": true,
+        "url": "salat-inkrustovane"
+      },
+      {
+        "id": 6,
+        "title": "Салат",
+        "price": 3.40,
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/salade.png",
+          "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQJpSrga5Hr8sBO-NJwumvNQEVIFhAvwhdSTPn2hh_PSNsluVdyeLHT20CPe95mmlu3ytzyn22vmmBJw8vWKDjn9dnlYmwSCBgQPZ-oh1Y&usqp=CAE"
+        ],
+        "isInStock": true,
+        "url": "salat-inkrustovane"
+      }
+    ],
+    "news": [{
+        "id": 1,
+        "title": "Перець італійський",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/perec.png",
+          "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTNGMhR-D8OlrFEU58LOXv41MqiKYrkDR2Whx_DBICOJPmpEWF4w2Dmq_AezrEenrwjnch7AWNA7pwHWwsuqnN6IrQwiv9P-Lb6GrVk9pl9UecY4HwFoE9BxA&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": true,
+        "url": "perets-italijski"
+      },
+      {
+        "id": 2,
+        "title": "Буряк",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/buraki.png",
+          "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRwfVL4uKAfvhkA8PaN8ouPm4E6mKwdg7Efliv_7zIPnGaSXoSBOkieb-2SUuQNDp68gbD7H8RC_dVH5s6hh9YixAmXCzG_&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": false,
+        "url": "buryak-tsukrovij-inkrustovane"
+      },
+      {
+        "id": 3,
+        "title": "Редиска (інкрустоване)",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/dynya.png",
+          "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRbcD0QepVd1QdsajvTWwYQopB1HaQEwi4VBz80oNDXXmiCPrspI4c3mee9LzDn7Fl-_eezGf2HHbrCxwieIR2xMk-AztFtvqmFOCVZQ5N0jg64A9oek5AkHw&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": true,
+        "url": "rediska-inkrustovane"
+      },
+      {
+        "id": 4,
+        "title": "Капуста китайська",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/kapusta.png",
+          "hhttps://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS6FCGODSG7GK5MHrwKqUqErlHplrFNx5-W1JkpackjN0Tq6XP9EocHm7QV9ghIDskLuC4cK3lSGyV7itcGmFQnD6JvtwoJ1gnyYnlVHeyISvn7pH-mpXmw&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": true,
+        "url": "kapusta-kitayska"
+      },
+      {
+        "id": 5,
+        "title": "Помідори черрі (імпортні)",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/tomatos.png",
+          "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ8lBy8XguFf62uDmNbutpAjFoJFZWUBCV-wSUiLm2DggaIBWn6XddK4FZcn6PAcPU8A6BVOMlXNargAkdlMcKL8M49Ij08PI4-H0wxp6tdqsQQ_lALH39ShQ&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": true,
+        "url": "pomidori-cherri-importni"
+      },
+      {
+        "id": 6,
+        "title": "Салат",
+        "img": [
+          "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/salade.png",
+          "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQJpSrga5Hr8sBO-NJwumvNQEVIFhAvwhdSTPn2hh_PSNsluVdyeLHT20CPe95mmlu3ytzyn22vmmBJw8vWKDjn9dnlYmwSCBgQPZ-oh1Y&usqp=CAE"
+        ],
+        "price": 3.40,
+        "isInStock": true,
+        "url": "salat-inkrustovane"
+      }
     ]
   },
-  "catalog": [
-    {
-        "id": 1,
-        "title": "Арахіс (малий європакет)",
-        "url": "arachis",
-        "catalog": "vegetables-euro-package", 
-        "isInStock": true,
-        "code": 1001,
-        "producer": "Unknown",
-        "weightItems": [0.1, 0.2, 0.5, 1],
-        "price": 5,
-        "description": "Арахіс - смачний горіх, популярний у багатьох кухнях.",
-        "category": "Овочі (малий європакет)",
-        "weight": 0.2,
-        "count": 50,
-        "type": 1,
-        "popularity": 7.8,
-        "img": "/img/arahis.png"
+  "catalog": [{
+      "id": 1,
+      "title": "Арахіс (малий європакет)",
+      "url": "arachis",
+      "catalog": "vegetables-euro-package",
+      "isInStock": true,
+      "code": 1001,
+      "producer": "Unknown",
+      "weightItems": [0.1, 0.2, 0.5, 1],
+      "price": 5,
+      "description": "Арахіс - смачний горіх, популярний у багатьох кухнях.",
+      "category": "Овочі (малий європакет)",
+      "weight": 0.2,
+      "count": 50,
+      "type": 1,
+      "popularity": 7.8,
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT8L-F4huybvCrPtoOeFtNicrMaSRUU5EVATyPxmR6UzambXmfIs8zRH8Z5qiCkeY3KDWDLNaVAC2MD5opN5stfZW55e_18mEAKhggTNMtjvHK9WN0HQJe9warY&usqp=CAE",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS-bU5PPKMAHfylvnit-CwLHt_gJnH--rdL6g22EiljqogJBH8UeHIrKwMSIpKyhlaoQDudvJJl6QAQlWMt1ZYJQeyZLYpcM_5yKlulCHQ&usqp=CAE"
+      ]
     },
     {
-        "id": 2,
-        "title": "Баклажани (малий європакет)",
-        "url": "baklazhany",
-        "catalog": "vegetables-euro-package", 
-        "isInStock": true,
-        "code": 1002,
-        "producer": "Unknown",
-        "weightItems": [0.1, 0.2, 0.5, 1],
-        "price": 1.50,
-        "description": "Баклажани - смачний овоч, популярний у багатьох кухнях.",
-        "category": "Овочі (малий європакет)",
-        "weight": 0.2,
-        "count": 50,
-        "type": 1,
-        "popularity": 8.5,
-        "img": "/img/baklazhany.png"
+      "id": 2,
+      "title": "Баклажани (малий європакет)",
+      "url": "baklazhany",
+      "catalog": "vegetables-euro-package",
+      "isInStock": true,
+      "code": 1002,
+      "producer": "Unknown",
+      "weightItems": [0.1, 0.2, 0.5, 1],
+      "price": 1.50,
+      "description": "Баклажани - смачний овоч, популярний у багатьох кухнях.",
+      "category": "Овочі (малий європакет)",
+      "weight": 0.2,
+      "count": 50,
+      "type": 1,
+      "popularity": 8.5,
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/baklazhany.png",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRGBp8TV7biD-OLlWhuDDYF1y1RbmTKwdIZGhrDbSQ-EBZbQ5WRWCtVz0_OdkX0OhVNoTEAhovtrdYiFW5ko7oNo8-vhPep2WFe4dxPSAhii_Tf4elbMIwArQ&usqp=CAE"
+      ]
     },
     {
-        "id": 3,
-        "title": "Буряк (малий європакет)",
-        "url": "buraki",
-        "catalog": "vegetables-euro-package", 
-        "isInStock": false,
-        "code": 1003,
-        "producer": "Unknown",
-        "weightItems": [0.1, 0.2, 0.5, 1],
-        "price": 0.90,
-        "description": "Буряк - смачний коренеплід, популярний у багатьох кухнях.",
-        "category": "Овочі (малий європакет)",
-        "weight": 0.2,
-        "count": 50,
-        "type": 2,
-        "popularity": 7.8,
-        "img": "/img/buraki.png"
+      "id": 3,
+      "title": "Буряк (малий європакет)",
+      "url": "buraki",
+      "catalog": "vegetables-euro-package",
+      "isInStock": false,
+      "code": 1003,
+      "producer": "Unknown",
+      "weightItems": [0.1, 0.2, 0.5, 1],
+      "price": 0.90,
+      "description": "Буряк - смачний коренеплід, популярний у багатьох кухнях.",
+      "category": "Овочі (малий європакет)",
+      "weight": 0.2,
+      "count": 50,
+      "type": 2,
+      "popularity": 7.8,
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/buraki.png",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRwfVL4uKAfvhkA8PaN8ouPm4E6mKwdg7Efliv_7zIPnGaSXoSBOkieb-2SUuQNDp68gbD7H8RC_dVH5s6hh9YixAmXCzG_&usqp=CAE"
+      ]
     },
     {
-        "id": 4,
-        "title": "Диня (малий європакет)",
-        "url": "dynya",
-        "catalog": "vegetables-euro-package", 
-        "isInStock": true,
-        "code": 1004,
-        "producer": "Unknown",
-        "weightItems": [0.1, 0.2, 0.5, 1],
-        "price": 2.00,
-        "description": "Диня - солодкий фрукт, популярний у багатьох кухнях.",
-        "category": "Фрукти (малий європакет)",
-        "weight": 0.2,
-        "count": 50,
-        "type": 2,
-        "popularity": 8.7,
-        "img": "/img/dynya.png"
+      "id": 4,
+      "title": "Диня (малий європакет)",
+      "url": "dynya",
+      "catalog": "vegetables-euro-package",
+      "isInStock": true,
+      "code": 1004,
+      "producer": "Unknown",
+      "weightItems": [0.1, 0.2, 0.5, 1],
+      "price": 2.00,
+      "description": "Диня - солодкий фрукт, популярний у багатьох кухнях.",
+      "category": "Фрукти (малий європакет)",
+      "weight": 0.2,
+      "count": 50,
+      "type": 2,
+      "popularity": 8.7,
+      "img": [
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcS7-yMZGeX1IUoXKJRnBkgZQkh7X-DFvqmHEAHK5NLpDoA6OEY8eDmofj-o4qwXixoEFx6Ie9ASfhWRrNyj_iIA4ElNoiEAj3o9i4u3ZmqJScrcOUt0K7WWQg&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSP7kTCUSzXKLN6DsQ5PaMPIKsOXngVSgzf-Rx_uh4T7G0Vb3visHGcUY1PARGBn8gXnVasdzXBGMou_lKc8F6LaK3PDWeWhLsVB7h0T6EfsKCorunZaLbpIA&usqp=CAE"
+      ]
     },
     {
-        "id": 5,
-        "title": "Гарбуз (малий європакет)",
-        "url": "harbuz",
-        "catalog": "vegetables-euro-package", 
-        "isInStock": true,
-        "code": 1005,
-        "producer": "Unknown",
-        "weightItems": [0.1, 0.2, 0.5, 1],
-        "price": 2.30,
-        "description": "Гарбуз - смачний овоч, популярний у багатьох кухнях.",
-        "category": "Овочі (малий європакет)",
-        "weight": 0.2,
-        "count": 50,
-        "type": 3,
-        "popularity": 8.6,
-        "img": "/img/harbuz.png"
+      "id": 5,
+      "title": "Гарбуз (малий європакет)",
+      "url": "harbuz",
+      "catalog": "vegetables-euro-package",
+      "isInStock": true,
+      "code": 1005,
+      "producer": "Unknown",
+      "weightItems": [0.1, 0.2, 0.5, 1],
+      "price": 2.30,
+      "description": "Гарбуз - смачний овоч, популярний у багатьох кухнях.",
+      "category": "Овочі (малий європакет)",
+      "weight": 0.2,
+      "count": 50,
+      "type": 3,
+      "popularity": 8.6,
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/garbuza.png",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRT527rbhamz0kX7OUwlgmVOzwcCLdfmZaTZC6T6ZbCm--bjfu-hyrhSHSmLk0YmgRn6B09OVwxzcGEjcRZUvszs-PETdQCdaT3iOq8Azw_&usqp=CAE"
+      ]
     },
     {
       "id": 6,
       "title": "Горох (малий європакет)",
       "url": "horoh",
-      "catalog": "vegetables-euro-package", 
+      "catalog": "vegetables-euro-package",
       "isInStock": true,
       "code": 1006,
       "producer": "Unknown",
@@ -257,7 +323,10 @@
       "count": 65,
       "type": 1,
       "popularity": 4.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTZaqU5kdEH4JDiHWfazyO_sQvcxwV068XsjU1ItrVPVmYlyZbYtGkFf2jXIrTllrIGQXW9i2x_mkz-7jWPfZX6HQbxjgGP&usqp=CAE",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSTaK3P5NtfIRi8a3JlEa1xbPW-iY9qYUdY-TgNLp5ngjoo_tnRAxWg-INYV-x3TbU5IrF6omRt_I6RuiAiHR7i_JjirG8z&usqp=CAE"
+      ]
     },
     {
       "id": 7,
@@ -275,7 +344,10 @@
       "count": 50,
       "type": 3,
       "popularity": 4.0,
-      "img": ""
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/kabachki.png",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTNGMhR-D8OlrFEU58LOXv41MqiKYrkDR2Whx_DBICOJPmpEWF4w2Dmq_AezrEenrwjnch7AWNA7pwHWwsuqnN6IrQwiv9P-Lb6GrVk9pl9UecY4HwFoE9BxA&usqp=CAE"
+      ]
     },
     {
       "id": 8,
@@ -290,25 +362,33 @@
       "description": "Кавун - великий і смачний фрукт, ідеальний для літніх днів.",
       "category": "Фрукти (малий європакет)",
       "weight": 1.0,
-      "count": 30
+      "count": 30,
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTiGhdvVYteUaHqR6g8F9viAoZ1R1e4STZZ0Lx7Y6LbySYtQ5othXsVL_3JIK3TyXZk1kHP3UnV8tMto44s8DC5pFnwdtgw&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQCsrmeSl_hM-RaF5Lc6F7e_Q1weo9Stj87HZfFNmDsXuCwDvHMsBGhXBtFLOTNeabW3YMCbh7AW0amj8EUF-BnUcxx3wSf5qSvyjUUC9_EG4cnjNFkFib1Mg&usqp=CAE"
+      ]
     },
     {
-        "id": 9,
-        "title": "Капуста (малий європакет)",
-        "url": "kapusta",
-        "catalog": "vegetables-euro-package",
-        "isInStock": true,
-        "code": 1009,
-        "producer": "Unknown",
-        "weightItems": [0.1, 0.2, 0.5, 1],
-        "price": 4,
-        "description": "Капуста - овоч, який часто використовується в салатах і супах.",
-        "category": "Овочі (малий європакет)",
-        "weight": 0.5,
-        "count": 70,
-        "type": 1,
-        "popularity": 9.5,
-        "img": ""
+      "id": 9,
+      "title": "Капуста (малий європакет)",
+      "url": "kapusta",
+      "catalog": "vegetables-euro-package",
+      "isInStock": true,
+
+      "code": 1009,
+      "producer": "Unknown",
+      "weightItems": [0.1, 0.2, 0.5, 1],
+      "price": 4,
+      "description": "Капуста - овоч, який часто використовується в салатах і супах.",
+      "category": "Овочі (малий європакет)",
+      "weight": 0.5,
+      "count": 70,
+      "type": 1,
+      "popularity": 9.5,
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/kapusta.png",
+        "hhttps://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS6FCGODSG7GK5MHrwKqUqErlHplrFNx5-W1JkpackjN0Tq6XP9EocHm7QV9ghIDskLuC4cK3lSGyV7itcGmFQnD6JvtwoJ1gnyYnlVHeyISvn7pH-mpXmw&usqp=CAE"
+      ]
     },
     {
       "id": 10,
@@ -326,79 +406,94 @@
       "count": 50,
       "type": 1,
       "popularity": 6.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRTXGNW_Bk8vJYD2vTSyKtDyfEpxMh-C-UM41dBKYDdgdOq43tZ52r441-6YAiOrnsrKD73Vp9GSdRmyThOhTw0m1jDifv2&usqp=CAE",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRFOcuQK2Fy3rSOEhkvSz7pVGIZgPFMmwGQhyZSh7DPb4Ro4aMY7EmPq6Yw_J9ZDQ9Q2E8gAqdgx3e8-VjQRX1wgJeCWKj7-A&usqp=CAE"
+      ]
     },
     {
-        "id": 11,
-        "title": "Тюльпани",
-        "url": "tulipany",
-        "catalog": "flowers-seeds",
-        "isInStock": true,
-        "code": 1502,
-        "producer": "Plante",
-        "weightItems": [0.1, 0.2, 0.5, 1, 3],
-        "price": 10,
-        "description": "Тюльпани - популярні весняні квіти, відомі своїми яскравими кольорами і різноманітністю видів.",
-        "category": "Насіння квітів (малий європакет)",
-        "weight": 0.2,
-        "count": 60,
-        "type": 1,
-        "popularity": 9.5,
-        "img": ""
+      "id": 11,
+      "title": "Тюльпани",
+      "url": "tulipany",
+      "catalog": "flowers-seeds",
+      "isInStock": true,
+      "code": 1502,
+      "producer": "Plante",
+      "weightItems": [0.1, 0.2, 0.5, 1, 3],
+      "price": 10,
+      "description": "Тюльпани - популярні весняні квіти, відомі своїми яскравими кольорами і різноманітністю видів.",
+      "category": "Насіння квітів (малий європакет)",
+      "weight": 0.2,
+      "count": 60,
+      "type": 1,
+      "popularity": 9.5,
+      "img": [
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRTXGNW_Bk8vJYD2vTSyKtDyfEpxMh-C-UM41dBKYDdgdOq43tZ52r441-6YAiOrnsrKD73Vp9GSdRmyThOhTw0m1jDifv2&usqp=CAE",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRFOcuQK2Fy3rSOEhkvSz7pVGIZgPFMmwGQhyZSh7DPb4Ro4aMY7EmPq6Yw_J9ZDQ9Q2E8gAqdgx3e8-VjQRX1wgJeCWKj7-A&usqp=CAE"
+      ]
     },
     {
-        "id": 12,
-        "title": "Орхідеї",
-        "url": "orhideyi",
-        "catalog": "flowers-seeds",
-        "isInStock": true,
-        "code": 1503,
-        "producer": "Plante",
-        "weightItems": [0.1, 0.2, 0.5, 1, 3],
-        "price": 15,
-        "description": "Орхідеї - екзотичні квіти, які відзначаються своєю витонченістю і складною структурою. Вони вимагають особливого догляду.",
-        "category": "Насіння квітів (малий європакет)",
-        "weight": 0.2,
-        "count": 40,
-        "type": 1,
-        "popularity": 5.5,
-        "img": ""
+      "id": 12,
+      "title": "Орхідеї",
+      "url": "orhideyi",
+      "catalog": "flowers-seeds",
+      "isInStock": true,
+      "code": 1503,
+      "producer": "Plante",
+      "weightItems": [0.1, 0.2, 0.5, 1, 3],
+      "price": 15,
+      "description": "Орхідеї - екзотичні квіти, які відзначаються своєю витонченістю і складною структурою. Вони вимагають особливого догляду.",
+      "category": "Насіння квітів (малий європакет)",
+      "weight": 0.2,
+      "count": 40,
+      "type": 1,
+      "popularity": 5.5,
+      "img": [
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSlHqYHQU4KsBR-cjHot8htd6h3jo2fKdSiQpefMJp7f7nc9N36ehowOPVDm8aWkWPcGLyhzMEiaK8ge9rhZjie2beOSsBulzjKswdPt9I&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTiY6eN7b3aufBD7bCGvQixehhdmELAYvimYxTpNXQhfxERtDM92X6RO-jXQEOY2j-Zg4MhpsxrT0b97zHZAHecdne6fALH&usqp=CAE"
+      ]
     },
     {
-        "id": 13,
-        "title": "Нарциси",
-        "url": "narcisi",
-        "catalog": "flowers-seeds",
-        "isInStock": true,
-        "code": 1504,
-        "producer": "Plante",
-        "weightItems": [0.1, 0.2, 0.5, 1, 3],
-        "price": 8,
-        "description": "Нарциси - весняні квіти, які символізують нове життя і надію. Вони часто використовуються в садовому дизайні.",
-        "category": "Насіння квітів (малий європакет)",
-        "weight": 0.2,
-        "count": 55,
-        "type": 1,
-        "popularity": 10,
-        "img": ""
+      "id": 13,
+      "title": "Нарциси",
+      "url": "narcisi",
+      "catalog": "flowers-seeds",
+      "isInStock": true,
+      "code": 1504,
+      "producer": "Plante",
+      "weightItems": [0.1, 0.2, 0.5, 1, 3],
+      "price": 8,
+      "description": "Нарциси - весняні квіти, які символізують нове життя і надію. Вони часто використовуються в садовому дизайні.",
+      "category": "Насіння квітів (малий європакет)",
+      "weight": 0.2,
+      "count": 55,
+      "type": 1,
+      "popularity": 10,
+      "img": [
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSrbpytjHas45eDNaSnBklQe1GSri0NkkFA96Y9JN4R_AgX2rWpIlMs4DiqFhGHWmLqGV6FmU23vlUvFke_RcOq-umin4BEPa0bp7p6qQIk&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQXNy8II3WzvpW9osG4IMWtxlgct1Mw3p-TXome4x1tX1EUgOjsUu37FfRS3G82j-vcDYiqFLzzwqggjuiKunKp-q9FOaRgRfiI9As8issy&usqp=CAE"
+      ]
     },
     {
-        "id": 14,
-        "title": "Ромашки",
-        "url": "romashki",
-        "catalog": "flowers-seeds",
-        "isInStock": true,
-        "code": 1505,
-        "producer": "Plante",
-        "weightItems": [0.1, 0.2, 0.5, 1, 3],
-        "price": 7,
-        "description": "Ромашки - прості і чарівні квіти, відомі своїми білими пелюстками і жовтими серединками. Вони символізують чистоту і невинність.",
-        "category": "Насіння квітів (малий європакет)",
-        "weight": 0.2,
-        "count": 65,
-        "type": 1,
-        "popularity": 9.0,
-        "img": ""
+      "id": 14,
+      "title": "Ромашки",
+      "url": "romashki",
+      "catalog": "flowers-seeds",
+      "isInStock": true,
+      "code": 1505,
+      "producer": "Plante",
+      "weightItems": [0.1, 0.2, 0.5, 1, 3],
+      "price": 7,
+      "description": "Ромашки - прості і чарівні квіти, відомі своїми білими пелюстками і жовтими серединками. Вони символізують чистоту і невинність.",
+      "category": "Насіння квітів (малий європакет)",
+      "weight": 0.2,
+      "count": 65,
+      "type": 1,
+      "popularity": 9.0,
+      "img": [
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTCoFTaODz08sGkHtAiHIBDVP2UcaS8YNw20kvZZzWNUD_O3SLZ1GyqulYMe7ms1SAbkpxWVtdYlDwShZ54LetN1YSCZTCV&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ_2IdAyMpHUwU-n9tKkjZkEsg6moPH1V7es2Q6-tC-tXEp3TGVMlbWX0eQLK-qZWX3tcK6NzTwHNuAxj1yqysz0Tb8CM54&usqp=CAE"
+      ]
     },
     {
       "id": 15,
@@ -416,7 +511,10 @@
       "count": 100,
       "type": 3,
       "popularity": 8.0,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRSiiu17ks3f-7XBpa3tSpWE20oAq1ViXhIk8hJhMh0cTS6b4SN_8d3PK6hQRuTx--PPCsn8MIdxtRdE0iME2s1bnQlCVCNDWpfRyruy_pSwgYB5YRPvhQaSg&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRY4zBbGu1V2BOHWeETJS9BddUewq5RCERMrWSVieGp92XbkNXaFHoOUWFBj07Vj68sM_nVmTVYtcYuSMAI9yFfe3QsEtXE1g&usqp=CAE"
+      ]
     },
     {
       "id": 16,
@@ -434,7 +532,10 @@
       "count": 120,
       "type": 2,
       "popularity": 3.5,
-      "img": ""
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/kapusta.png",
+        "hhttps://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS6FCGODSG7GK5MHrwKqUqErlHplrFNx5-W1JkpackjN0Tq6XP9EocHm7QV9ghIDskLuC4cK3lSGyV7itcGmFQnD6JvtwoJ1gnyYnlVHeyISvn7pH-mpXmw&usqp=CAE"
+      ]
     },
     {
       "id": 17,
@@ -452,7 +553,10 @@
       "count": 110,
       "type": 4,
       "popularity": 6.5,
-      "img": ""
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/perec.png",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTNGMhR-D8OlrFEU58LOXv41MqiKYrkDR2Whx_DBICOJPmpEWF4w2Dmq_AezrEenrwjnch7AWNA7pwHWwsuqnN6IrQwiv9P-Lb6GrVk9pl9UecY4HwFoE9BxA&usqp=CAE"
+      ]
     },
     {
       "id": 18,
@@ -470,7 +574,10 @@
       "count": 90,
       "type": 2,
       "popularity": 5.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQQx9F7S4tbBzIJD_dD4GcxqhvJtq4YEKKiJUtmZoW5qyVnamB_P1Fx-vouB8UbnTR5aJgnB1z2-JBaD47cKWpjnBPG4cBS&usqp=CAE",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcR3rAI49WLiVLWl0bsoycZoPFQf7aBymhRAhBSma03lr_W0ZR--C9dAU88fXXhEzQMMm97gHSmKMO2XMrdrNd-mngvpxShLxrkknfF2n2-efAlz5hTiNv4j&usqp=CAE"
+      ]
     },
     {
       "id": 19,
@@ -488,7 +595,10 @@
       "count": 130,
       "type": 1,
       "popularity": 7.0,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT3enbsk5JsJDyNPeMQXlT7rS4yLHEafDB0dnWFhcnA3TALbOFpMG4eLnNHLgBzAAXlWxA07jtbwPfOGC0Z0cLuStE1IKML&usqp=CAE",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRlj1IV-4RFu2098it6QTw29IuaES6OwXgdhHlrO5YvGQjtRFX5Xg0vHt2Nq2Hc_y8vL7bhvSPmQ11LmBCm7dhvmHjchilC&usqp=CAE"
+      ]
     },
     {
       "id": 20,
@@ -506,7 +616,10 @@
       "count": 200,
       "type": 4,
       "popularity": 9.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ3XqvhmzIoKa3pD2fM-qZaBlVx2AVI_hFnJ4Ti8QK8B5nvbcOuwQQKtSq3RyzMuDASEQGhAh2iGc7krE5FulccJHjn0X6vKw&usqp=CAE",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTyV4Ik9arxzTZH_5Wjo5eB0_-6pSfeF95rtlJwRQiuoLTqS1AjKJuvFtylRf424X-Sle6DedTRW-Qaq1T924NI7tGpOjQk&usqp=CAE"
+      ]
     },
     {
       "id": 21,
@@ -524,7 +637,10 @@
       "count": 180,
       "type": 3,
       "popularity": 8.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR-TGWyqrRpq5sklkGQcvKOC3xyJxMLu29hEOdr4AN77ibZKDu8XiBJFvEvllsSGGPpOyN7LPhNjrLIubOXQlhuKVVFG56N&usqp=CAE",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRw9PDHBuQUUUAOUA4zxyKD8wYJXdkn3pA_YKzDSBP949p7PcwBlsHg5uxxdjhE4QiEvHW5mQF1kOLY33d6mC9yHSBZIokr56teIDzg3vE&usqp=CAE"
+      ]
     },
     {
       "id": 22,
@@ -542,7 +658,10 @@
       "count": 190,
       "type": 3,
       "popularity": 7.0,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRRhxqWNwO6mtt1fG8_rOM3QPf540YRrkbLdJnO7zwls7kx3RimCdl29F3hzxHnjgdbbhEeBapy7gp_dqLQmJR3qXJtjlwyC5jvqIlKMqr_&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRrK_TbE6bUqeGrumasMvry5EmOCirtl-DaY2nujDY5KJ6FpwWRT-VewiS-S95peEiR8Y-G6r1yFKzKI-lXFBMFWiNZ4c8OOPoLoTZhqQ0&usqp=CAE"
+      ]
     },
     {
       "id": 23,
@@ -560,7 +679,10 @@
       "count": 170,
       "type": 2,
       "popularity": 6.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSUXlJNBnav0rHn-RymvjIRcKyvgk037esUgNBtCM3cUyxinxBdpMiIPNvT2KXrbouU-UflczhwAsIDJv8tk-8iAJD00HP9x7S4GSY3g7E&usqp=CAE",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSZFUHN8hsjmkllUy81ko7Y9gLBXIYgD84Y7rCRnf0id1RWCLusPoRNDjo_40KAPP1LSrDngIRriP1QHWrLepWaaAEBN6uG&usqp=CAE"
+      ]
     },
     {
       "id": 24,
@@ -578,7 +700,10 @@
       "count": 210,
       "type": 3,
       "popularity": 8.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQfVkWzuickmjd5jdxFNnXjnExri0xmjOrMiM5UuZfbcZLpr0n7v9DX1y4pDrYlSjLHPADxDVdEB8D-9NKAv653bozIunsyFw&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQwYisHbfBOK_H8VvubxSrbkiRpwIWtjQbodEJqztqhmVKEWIBQGKTIy2qzCMxn-d8gdIcOKQrUjvu_-jHIVu1XFIHyp0fCEw&usqp=CAE"
+      ]
     },
     {
       "id": 25,
@@ -596,7 +721,10 @@
       "count": 150,
       "type": 4,
       "popularity": 9.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQZzZrbMwgQi8xpAmcpaFwlhRDKjsN7jRKdiHYdx7nkMxjVNfEcpUtewhTVwoGb7BDVmPw7Ehib2RGl2pBl3rQNrjzRJ3n7K6x7qPYZgqNziZegEBQIZ9hh7Q&usqp=CAE",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRPD1CKqCWSf9mxbuHfAUKC9tgVMzXXVNL7XkVoEuBc3rwQdDfXxeFA_jePutGKMKteujdg8il-6xFQglzokXMTCs9AbEWZ_ozzfLudybwxN8l2uz6d6Seg&usqp=CAE"
+      ]
     },
     {
       "id": 26,
@@ -614,7 +742,10 @@
       "count": 160,
       "type": 2,
       "popularity": 6.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSI86Xrn0cvqLhPzUiPGXsFuzumwCsbCKj1tpzFUEgkRPlmtsIUsAn6Rca-YI_XuBXeYSiQy0DPOXu5fs7SG_DzK_GMn0gvqg&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcROkHpG7uz4zqcwRPmOAbD7N9M-lwIPDgCwmQC4CvULCwIaV4KAmuHUx9l8M3DAAUgo0H2KiPm-OOnbEjBcCjPcscGNKr_CfjNUfSD0QU36vqEh_hgujz_L&usqp=CAE"
+      ]
     },
     {
       "id": 27,
@@ -632,7 +763,10 @@
       "count": 170,
       "type": 1,
       "popularity": 4.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQFaiiMP8dT2HWaXhHIgqzeR7NupqY0kHH5bG5O4t6QlZ7BuO1uLZwx0D0U6LViM7yZ7Q-2Lkt64cfuNs56-ficPdEZI7fN&usqp=CAE",
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSomBoWwmSkDzeqEFHlZ4ERjrx-ZWzGPFW0UPqGKZGSdaAHYMo1mfHTL5phPBlRNiUZxl2pRZj4F1ir8jKajtwQbUgIvmNqhg&usqp=CAE"
+      ]
     },
     {
       "id": 28,
@@ -650,7 +784,10 @@
       "count": 140,
       "type": 1,
       "popularity": 4.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS76VeQR6kQ-am_Y2ABI2eEk69gioIZ2rX8UNMFSLzTgYMbwI_TNdNmHCmz2XBlx0b29HhGMgeGJcsk_4u71SoJk3e09QvhG7WxVh5H92wl&usqp=CAE",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcReSSevsvTSsOLq8BoT_EY8g7nApJe5xNpk6IDsPVwtgSDva9Ls4-UxeVdQSDP_aybRD1MC-HYnu2Lizij6vdcEE7j4_u3IYPF7-3YXWIHn&usqp=CAE"
+      ]
     },
     {
       "id": 29,
@@ -668,7 +805,10 @@
       "count": 130,
       "type": 4,
       "popularity": 9.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSxR4L6BxQheyeqBJvHqk8OUSqdAKGxiZ86uI4vM-dhvrRDG-oCy3CFTf1c-Ji8nx5fHqQ2Dn3X4_oQlyeVBqGCzIojvrTaEgb022-G2es&usqp=CAE",
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSZOC79N_luh2rGb4l1bdmPAo1itKS9M2bybxr6b2giCIGbTbHhAGImOfRUsYIRhy6a_tFeFYfs7K4J-7yu0BEvkYvG5gmF&usqp=CAE"
+      ]
     },
     {
       "id": 30,
@@ -686,7 +826,10 @@
       "count": 100,
       "type": 2,
       "popularity": 9.5,
-      "img": ""
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/tomatos.png",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ8lBy8XguFf62uDmNbutpAjFoJFZWUBCV-wSUiLm2DggaIBWn6XddK4FZcn6PAcPU8A6BVOMlXNargAkdlMcKL8M49Ij08PI4-H0wxp6tdqsQQ_lALH39ShQ&usqp=CAE"
+      ]
     },
     {
       "id": 31,
@@ -704,7 +847,10 @@
       "count": 90,
       "type": 3,
       "popularity": 7,
-      "img": ""
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/baklazhany.png",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRGBp8TV7biD-OLlWhuDDYF1y1RbmTKwdIZGhrDbSQ-EBZbQ5WRWCtVz0_OdkX0OhVNoTEAhovtrdYiFW5ko7oNo8-vhPep2WFe4dxPSAhii_Tf4elbMIwArQ&usqp=CAE"
+      ]
     },
     {
       "id": 32,
@@ -722,7 +868,10 @@
       "count": 110,
       "type": 3,
       "popularity": 6,
-      "img": ""
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/kapusta.png",
+        "hhttps://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS6FCGODSG7GK5MHrwKqUqErlHplrFNx5-W1JkpackjN0Tq6XP9EocHm7QV9ghIDskLuC4cK3lSGyV7itcGmFQnD6JvtwoJ1gnyYnlVHeyISvn7pH-mpXmw&usqp=CAE"
+      ]
     },
     {
       "id": 33,
@@ -740,7 +889,10 @@
       "count": 120,
       "type": 2,
       "popularity": 5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRSiiu17ks3f-7XBpa3tSpWE20oAq1ViXhIk8hJhMh0cTS6b4SN_8d3PK6hQRuTx--PPCsn8MIdxtRdE0iME2s1bnQlCVCNDWpfRyruy_pSwgYB5YRPvhQaSg&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRY4zBbGu1V2BOHWeETJS9BddUewq5RCERMrWSVieGp92XbkNXaFHoOUWFBj07Vj68sM_nVmTVYtcYuSMAI9yFfe3QsEtXE1g&usqp=CAE"
+      ]
     },
     {
       "id": 34,
@@ -758,7 +910,10 @@
       "count": 105,
       "type": 4,
       "popularity": 8,
-      "img": ""
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/perec.png",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTNGMhR-D8OlrFEU58LOXv41MqiKYrkDR2Whx_DBICOJPmpEWF4w2Dmq_AezrEenrwjnch7AWNA7pwHWwsuqnN6IrQwiv9P-Lb6GrVk9pl9UecY4HwFoE9BxA&usqp=CAE"
+      ]
     },
     {
       "id": 35,
@@ -776,7 +931,10 @@
       "count": 140,
       "type": 1,
       "popularity": 2,
-      "img": ""
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/buraki.png",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRwfVL4uKAfvhkA8PaN8ouPm4E6mKwdg7Efliv_7zIPnGaSXoSBOkieb-2SUuQNDp68gbD7H8RC_dVH5s6hh9YixAmXCzG_&usqp=CAE"
+      ]
     },
     {
       "id": 36,
@@ -794,7 +952,10 @@
       "count": 130,
       "type": 3,
       "popularity": 9.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQZzZrbMwgQi8xpAmcpaFwlhRDKjsN7jRKdiHYdx7nkMxjVNfEcpUtewhTVwoGb7BDVmPw7Ehib2RGl2pBl3rQNrjzRJ3n7K6x7qPYZgqNziZegEBQIZ9hh7Q&usqp=CAE",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRPD1CKqCWSf9mxbuHfAUKC9tgVMzXXVNL7XkVoEuBc3rwQdDfXxeFA_jePutGKMKteujdg8il-6xFQglzokXMTCs9AbEWZ_ozzfLudybwxN8l2uz6d6Seg&usqp=CAE"
+      ]
     },
     {
       "id": 37,
@@ -812,7 +973,10 @@
       "count": 120,
       "type": 4,
       "popularity": 3.5,
-      "img": ""
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/garbuza.png",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRT527rbhamz0kX7OUwlgmVOzwcCLdfmZaTZC6T6ZbCm--bjfu-hyrhSHSmLk0YmgRn6B09OVwxzcGEjcRZUvszs-PETdQCdaT3iOq8Azw_&usqp=CAE"
+      ]
     },
     {
       "id": 38,
@@ -830,7 +994,10 @@
       "count": 110,
       "type": 1,
       "popularity": 6.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRSiiu17ks3f-7XBpa3tSpWE20oAq1ViXhIk8hJhMh0cTS6b4SN_8d3PK6hQRuTx--PPCsn8MIdxtRdE0iME2s1bnQlCVCNDWpfRyruy_pSwgYB5YRPvhQaSg&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRY4zBbGu1V2BOHWeETJS9BddUewq5RCERMrWSVieGp92XbkNXaFHoOUWFBj07Vj68sM_nVmTVYtcYuSMAI9yFfe3QsEtXE1g&usqp=CAE"
+      ]
     },
     {
       "id": 39,
@@ -848,8 +1015,11 @@
       "count": 130,
       "type": 3,
       "popularity": 8.5,
-      "img": ""
-    }, 
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTiGhdvVYteUaHqR6g8F9viAoZ1R1e4STZZ0Lx7Y6LbySYtQ5othXsVL_3JIK3TyXZk1kHP3UnV8tMto44s8DC5pFnwdtgw&usqp=CAE",
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQCsrmeSl_hM-RaF5Lc6F7e_Q1weo9Stj87HZfFNmDsXuCwDvHMsBGhXBtFLOTNeabW3YMCbh7AW0amj8EUF-BnUcxx3wSf5qSvyjUUC9_EG4cnjNFkFib1Mg&usqp=CAE"
+      ]
+    },
     {
       "id": 40,
       "title": "Редиска (інкрустоване)",
@@ -866,7 +1036,10 @@
       "count": 90,
       "type": 4,
       "popularity": 9.5,
-      "img": ""
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/dynya.png",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRbcD0QepVd1QdsajvTWwYQopB1HaQEwi4VBz80oNDXXmiCPrspI4c3mee9LzDn7Fl-_eezGf2HHbrCxwieIR2xMk-AztFtvqmFOCVZQ5N0jg64A9oek5AkHw&usqp=CAE"
+      ]
     },
     {
       "id": 41,
@@ -884,7 +1057,10 @@
       "count": 100,
       "type": 4,
       "popularity": 7.5,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT3enbsk5JsJDyNPeMQXlT7rS4yLHEafDB0dnWFhcnA3TALbOFpMG4eLnNHLgBzAAXlWxA07jtbwPfOGC0Z0cLuStE1IKML&usqp=CAE",
+        "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRlj1IV-4RFu2098it6QTw29IuaES6OwXgdhHlrO5YvGQjtRFX5Xg0vHt2Nq2Hc_y8vL7bhvSPmQ11LmBCm7dhvmHjchilC&usqp=CAE"
+      ]
     },
     {
       "id": 42,
@@ -902,7 +1078,10 @@
       "count": 85,
       "type": 3,
       "popularity": 8,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRqOE_qSTv2YNNPV1mQ0cx4JrjG0xAlIK3sv2S6geczXTT6Wcghvds2n7NcRo9HU-5s3xUdrkSGNwiN6ycspJeth3rCA8n2&usqp=CAE",
+        "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT5U5_Dp0idM-AxaYC0GXzftrvXHD4tdlaiIb20QRwzF0iFMNPKvTCpQ7J6NA2PWZtuZPLkKHN9hhoRgS71Te-AcLzo5Axs1w&usqp=CAE"
+      ]
     },
     {
       "id": 43,
@@ -920,7 +1099,10 @@
       "count": 110,
       "type": 2,
       "popularity": 6,
-      "img": ""
+      "img": [
+        "https://raw.githubusercontent.com/RuslanKhilkovets/Plante/main/public/img/salade.png",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQJpSrga5Hr8sBO-NJwumvNQEVIFhAvwhdSTPn2hh_PSNsluVdyeLHT20CPe95mmlu3ytzyn22vmmBJw8vWKDjn9dnlYmwSCBgQPZ-oh1Y&usqp=CAE"
+      ]
     },
     {
       "id": 44,
@@ -938,7 +1120,10 @@
       "count": 95,
       "type": 2,
       "popularity": 10,
-      "img": ""
+      "img": [
+        "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQBqGbRBKcf67s5sIfQ4n9Hjt9y6e9RCk2SQigMdqrGXPBgnpcKA4Q-TCUS1JSOkGw2jh4wSHXpKaQPBD57WSsRz-Vjdyn0ig&usqp=CAE",
+        "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRxPhwXNRQIyQxkVpGoRlP5oQZc5pGRcjhaTGY3mAzt9Z0gElr7vieaYYYxMdd_CRM5QQTTAtAjGNs_qtGx0u8XYVEKocjf&usqp=CAE"
+      ]
     }
   ]
 }
