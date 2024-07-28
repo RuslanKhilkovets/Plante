@@ -1,33 +1,35 @@
 @import "../../../scss-common/mixins.scss";
 @import "../../../scss-common/vars.scss";
 
-.menu-container{
+.menu-container {
     @include f-between($gap: 2rem);
     position: relative;
     margin: 0 auto;
     width: max-content;
     height: max-content;
     max-height: 437px;
-    &__item{
+
+    &__item {
         transition: .3s;
         cursor: pointer;
         width: 100%;
         position: relative;
         @include f-center();
-        padding: 10px;  
+        padding: 10px;
     }
 }
 
-.menu-wrapper{
+.menu-wrapper {
     @include f-between($gap: 2rem);
     position: relative;
 }
 
-.header-menu{
-    position: absolute!important;
-    padding-top: 20px; 
+.header-menu {
+    position: absolute !important;
+    padding-top: 20px;
 }
-.menu{
+
+.menu {
     @include flexbox($fd: column, $gap: 20px);
     position: relative;
     z-index: 5;
@@ -39,84 +41,100 @@
     overflow-x: hidden;
     background-color: $main-primary-color;
 
-    &__item{
+    &__item {
         @include flexbox($gap: 10px, $ai: center);
         width: 100%;
         padding: 10px 20px;
         cursor: pointer;
         transition: $trans-time;
-        &:hover{
+
+        &:hover {
             background-color: $menu-item-hover-back;
         }
-        &::after{
+
+        &::after {
             content: "";
             position: absolute;
             z-index: 3;
             right: 0;
             height: 30px;
             width: 30px;
-            @include back-image("../../icons/arrow-right.svg");
+            @include back-image("../../../icons/arrow-right.svg");
         }
     }
-    &__item_icon{
+
+    &__item_icon {
         font-size: 1.5rem;
         color: $text-icons-color;
     }
-    &__text{
+
+    &__text {
         color: #121212;
         @include font;
     }
 }
 
-.menu-navbar{
+.menu-navbar {
     background-color: $button-secondary-color;
     border-radius: 20px;
     display: none;
     width: 100%;
-    &__header{
+
+    &__header {
         background-color: $light-green;
         padding: 10px;
         border-radius: 20px;
         display: none;
     }
-    &__container{
+
+    &__container {
         @include f-between($gap: 4rem, $fw: wrap);
         padding: 20px;
     }
-    &__header_item{
+
+    &__header_item {
         width: 100%;
         @include f-center($jc: flex-start, $gap: 1rem);
-        &:nth-child(1) &_button{
+
+        &:nth-child(1) &_button {
             @include back-image("../../icons/person.svg")
         }
-        &:nth-child(2) &_button{
+
+        &:nth-child(2) &_button {
             @include back-image("../../icons/like.svg")
         }
     }
-    &__header_item_title{
+
+    &__header_item_title {
         @include font($fsz: 1.5rem, $lh: 200%);
         color: $text-primary-color;
     }
-    &__header_item_button{
+
+    &__header_item_button {
         @include back-image();
         height: 25px;
         width: 25px;
     }
-    &__list{
+
+    &__list {
         @include flexbox($fd: column, $gap: 1rem)
     }
-    &__links{
+
+    &__links {
         @include flexbox($fd: column, $gap: 1rem, $ai: flex-end)
     }
-    &__link{
+
+    &__link {
         @include font($fsz: 1.5rem);
         color: $text-primary-color;
     }
-    &__connect{
+
+    &__connect {
         color: $text-secondary-color;
     }
 }
-.menu-items{
+
+.menu-items {
     position: absolute;
     left: 100%;
     padding-left: 20px;
@@ -125,29 +143,33 @@
     width: max-content;
     overflow: auto;
 
-    &__header{
+    &__header {
         background-color: $main-primary-color;
         display: none;
         padding: 1rem;
         border-bottom: 2px $button-secondary-color solid;
     }
-    &__header--title{
+
+    &__header--title {
         @include font($fsz: 2rem, $fw: 500);
         color: $text-primary-color;
     }
-    &__header--close-icon{
+
+    &__header--close-icon {
         @include back-image("../../icons/close.svg");
         width: 50px;
         height: 50px;
     }
-    &__list{
+
+    &__list {
         @include flexbox($fd: column, $gap: 1rem);
         background-color: $main-primary-color;
         border-radius: 10px;
         padding: 20px;
         height: 390px;
     }
-    &__item{
+
+    &__item {
         @include font;
         @include flexbox($ai: center);
         transition: $trans-time;
@@ -156,35 +178,40 @@
         position: relative;
         color: #121212;
     }
-    &__item_title{
+
+    &__item_title {
         @include font($fsz: 1.2rem);
-        color: #2a8927!important;
-        white-space: nowrap;       
-        overflow: hidden;          
-        text-overflow: ellipsis;  
-        width: 250px;   
+        color: #2a8927 !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 250px;
     }
-    &__item_text{
+
+    &__item_text {
         font-size: 1rem;
         color: $text-primary-color;
     }
 }
 
-@media screen and (max-width: 1024px){
-    .menu-navbar{
+@media screen and (max-width: 1024px) {
+    .menu-navbar {
         display: block;
     }
-    .menu{
+
+    .menu {
         min-height: 100vh;
         width: 495px;
         border-radius: 0;
         left: 0;
         top: 0;
-        &__list{
+
+        &__list {
             margin-top: 60px;
         }
     }
-    .menu-items{
+
+    .menu-items {
         padding-left: 0;
         min-height: 100vh;
         width: 100%;
@@ -192,17 +219,21 @@
         top: -80px;
         left: 0;
         z-index: 99999;
-        &__header{
+
+        &__header {
             @include f-between;
         }
-        &__item_title{
-            font-size: 1.5rem!important;
+
+        &__item_title {
+            font-size: 1.5rem !important;
         }
-        &__item_text{
+
+        &__item_text {
             font-size: 2rem;
         }
     }
-    .menu-container{
+
+    .menu-container {
         min-height: 100vh;
         width: 100%;
         top: 0;
@@ -211,49 +242,54 @@
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
 
-    .menu-items{
+    .menu-items {
         left: 0;
-        top: 0; 
-        &__list{
-           min-height: 100vh;
+        top: 0;
+
+        &__list {
+            min-height: 100vh;
             width: 100%;
-            border-radius: 0;        
+            border-radius: 0;
         }
 
     }
 
-    .menu{
+    .menu {
         top: 0px;
         padding: 10px;
         min-height: 100vh;
         width: 100%;
         border-radius: 0;
         background-color: $main-primary-color;
-        &__text{
+
+        &__text {
             font-size: 1.2rem;
         }
     }
-    .menu-navbar{
-        &__container{
+
+    .menu-navbar {
+        &__container {
             flex-wrap: wrap;
         }
 
     }
 }
 
-@media screen and (max-width: 360px){
-    .menu-navbar{
-        &__container{
+@media screen and (max-width: 360px) {
+    .menu-navbar {
+        &__container {
             flex-wrap: wrap;
         }
-        &__header{
+
+        &__header {
             @include flexbox($fd: column, $gap: 1rem)
         }
     }
-    .menu-items{
-        &__header{
+
+    .menu-items {
+        &__header {
             @include f-between($gap: 1rem);
         }
     }
