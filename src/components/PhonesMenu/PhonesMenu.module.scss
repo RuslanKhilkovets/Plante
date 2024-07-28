@@ -1,9 +1,0 @@
-@import "../../components/UI/vars.scss";
-@import "../../components/UI/mixins.scss";
-
-.phone{
-    &__link{
-        @include font();
-        color: $text-primary-color;
-    }
-}

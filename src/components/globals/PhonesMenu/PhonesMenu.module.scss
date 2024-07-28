@@ -1,0 +1,9 @@
+@import "../../../scss-common/vars.scss";
+@import "../../../scss-common/mixins.scss";
+
+.phone{
+    &__link{
+        @include font();
+        color: $text-primary-color;
+    }
+}

@@ -1,0 +1,14 @@
+
+@import "../../../scss-common/vars.scss";
+@import "../../../scss-common/mixins.scss";
+
+.overlay{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.3;
+    background: $overlay-color;
+}

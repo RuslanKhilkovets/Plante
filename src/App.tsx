@@ -1,5 +1,5 @@
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
+import Footer from './components/globals/Footer/Footer';
+import Header from './components/globals/Header/Header';
 import AppRouter from './router/AppRouter/AppRouter';
 
 import './App.css';

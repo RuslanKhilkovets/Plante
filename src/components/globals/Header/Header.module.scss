@@ -1,0 +1,142 @@
+@import "../../../scss-common/vars.scss";
+@import "../../../scss-common/mixins.scss";
+
+
+.header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 13;
+    background-color: $main-primary-color;
+}
+
+.cart{
+    position: relative;
+    &::after{
+        content: attr(aria-count);
+        @include font;
+        background-color: #FF7E07;
+        color: #fff;
+        min-height: 20px;
+        min-width: 25px;
+        border-radius: 50%;
+        padding: 5px;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+    }
+}
+
+.navbar{
+    position: relative;
+    padding: 17.5px 0;
+    @include f-between;    
+    &__list{
+        @include f-between(25px);    
+    }
+    &__link{
+        @include font($fsz: 1.125rem);
+        color: $text-primary-color;
+    }
+    &__contacts{
+        @include f-between(30px);    
+    }
+    &__connect{
+        color: $text-secondary-color;
+    }
+}
+
+.header-actions{
+    display: grid;
+    grid-template-columns: 1fr 2fr 10fr 2fr;
+    gap: 20px;
+    padding: 10px 0;
+
+    &__catalog{
+        @include f-center($gap: 10px);
+        position: relative;
+        z-index: 9;
+        border-radius: 30px;
+        transition: $trans-time;
+        background: $button-secondary-color;
+        cursor: pointer;
+        &:hover{
+            color:#2A8927;
+            transition: $trans-time;
+        }
+    }
+    &__catalog_button{
+        @include back-image("../../icons/catalog.svg");
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__catalog_title{
+        @include font($fsz: 1.2rem);
+    }
+    &__search{
+        @include flexbox($ai: center);
+        border-radius: 30px;
+        background: $button-secondary-color;
+        height: 100%;
+        padding: 0 1rem;
+    }
+    &__search_btn{
+        width: 19px;
+        height: 19px;
+        @include back-image("../../icons/search.svg");
+    }
+    &__search_input{
+        @include font($fsz: 1.2rem);
+        background: $button-secondary-color;
+        width: 100%;
+    }
+    &__icons{
+        @include f-between($gap: 5px, $ai: center);
+    }
+
+}
+
+@media screen and (max-width: 1024px){
+    .navbar{
+        display: none;
+    }
+
+    .header-actions{
+        grid-template-columns: 0px 4rem 10fr 2fr;
+
+        &__logo{
+            display: none;
+        }
+        &__catalog_title{
+            display: none;
+        }
+        &__catalog_active{
+            background-color: #caf0d2;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .header-actions{
+        grid-template-columns: 0fr 4rem 12fr 3fr;
+        &__icon{
+            display: none!important;
+        }
+    }
+}
+
+@media screen and (max-width: 360px){
+    .header-actions{
+        grid-template-columns: 0fr 4rem 8fr 1fr;
+        &__icon:nth-child(1){ 
+            display: none;
+        }
+        &__icon:nth-child(2){
+            display: none;
+        }
+    }
+}

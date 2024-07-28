@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import ErrorPageContent from "../components/ErrorPageContent/ErrorPageContent";
+import ErrorPageContent from "../components/ErrorComponents/ErrorPageContent/ErrorPageContent";
 
 const ErrorPage = () => {
     return (

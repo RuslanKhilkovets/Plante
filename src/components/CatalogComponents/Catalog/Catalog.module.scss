@@ -1,0 +1,13 @@
+@import "../../../scss-common/vars.scss";
+@import "../../../scss-common/mixins.scss";
+
+.catalog{
+    width: 100%;
+    @include flexbox($gap: 30px);
+}
+
+@media screen and (max-width: 768px){
+    .catalog{
+        @include f-between($gap: 0px);
+    }
+}

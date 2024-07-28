@@ -3,13 +3,13 @@ import { Helmet } from 'react-helmet';
 
 import { CircularProgress } from '@mui/material';
 
-import ItemPresentation from '../components/ItemPresentation/ItemPresentation';
-import ItemInfo from '../components/ItemInfo/ItemInfo';
-import ProductsContainer from '../components/Products/ProductContainer/ProductsContainer';
-import ViewedItems from '../components/ViewedItems/ViewedItems';
-import CustomBreadcrumps from '../components/StyledComponents/CustomBreadcrumps';
-import UpdatesForm from '../components/UpdatesForm/UpdatesForm';
-import SimilarProducts from '../components/SimilarProducts/SimilarProducts';
+import ItemPresentation from '../components/ItemComponents/ItemPresentation/ItemPresentation';
+import ItemInfo from '../components/ItemComponents/ItemInfo/ItemInfo';
+import ProductsContainer from '../components/ProductComponents/ProductContainer/ProductsContainer';
+import ViewedItems from '../components/globals/ViewedItems/ViewedItems';
+import CustomBreadcrumps from '../components/UI/BreadCrumps/CustomBreadcrumps';
+import UpdatesForm from '../components/globals/UpdatesForm/UpdatesForm';
+import SimilarProducts from '../components/globals/SimilarProducts/SimilarProducts';
 
 import addItemToStorage from '../helpers/addItemToStorage';
 import ApiClient from '../api/ApiClient';

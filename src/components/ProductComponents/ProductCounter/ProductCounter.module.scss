@@ -1,0 +1,32 @@
+@import "../../../scss-common/vars.scss";
+@import "../../../scss-common/mixins.scss";
+
+.product-counter{
+    @include f-between($gap: 1rem, $ai: center);
+    &__btn{
+        @include font($fw: 700);
+        padding: 20px 25px;
+        border-radius: 50%;
+        background-color: $button-secondary-color;
+        &:disabled{
+            cursor: default;
+            opacity: .5;
+        }
+    }
+    &__input{
+        width: 4rem!important;
+        border: 2px solid  $button-secondary-color!important;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .product-counter_cart .product-counter{
+        &__btn{
+            @include font($fsz: 1.2rem, $fw: 900);
+            padding: 10px 15px;
+        }
+        &__input{
+            height: 40px;
+        }
+    }
+}

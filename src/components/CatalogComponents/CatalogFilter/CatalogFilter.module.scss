@@ -1,0 +1,102 @@
+
+@import "../../../scss-common/vars.scss";
+@import "../../../scss-common/mixins.scss";
+
+.catalog-filter{
+    background-color: $main-primary-color;
+    max-width: 304px;
+    min-width: 200px;
+    height: 100%;
+    &__checkboxes{
+        @include flexbox($fd: column) 
+    }
+    &__clear-filters-btn{
+        @include font();
+        color: $text-gray-color!important;
+        text-transform: none!important;
+        display: block;
+        position: relative;
+        &::before{
+            content: "";
+            display: block;
+            width: 25px;
+            height: 25px;
+            margin-right: 12px;
+            @include back-image($url: "@/icons/trash.svg");
+        }
+    }
+    &__title{
+        display: none!important;
+        background-color: $main-primary-color;
+        color: #000!important;
+        margin-bottom: 2rem;
+        padding-left: 30px!important;
+        text-transform: none!important;
+        @include font($fsz: 1.3rem, $fw: 600);
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: center;
+            height: 20px;
+            width: 20px;
+            @include back-image($url: "@/icons/arrow-left.svg")
+        }
+    }
+}
+
+.price-inputs{
+    @include flexbox($gap: 10px, $ai: center);
+    &__input{
+        background-color: $button-secondary-color!important;
+    }
+}
+
+.reset-btn{
+    width: 100%;
+}
+
+.choosen-title{
+    @include font;
+    margin: 5px 0;
+}
+
+.price-btn{
+    @include font;
+    background-color: $button-secondary-color!important;
+    color: #000!important;
+    border-radius: 100px!important;
+    text-transform: none!important;
+    padding: 1.3rem!important;
+}
+
+.overlay-container{
+    display: none;
+}
+
+.price{
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 768px){
+
+    .catalog-filter{
+        width: min(400px, 100%);
+        overflow: auto;
+        top: 0;
+        left: -100%;
+        position: fixed;
+        z-index: 999;
+        padding: 20px;
+        transition: $trans-time all;
+        &_active{
+            left: 0;
+            transition: $trans-time all;
+        }
+        &__title{
+            display: block!important;
+        }
+    }
+}

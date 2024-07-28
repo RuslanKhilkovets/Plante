@@ -1,0 +1,40 @@
+@import "../../../scss-common/vars.scss";
+@import "../../../scss-common/mixins.scss";
+
+.updates-form{
+    
+    padding: 50px 20px;
+    @include f-center($fd: column, $gap: 20px);
+    background-color: $light-green;
+    border-radius: 20px;
+    &__title{
+        @include font($fsz: 1.625rem, $fw: 700);
+        color: $text-primary-color;
+        margin-bottom: 10px;
+        text-align: center;
+
+        @media (max-width: 768px){
+            text-align: left;
+        }
+    }
+    &__subtitle{
+        @include font();
+        color: $overlay-color;
+        text-align: center;
+
+        @media (max-width: 768px){
+            text-align: left;
+        }
+    }
+    &__form{
+        width: min(687px, 100%);
+        @include f-between($fd: column, $gap: 20px)
+    }
+    &__input{
+        background-color: $main-primary-color;
+        color: $overlay-color;
+    }
+    &__texts{
+        width: 100%;
+    }
+}

@@ -2,10 +2,10 @@ import { Helmet } from 'react-helmet';
 
 import { Typography } from '@mui/material';
 
-import Catalog from '../components/Catalog/Catalog';
-import ViewedItems from '../components/ViewedItems/ViewedItems';
-import CustomBreadcrumps from '../components/StyledComponents/CustomBreadcrumps';
-import UpdatesForm from '../components/UpdatesForm/UpdatesForm';
+import Catalog from '../components/CatalogComponents/Catalog/Catalog';
+import ViewedItems from '../components/globals/ViewedItems/ViewedItems';
+import CustomBreadcrumps from '../components/UI/BreadCrumps/CustomBreadcrumps';
+import UpdatesForm from '../components/globals/UpdatesForm/UpdatesForm';
 
 import useQuery from '../hooks/useQuery';
 import catalogMenuItems from '../constants/catalogMenuItems';

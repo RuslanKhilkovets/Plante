@@ -1,0 +1,13 @@
+@import "../../../scss-common/vars.scss";
+@import "../../../scss-common/mixins.scss";
+
+.filter-button{
+    @include font;
+    color: $overlay-color;
+    margin: 5px;
+    margin-left: 0;
+    padding: 0px 10px;
+    padding-right: 0;
+    border-radius: 5px;
+    background-color: $button-secondary-color;
+}
