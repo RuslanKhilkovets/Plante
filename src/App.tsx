@@ -12,8 +12,8 @@ function App() {
 
       <main className="main">
         <AppRouter/>
-
       </main>
+
       <Footer />
     </>
   )

@@ -27,7 +27,8 @@ const ItemPresentation: FC<ItemPresentationProps> = ( { item } ) => {
     const dispatch = useAppDispatch();
 
     const addNewItemToCart = () => {
-        dispatch((addItemToCart(item)));
+
+        dispatch((addItemToCart({ ...item, count})));
     }
 
     return (

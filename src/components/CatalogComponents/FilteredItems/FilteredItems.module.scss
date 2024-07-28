@@ -4,6 +4,7 @@
 
 .filtered-items{
     margin: 0 auto;
+    padding: 1rem;
     @include flexbox($fw: wrap, $gap: 40px);
 }
 
@@ -17,7 +18,7 @@
 @media screen and (max-width: 768px){
 
     .filtered-items{
-        @include flexbox($gap: 25px);
+        @include f-between($gap: 10px);
     }
 }
 @media screen and (max-width: 360px){

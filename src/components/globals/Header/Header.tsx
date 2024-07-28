@@ -45,7 +45,8 @@ const Header = () => {
     }
     
     const calculateCartCount = () => cart.reduce((prev, next) => {
-        return prev + next.count;
+        console.log(next.itemCount)
+        return prev + next.itemCount;
     }, 0)
     
     return (

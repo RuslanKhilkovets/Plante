@@ -1,4 +1,3 @@
-
 @import "../../../scss-common/vars.scss";
 @import "../../../scss-common/mixins.scss";
 
@@ -52,7 +51,7 @@
         &__item{
             padding: 20px;
         }
-        // flex-wrap: wrap;~
+        @include flexbox($fw: wrap);
         &__content--item_text_grey{
             text-wrap: wrap;
         } 

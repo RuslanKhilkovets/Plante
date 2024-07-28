@@ -16,7 +16,7 @@ import cl from "./CartItem.module.scss";
  
 const CartItem: FC<{item: TProductFullData}> = ({ item }) => {
     const dispatch = useAppDispatch();
-    const [count, setCount] = useState(item.count);
+    const [count, setCount] = useState(item.itemCount);
 
     useEffect(() => {
         dispatch(updateItemCount({ id: item.id, count }));
@@ -30,7 +30,7 @@ const CartItem: FC<{item: TProductFullData}> = ({ item }) => {
         <div className={cl["cart-item"]}>
             <div className={cl["cart-item__info"]}>
                 <img
-                    src={item?.img}
+                    src={item?.img[0]}
                     className={cl["cart-item__img"]}
                     alt={item?.title}
                 />

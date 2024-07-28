@@ -26,6 +26,8 @@ import arrowIcon from "../../../icons/btn-arrow-right.png" ;
 import successImage from "../../../icons/iconamoon_cloud-yes.png";
 
 import cl from "./OrderDialog.module.scss"
+import { useDispatch } from "react-redux";
+import { resetCart } from "../../../redux/slices/CartSlice";
 
 
 enum DeliveryType {
@@ -54,6 +56,8 @@ interface IOrderData {
 
 const OrderDialog: React.FC<IDialogProps> = ({ open, onClose }) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
 	const { items: cart } = useAppSelector(state => state.cartReducer)
     const orderId = Math.floor(Math.random() * 20000); // In future will be in response from server
 
@@ -85,6 +89,8 @@ const OrderDialog: React.FC<IDialogProps> = ({ open, onClose }) => {
 
     const approveOrder = () => {
         // in the future request to server
+        dispatch(resetCart())
+        
         setIsOrderingCompleted(true);
     }
 
@@ -348,7 +354,7 @@ const OrderDialog: React.FC<IDialogProps> = ({ open, onClose }) => {
                                         <li className={cl["order-cart__item"]}>
                                             <div className={cl["order-cart__item-item"]}>
                                                 <img
-                                                    src={ cartItem?.img }
+                                                    src={ cartItem?.img[0] }
                                                     className={cl["order-cart__item--img"]}
                                                 />
                                                 <p className={cl["order-cart__item--text"]}>

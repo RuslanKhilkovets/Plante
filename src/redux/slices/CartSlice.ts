@@ -15,23 +15,26 @@ const cartSlice = createSlice({
         addItemToCart: (state, action: PayloadAction<TProductFullData>) => {
             const itemIndex = state.items.findIndex(item => item.id === action.payload.id);
             if (itemIndex >= 0) {
-                state.items[itemIndex].count++;
+                state.items[itemIndex].itemCount += action.payload.count || 1;
             } else {
-                state.items.push({ ...action.payload, count: 1});
+                state.items.push({ ...action.payload, itemCount: action.payload.count || 1 });
             }
-        },
+        },        
         removeItemFromCart: (state, action: PayloadAction<number>) => {
             state.items = state.items.filter(item => item.id !== action.payload);
         },
         updateItemCount: (state, action: PayloadAction<{ id: number; count: number }>) => {
             const item = state.items.find(item => item.id === action.payload.id);
             if (item) {
-                item.count = action.payload.count;
+                item.itemCount = action.payload.count;
             }
+        },
+        resetCart: (state) => {
+            state.items = [];
         }
     }
 });
 
-export const { addItemToCart, removeItemFromCart, updateItemCount } = cartSlice.actions;
+export const { addItemToCart, removeItemFromCart, updateItemCount, resetCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

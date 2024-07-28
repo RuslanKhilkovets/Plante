@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import CatalogFilter from '../CatalogFilter/CatalogFilter';
 import FilteredItems from '../FilteredItems/FilteredItems';
@@ -22,6 +23,7 @@ const initialFilters = {
 };
 
 const Catalog: FC<ICatalogProps> = ( { category } ) => {
+    const location = useLocation()
     const [filters, setFilters] = useState<ICatalogFilters>({
        ...initialFilters
     });
@@ -43,7 +45,7 @@ const Catalog: FC<ICatalogProps> = ( { category } ) => {
 
     useEffect(() => {
         filterItems();
-    }, [filters.productAgeTypes, filters.productWeightTypes]);
+    }, [filters.productAgeTypes, filters.productWeightTypes, location]);
 
     useEffect(() => {
         const sortedItems = sortItems(sort, catalogItems);

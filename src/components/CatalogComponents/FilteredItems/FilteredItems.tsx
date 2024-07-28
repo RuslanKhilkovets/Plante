@@ -8,7 +8,7 @@ import ProductItem from '../../ProductComponents/ProductItem/ProductItem';
 
 
 const FilteredItems: FC<{ items: TProductFullData[] }> = ({ items = [] }) => {
-
+    
     return (
         <div className={clsx(cl["filtered-items"] , {
             [cl["empty"]]: items.length === 0

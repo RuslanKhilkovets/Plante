@@ -24,11 +24,9 @@ const ProductItem: FC<{ product: TProductFullData }> = ({ product }) => {
   
   const addToCart = (event: React.MouseEvent) => {
     event.stopPropagation();
-    dispatch(addItemToCart(product));
+    dispatch(addItemToCart({ ...product, count: 1}));
     enqueueSnackbar('Продукт було додано в кошик!', { variant: 'success' });
   };
-
-  console.log(product.img);
   
   const handleNavigation = () => {
     navigate(`${PATHS.ITEM}?url=${product.url || ''}`);
