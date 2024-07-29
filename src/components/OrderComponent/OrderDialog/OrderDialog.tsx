@@ -151,7 +151,7 @@ const OrderDialog: React.FC<IDialogProps> = ({ open, onClose }) => {
                                 className={cl["order-form__input"]}
                             />
                         </Grid>
-                        <Grid item xs={8}>
+                        <Grid item md={8} xs={12}>
                             <label className={cl["order-form__input-label"]}>Вулиця</label>
                             <CustomInput
                                 value={orderForm.street}
@@ -160,7 +160,7 @@ const OrderDialog: React.FC<IDialogProps> = ({ open, onClose }) => {
                                 className={cl["order-form__input"]}
                             />
                         </Grid>
-                        <Grid item xs={2}>
+                        <Grid item md={2} xs={6}>
                             <label className={cl["order-form__input-label"]}>Будинок</label>
                             <CustomInput
                                 value={orderForm.house}
@@ -169,7 +169,7 @@ const OrderDialog: React.FC<IDialogProps> = ({ open, onClose }) => {
                                 className={cl["order-form__input"]}
                             />
                         </Grid>
-                        <Grid item xs={2}>
+                        <Grid item md={2} xs={6}>
                             <label className={cl["order-form__input-label"]}>Квартира</label>
                             <CustomInput
                                 value={orderForm.apartment}
