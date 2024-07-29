@@ -37,7 +37,10 @@ const ProductItem: FC<{ product: TProductFullData }> = ({ product }) => {
       <div className={cl['product-item__item']}>
         <div
           className={cl['product-item__img']}
-          style={{ backgroundImage: `url(${product.img ? product?.img[0] : ""})` }}
+          style={{ 
+            backgroundImage: `url(${product.img ? product?.img[0] : ""})`,
+            backgroundSize: "cover",
+           }}
         ></div>
         <div className={cl['product-item__heading']}>
           <p className={cl['product-item__title']}>{product.title}</p>
