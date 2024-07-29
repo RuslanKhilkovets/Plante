@@ -113,7 +113,9 @@ const Cart: React.FC<IDialogProps> = ({ open, onClose }) => {
 				{renderContent()}
 			</DialogContent>
 
-			<DialogActions>
+			<DialogActions
+				className={cl["cart__btns"]}
+			>
 				{renderActionsButtons()}
 			</DialogActions>
 		</Dialog>

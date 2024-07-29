@@ -49,3 +49,14 @@
         color: #000;
     }
 }
+
+@media screen and (max-width: 768px) {
+    .cart{
+        &__header{
+            margin-top: 30px!important;
+        }
+        &__btns{
+            margin-bottom: 30px!important;
+        }
+    }
+}

@@ -84,11 +84,11 @@
         }
 
         &__title {
-            @include font($fsz: 2rem);
+            @include font($fsz: 1.9rem,  $fw: 700);
         }
 
         &__subtitle {
-            @include font($fsz: 1.5rem, $fw: normal);
+            @include font($fsz: 1rem, $fw: normal);
         }
     }
 

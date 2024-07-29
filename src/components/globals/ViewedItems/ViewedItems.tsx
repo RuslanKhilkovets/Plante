@@ -11,11 +11,11 @@ const ViewedItems = () => {
     const [items, setItems] = useState([]);
     
     const query = useQuery();
-    const currentItemUrl = query.get('item') || "";
+    const currentItemUrl = query.get('url') || "";
 
     useEffect(() => {
         const itemsFromStorage = getItemFromStorage("viewedItems");
-        
+        console.log(currentItemUrl)
         setItems(itemsFromStorage)
     }, [currentItemUrl])
 

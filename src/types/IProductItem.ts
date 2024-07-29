@@ -20,6 +20,7 @@ export type TProductFullData = TProductItem & {
     count: number;
     img: string[];
     type: number;
+    itemCount?: number;
 }
 
 export default interface IProductItems {

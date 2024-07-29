@@ -6,6 +6,8 @@ import IProductItems from '../../../types/IProductItem';
 import ProductType from '../../../constants/productsTypes';
 import ApiClient from '../../../api/ApiClient';
 
+import cl from "./ProductsMain.module.scss"
+
 
 const ProductsMain = () => {
     const [products, setProducts] = useState<IProductItems>({
@@ -28,7 +30,7 @@ const ProductsMain = () => {
     }, []);
 
     return (
-        <div style={{ marginTop: "100px"}}>
+        <div className={cl["prod-main"]}>
             <ProductsContainer 
                 products={products.popular} 
                 type={ProductType.POPULAR} 
