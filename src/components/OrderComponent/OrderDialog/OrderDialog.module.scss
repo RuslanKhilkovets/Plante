@@ -114,6 +114,9 @@
     }
     &__item--text{
         @include font;
+        max-width: 100px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &__sum-item{
         width: 100%;

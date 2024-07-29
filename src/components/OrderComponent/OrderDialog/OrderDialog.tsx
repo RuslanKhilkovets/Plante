@@ -363,7 +363,7 @@ const OrderDialog: React.FC<IDialogProps> = ({ open, onClose }) => {
                                             </div>
                                             <div className={cl["order-cart__item-item"]}>
                                                 <p className={cl["order-cart__item--text"]}>
-                                                    {cartItem.count}x
+                                                    {cartItem.itemCount}x
                                                 </p>
                                                 <p className={cl["order-cart__item--text"]}>
                                                     {cartItem.price} грн
@@ -491,7 +491,11 @@ const OrderDialog: React.FC<IDialogProps> = ({ open, onClose }) => {
                 p: 0
             }}}
 		>
-			<DialogContent>
+			<DialogContent
+                sx={{
+                    p: 0
+                }}
+            >
                 <div className="global-container">
                     <div className="order">
                         <div className={cl["order__heading"]}>
